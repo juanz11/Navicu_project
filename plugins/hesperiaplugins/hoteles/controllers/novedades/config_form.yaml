@@ -1,0 +1,10 @@
+name: Novedades
+form: $/hesperiaplugins/hoteles/models/novedad/fields.yaml
+modelClass: HesperiaPlugins\Hoteles\Models\Novedad
+defaultRedirect: hesperiaplugins/hoteles/novedades
+create:
+    redirect: 'hesperiaplugins/hoteles/novedades/update/:id'
+    redirectClose: hesperiaplugins/hoteles/novedades
+update:
+    redirect: hesperiaplugins/hoteles/novedades
+    redirectClose: hesperiaplugins/hoteles/novedades

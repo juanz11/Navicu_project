@@ -1,0 +1,95 @@
+
+<div class="control-list" style="overflow:auto; max-height:300px;">
+  <table class="table data" data-control="rowlink">
+      <thead>
+          <tr>
+              <th><span>Producto/Servicio</span></th>
+              <?php if($prefix == "paq"): ?>
+              <th><span>acciones</span></th>
+              <?php endif ?>
+          </tr>
+      </thead>
+      <tbody>
+          <?php foreach ($upsellings as $upselling) :?>
+            <tr>
+                <?php if($prefix == "hab"): ?>
+                  <td>
+                    <p>
+                      <strong>
+                        <?php echo $upselling["titulo"]  ?>
+                      </strong>
+                    </p>
+                    <div class="form-group dropdown-field span-left form-group-sm">
+                      <div class="row">
+                        <div class="col-md-8">
+                      <label>Fecha disfrute</label>
+                      <select class="form-control custom-select" name="fechadisfrute-<?php echo $upselling['id']  ?>">
+                        <?php if($upselling["fechas_confirmadas"]!==null && $upselling->ind_calendario == 1): ?>
+                          <?php var_dump($upselling["fechas_confirmadas"]) ?>
+                          <?php foreach ($upselling["fechas_confirmadas"] as $date) :?>
+                            <option data-disponible="<?php echo ($date['disponible']) ?>"
+                             value="<?php echo ($date['fecha']) ?>"><?php echo ($date['fecha']); ?></option>
+                          <?php endforeach ?>
+                        <?php else: ?>
+                          <option value="NA">No aplica</option>
+                        <?php endif ?>
+                      </select>
+                      </div>
+                    </div>
+                      <!--<small class="help-block"><em>Fecha disfrute</em></small>-->
+                    </div>
+                    <div class="form-group dropdown-field span-right form-group-sm">
+                      <div class="row">
+                        <div class="col-md-8">
+                          <label>Cantidad</label>
+                          <select class="form-control custom-select select-upselling"
+                            data-base="<?php echo $upselling['precio']  ?>"
+                            data-ups-id="<?php echo $upselling['id']  ?>"
+                            data-tipo="<?php echo $prefix  ?>"
+                            name="<?php echo $prefix ?>-ups-<?php echo $upselling['id']  ?>">
+                            <?php for ($i=0;  $i <= $upselling->disponible_inicial; $i++):?>
+                              <option  value="<?php echo $i; ?>"><?php echo $i; ?></option>
+                            <?php endfor ?>
+                          </select>
+                        </div>
+                        <div class="col-md-4">
+                          <br>
+                          <p class="text-right">
+                            <strong>Precio:</strong>
+                              <span id="label-precio-ups-<?php echo $upselling['id']  ?>">
+                                <?php 
+                                  $price = $upselling["precio"]*$upselling["cantidad_min"];
+                                  echo $this->cambiarFormatoPrecio($price, $busqueda["moneda"])
+                                
+                                ?>
+                              </span>
+
+                          </p>
+                        </div>
+                      </div>
+                      <!--<small class="help-block"><em>Cantidad</em></small>-->
+                    </div>
+                  </td>
+
+                  <?php elseif($prefix == "paq"): ?>
+                  <td>
+                      <strong>
+                        <?php echo $upselling["titulo"]  ?>
+                      </strong>
+                  </td>
+                  <td class="column-button nolink">
+                    <button
+                        type="button"
+                        data-request-data="'ups_id':<?php echo $upselling['id']  ?>"
+                        data-request="onMostrarPreciosUps"
+                        data-request-complete="$('#content-precios-upsellings-sec').modal({show : true});"
+                        class="btn btn-secundary btn-sm">
+                        Ver Precios
+                    </button>
+                  </td>
+                  <?php endif ?>
+            </tr>
+          <?php endforeach ?>
+      </tbody>
+  </table>
+</div>

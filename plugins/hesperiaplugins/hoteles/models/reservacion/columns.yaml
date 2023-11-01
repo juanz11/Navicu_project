@@ -1,0 +1,49 @@
+columns:
+    id:
+        label: 'Reserva id'
+        type: number
+        searchable: true
+        sortable: true
+    created_at:
+        label: Fecha
+        type: Date
+        searchable: true
+        sortable: true
+    huesped:
+        label: Huésped
+        type: text
+        searchable: true
+        sortable: true
+    total:
+        label: Total
+        type: monto_formateado
+        sortable: true
+    moneda_id:
+        label: Moneda
+        type: number
+        select: moneda
+        relation: moneda
+
+    status_id:
+        label: Status
+        type: text
+        select: status
+        relation: status
+    checkin:
+        label: 'Check in'
+        type: date
+        format: d-m-Y
+        searchable: true
+        sortable: true
+    hotel_id:
+        label: Hotel
+        type: text
+        searchable: true
+        sortable: true
+        select: nombre
+        relation: hotel
+    origen_id:
+        label: Origen
+        type: text
+        select: origen
+        relation: origen

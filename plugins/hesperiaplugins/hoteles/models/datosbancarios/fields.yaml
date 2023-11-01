@@ -1,0 +1,44 @@
+fields:
+    hotel:
+        label: Hotel
+        oc.commentPosition: ''
+        nameFrom: nombre
+        span: auto
+        required: 1
+        descriptionFrom: description
+        type: relation
+        emptyOption: '--Seleccione:--'
+    banco:
+        label: Banco
+        oc.commentPosition: ''
+        span: auto
+        type: text
+    beneficiario:
+        label: Beneficiario
+        oc.commentPosition: ''
+        span: auto
+        type: text
+    cuenta:
+        label: Cuenta
+        oc.commentPosition: ''
+        span: auto
+        type: text
+    rif:
+        label: RIF
+        oc.commentPosition: ''
+        span: auto
+        type: text
+    swift:
+        label: Swift
+        oc.commentPosition: ''
+        span: auto
+        type: text
+    email:
+        label: Email
+        oc.commentPosition: ''
+        span: auto
+        type: text
+    nacional:
+        label: Nacional
+        span: auto
+        type: switch

@@ -1,0 +1,30 @@
+{% if __SELF__.property('num_slides') == '3'  %}
+  {% set class ="slider-3-items" %}
+  {% set subclass = "col-md-12" %}
+{% else %}
+  {% set class ="slider-default" %}
+  {% set subclass = "" %}
+{% endif %}
+
+{% set upsellings = __SELF__.getUpsellingById() %}
+
+
+<div class="col-md-12" >
+    <div class="slider-3-items">
+      {% for upselling in upsellings %}
+      <div class="item col-md-12 custom-thumbs">
+        <div class="wrapper"><img src="{{upselling.imagen.path}}" class="img-responsive">
+          <div class="speakers-thumb text-center">
+
+            <h3 >{{ upselling.titulo }}</h3>
+            <p ><small>{{upselling.hotel.nombre}}</small></p>
+            <p>
+              <a class="btn btn-default" href="{{ 'tienda/tienda'|page({ slug: upselling.slug }) }}">LO QUIERO</a>
+            </p>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+

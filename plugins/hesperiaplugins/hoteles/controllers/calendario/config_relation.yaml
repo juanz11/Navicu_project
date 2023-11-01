@@ -1,0 +1,10 @@
+fechas:
+    label: Fechas
+    view:
+        list: $/hesperiaplugins/hoteles/models/fechacalendario/columns.yaml
+        toolbarButtons: false
+        showCheckboxes: false
+        recordsPerPage: 10
+    manage:
+        form: $/hesperiaplugins/hoteles/models/fechacalendario/fields.yaml
+        recordsPerPage: 10

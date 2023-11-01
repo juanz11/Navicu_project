@@ -1,0 +1,10 @@
+columns:
+    role:
+        label: role
+        type: text
+    email:
+        label: email
+        type: text
+    id:
+        label: id
+        type: number

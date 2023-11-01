@@ -1,0 +1,16 @@
+atributos:
+    label: Atributos
+    view:
+        list: $/hesperiaplugins/hoteles/models/atributo/columns_with_pivot.yaml
+        toolbarButtons: 'add|remove'
+        showCheckboxes: true
+    manage:
+        form: $/hesperiaplugins/hoteles/models/atributo/fields.yaml
+        recordsPerPage: 10
+    pivot:
+        form:
+            fields:
+                pivot[orden]:
+                    label: Orden
+                    type: text
+                    default: 0

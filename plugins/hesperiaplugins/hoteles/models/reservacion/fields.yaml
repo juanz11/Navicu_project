@@ -1,0 +1,110 @@
+fields:
+    checkin:
+        label: Check-in
+        span: left
+        type: datepicker
+        mode: date
+        format: d-m-yy
+    checkout:
+        label: Check-out
+        span: right
+        type: datepicker
+        mode: date
+        format: d-m-yy
+    hotel:
+        label: Hotel
+        span: left
+        oc.commentPosition: ''
+        nameFrom: nombre
+        required: 1
+        descriptionFrom: description
+        type: relation
+    moneda:
+        label: Moneda
+        span: right
+        oc.commentPosition: ''
+        nameFrom: moneda
+        descriptionFrom: moneda
+        type: relation
+        defaultSort: 'id, desc'
+        scope: isActiva
+    huesped:
+        type: text
+        label: Huesped
+        span: left
+        context: create
+    usuario:
+        type: text
+        label: Email
+        span: right
+        context: create
+    usuario@preview:
+        label: Email
+        nameFrom: email
+        descriptionFrom: email
+        type: relation
+        span: right
+    identificacion:
+        type: text
+        label: Documento
+        span: left
+    contacto:
+        type: text
+        label: Contacto
+        span: left
+    total@preview:
+        type: number
+        label: Total
+        readOnly: true
+        span: right
+    comentarios:
+        label: Comentarios
+        type: textarea
+        size: small
+        span: full
+    total:
+        type: number
+        label: Total
+        readOnly: true
+        span: full
+        context: create
+    detalles:
+        type: detalles
+        context: create
+    pago_insite:
+        label: 'Pago en sitio'
+        type: switch
+        span: left
+        comment: 'Permitir hacer el pago en recepción'
+        'on': Si
+        'off': 'No'
+        context: create
+    status:
+        label: Status inicial
+        span: right
+        oc.commentPosition: ''
+        nameFrom: status
+        descriptionFrom: status
+        type: relation
+        context: create
+        default: 2
+    
+    info_adicional:
+        label: Adicional
+        prompt: 'Add new item'
+        span: auto
+        type: repeater
+        form:
+            fields:
+                hora_checkin:
+                    label: 'Hora check-in'
+                    span: full
+                    type: text
+                facturacion:
+                    label: Facturación
+                    span: full
+                    options:
+                        f-comercial: 'Factura Comercial'
+                        f-juridica: 'Factura Jurídica'
+                        a-comercial: 'Aliado Comercial'
+                    type: balloon-selector

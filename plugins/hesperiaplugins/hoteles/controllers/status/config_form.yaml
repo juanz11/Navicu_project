@@ -1,0 +1,10 @@
+name: Status
+form: $/hesperiaplugins/hoteles/models/statusreserva/fields.yaml
+modelClass: HesperiaPlugins\Hoteles\Models\StatusReserva
+defaultRedirect: hesperiaplugins/hoteles/status
+create:
+    redirect: 'hesperiaplugins/hoteles/status/update/:id'
+    redirectClose: hesperiaplugins/hoteles/status
+update:
+    redirect: hesperiaplugins/hoteles/status
+    redirectClose: hesperiaplugins/hoteles/status

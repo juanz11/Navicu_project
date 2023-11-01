@@ -1,0 +1,13 @@
+# ===================================
+#  List Column Definitions
+# ===================================
+
+columns:
+    key:
+        label: Agent
+        searchable: true
+
+    directives_count:
+        label: Number of Entries
+        relation: directives_count
+        relationCount: true

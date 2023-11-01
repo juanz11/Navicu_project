@@ -1,0 +1,24 @@
+columns:
+    'upselling[titulo]':
+        label: Upselling
+        type: text
+    precio:
+        label: Precio
+        type: monto_formateado
+    moneda:
+        label: Moneda
+        type: number
+        select: moneda
+        relation: moneda
+    cantidad:
+        label: Cantidad
+        type: text
+    fecha_disfrute:
+        label: Fecha Disfrute
+        type: Date
+        format: d-m-Y
+        default: NA
+    'upselling[hotel][nombre]':
+        label: Hotel
+        type: text
+       

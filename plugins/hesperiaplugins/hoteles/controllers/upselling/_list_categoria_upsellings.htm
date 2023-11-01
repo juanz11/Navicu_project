@@ -1,0 +1,17 @@
+<?php 
+    use HesperiaPlugins\Hoteles\Models\CategoriaUpselling;
+    $categorias = CategoriaUpselling::select('id','nombre')->get();
+?>
+
+<div class="form-group checkboxlist-field span-full" data-field-name="categorias" id="Form-field-categorias-group">
+    <label for="Form-field-categorias">Categorias</label>
+    <div class="field-checkboxlist">  
+     <?php foreach ($categorias as $key => $categoria): ?>
+
+        <div class="checkbox custom-checkbox">
+            <input type="checkbox" id="categoria_<?= $categoria->id; ?>" name="categorias[]" value="<?= $categoria->id; ?>">
+            <label for="categoria_<?= $categoria->id; ?>"><?= $categoria->nombre; ?></label>
+        </div>
+     <?php endforeach ?>
+    </div>
+</div>

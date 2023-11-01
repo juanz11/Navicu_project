@@ -1,0 +1,10 @@
+fields:
+    disponible:
+        label: Cantidad Disponible
+        oc.commentPosition: ''
+        span: auto
+        type: text
+
+    precios:
+      type: partial
+      path: precios_fields

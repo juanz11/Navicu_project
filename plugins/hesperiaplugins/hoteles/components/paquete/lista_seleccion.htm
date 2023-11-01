@@ -1,0 +1,47 @@
+
+{% if seleccion %}
+
+{% set total = 0 %} {# para obtener el total sin formato #}
+  <hr>
+  <div class="col-md-12">
+    <div class="col-md-8 col-md-offset-2">
+      <h3 class="text-center">HABITACIONES SELECCIONADAS</h3>
+      <ul class="list-group">
+        {% for habitacion in seleccion %}
+        <li class="list-group-item">
+          <button type="button" class="close delete-hab-selected" data-index="{{loop.index0}}" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          <span class="fa-stack fa-lg">
+            <i class="fa fa-square-o fa-stack-2x"></i>
+            <i class="fa fa-bed fa-stack-1x"></i>
+          </span>
+          <label>{{habitacion.hab_nombre}}</label>
+          <p>{{habitacion.ocup_desc}} | {{ habitacion.reg_desc }}</p>
+          <p class="text-right">
+            <strong>Precio:</strong>
+            {{habitacion.precio_formateado}} {{habitacion.acronimo}}</p>
+        </li>
+        {% set total = total + habitacion.precio %}
+        {% endfor %}
+        <li class="list-group-item text-center">
+          <strong>Total en Alojamiento</strong>
+          <span id="total-solo-alojamiento" data-totalraw="{{total_aloj_raw}}" data-value="{{total_alojamiento}}">{{total_alojamiento}}</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+{% else %}
+<hr>
+<div class="col-md-12">
+  <div class="col-md-8 col-md-offset-2">
+    <h3 class="text-center">HABITACIONES SELECCIONADAS</h3>
+    <ul class="list-group">
+      <li class="list-group-item">
+        <p class="lead text-center">Elige al menos una habitación para disfrutar de este paquete</p>
+      </li>
+
+    </ul>
+  </div>
+<div>
+{% endif %}

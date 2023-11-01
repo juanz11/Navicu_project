@@ -1,0 +1,24 @@
+fields:
+    desde:
+        label: Desde
+        mode: date
+        span: left
+        type: datepicker
+    hasta:
+        label: Hasta
+        mode: date
+        span: right
+        type: datepicker
+    moneda:
+        label: Moneda
+        span: left
+        default: '3'
+        type: dropdown
+    origen:
+        label: Origen
+        span: right
+        type: dropdown
+    hotel:
+        label: Hotel
+        span: left
+        type: checkboxlist

@@ -1,0 +1,9 @@
+fields:
+    description:
+        label: Descripcion
+        type: text
+        span: auto
+    amount:
+        label: Amount
+        type: number
+        span: auto

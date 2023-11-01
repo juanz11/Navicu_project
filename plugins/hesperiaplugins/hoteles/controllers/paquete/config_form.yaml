@@ -1,0 +1,10 @@
+name: Paquete
+form: $/hesperiaplugins/hoteles/models/paquete/fields.yaml
+modelClass: HesperiaPlugins\Hoteles\Models\Paquete
+defaultRedirect: hesperiaplugins/hoteles/paquete
+create:
+    redirect: 'hesperiaplugins/hoteles/paquete/update/:id'
+    redirectClose: hesperiaplugins/hoteles/paquete
+update:
+    redirect: hesperiaplugins/hoteles/paquete
+    redirectClose: hesperiaplugins/hoteles/paquete

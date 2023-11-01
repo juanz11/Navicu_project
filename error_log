@@ -1,0 +1,1 @@
+[23-Feb-2022 23:20:26 UTC] PHP Fatal error:  Cannot declare class Qchsoft\HotelesExtension\Updates\AddBookingOptionField, because the name is already in use in /home/qvqjt6czwzdr/public_html/plugins/qchsoft/hotelesextension/updates/add_stars_and_sort_fields.php on line 0

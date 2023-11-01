@@ -1,0 +1,5 @@
+fields:
+    origen:
+        label: Origen
+        span: full
+        type: text

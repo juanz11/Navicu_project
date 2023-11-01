@@ -1,0 +1,4 @@
+title: OrigenReserva
+modelClass: HesperiaPlugins\Hoteles\Models\OrigenReserva
+toolbar:
+    buttons: reorder_toolbar

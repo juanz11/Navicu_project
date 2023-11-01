@@ -1,0 +1,11 @@
+columns:
+    nombre:
+        label: Habitación
+        type: text
+        searchable: true
+    hotel:
+        label: Hotel
+        type: text
+        searchable: true
+        select: nombre
+        relation: hotel

@@ -1,0 +1,94 @@
+tabs:
+    fields:
+        titulo:
+            label: Titulo
+            span: auto
+            type: text
+            tab: General
+        slug:
+            label: Slug
+            span: auto
+            preset:
+                field: titulo
+                type: slug
+            type: text
+            comment: 'Si es unitario'
+            tab: General
+        hotel_id:
+            label: Hotel
+            required: 1
+            type: dropdown
+            tab: General
+        ind_activo:
+            label: Activo
+            span: left
+            type: switch
+            tab: General
+        adds_val:
+            label: 'Adds val'
+            span: auto
+            type: text
+            tab: General
+        imagen:
+            label: imagen
+            oc.commentPosition: ''
+            mode: image
+            imageWidth: '200'
+            imageHeight: '100'
+            useCaption: true
+            thumbOptions:
+                mode: crop
+                extension: auto
+            span: auto
+            required: 1
+            type: fileupload
+            tab: General
+        descripcion:
+            label: Descripcion
+            size: large
+            span: full
+            type: richeditor
+            tab: General
+        categorias:
+            label: Categorias
+            nameFrom: nombre
+            descriptionFrom: nombre
+            span: auto
+            type: relation
+            tab: Configuración
+        tipo_inventario:
+            label: Inventario
+            options:
+                1: 'Por Fecha'
+                2: General
+            default: 1
+            span: auto
+            type: radio
+            tab: Configuración
+        ind_calendario:
+            label: 'Usar Calendario'
+            span: auto
+            default: 1
+            type: switch
+            comment: 'Permitirle al usuario indicar la fecha de disfrute'
+            tab: Configuración
+        disponible:
+            label: Disponible
+            span: auto
+            trigger:
+                action: show
+                field: tipo_inventario
+                condition: 'value[2]'
+            default: '0'
+            type: text
+            tab: Configuración
+        porcentaje_markup:
+            label: 'Porcentaje Markup'
+            span: auto
+            type: text
+            tab: Configuración
+        codigo:
+            label: Codigo
+            span: auto
+            type: text
+            tab: Configuración

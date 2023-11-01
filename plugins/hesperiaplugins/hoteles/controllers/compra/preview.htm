@@ -1,0 +1,67 @@
+<?php Block::put('breadcrumb') ?>
+    <ul>
+        <li><a href="<?= Backend::url('hesperiaplugins/hoteles/compra') ?>">Compra</a></li>
+        <li><?= e($this->pageTitle) ?></li>
+    </ul>
+<?php Block::endPut() ?>
+
+<?php if (!$this->fatalError): ?>
+  <?= Form::open() ?>
+  <div class="scoreboard">
+      <div data-control="toolbar">
+          <?= $this->makePartial('preview_scoreboard') ?>
+      </div>
+  </div>
+
+  <div class="form-buttons">
+        <div class="loading-indicator-container">
+            <?= $this->makePartial('preview_toolbar') ?>
+        </div>
+    </div>
+  <div class="control-tabs master-tabs" data-control="tab">
+   <ul class="nav nav-tabs">
+     <li class="active"><a href="#primaryTabOne">General</a></li>
+     <li><a href="#primaryTabTwo">Upgrades/Upsellings</a></li>
+     <li><a href="#primaryTabThree">Reservaciones</a></li>
+     <li><a href="#primaryTabFour">Pagos</a></li>
+     <li><a href="#primaryTabFive">Observaciones</a></li>
+   </ul>
+   <div class="tab-content">
+     <div class="tab-pane active">
+       <div class="form-preview">
+       <?= $this->formRenderPreview() ?>
+       </div>
+     </div>
+
+     <div class="tab-pane">
+        <?= $this->relationRender("upgrades"); ?>
+     </div>
+
+     <div class="tab-pane">
+       <!--<div class="callout fade in callout-info no-subheader">
+            <div class="header">
+                <i class="icon-info"></i>
+                <h3>Próximamente</h3>
+            </div>
+        </div>-->
+        <?= $this->relationRender("reservaciones"); ?>
+     </div>
+
+     <div class="tab-pane">
+        <?= $this->relationRender("pagos"); ?>
+     </div>
+
+     <div class="tab-pane">
+        <?= $this->relationRender("observaciones"); ?>
+     </div>
+ </div>
+ <?= Form::close() ?>
+<?php else: ?>
+    <p class="flash-message static error"><?= e($this->fatalError) ?></p>
+<?php endif ?>
+
+<p>
+    <a href="<?= Backend::url('hesperiaplugins/hoteles/compra') ?>" class="btn btn-default oc-icon-chevron-left">
+        <?= e(trans('backend::lang.form.return_to_list')) ?>
+    </a>
+</p>

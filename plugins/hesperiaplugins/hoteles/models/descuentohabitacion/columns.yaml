@@ -1,0 +1,18 @@
+columns:
+    id:
+        label: ID
+        type: number
+        searchable: true
+        sortable: true
+    habitacion_id:
+        label: Habitacion
+        type: text
+        searchable: true
+        sortable: true
+        select: nombre
+        relation: habitacion
+    descuento_id:
+        label: Descuento
+        type: text
+        select: concepto
+        relation: descuento

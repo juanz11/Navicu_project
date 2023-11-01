@@ -1,0 +1,12 @@
+fields:
+    habitacion:
+        label: Habitacion
+        oc.commentPosition: ''
+        span: auto
+        default: ''
+        type: dropdown
+    cantidad:
+        label: 'Cantidad Disponible'
+        span: auto
+        oc.commentPosition: ''
+        type: number

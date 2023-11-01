@@ -1,0 +1,11 @@
+fields:
+    tag:
+        label: 'Nombre Tag'
+        span: full
+        required: 1
+        type: text
+    descripcion:
+        label: Descripcion
+        span: full
+        size: small
+        type: textarea

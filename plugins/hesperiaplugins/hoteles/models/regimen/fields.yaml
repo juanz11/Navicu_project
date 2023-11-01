@@ -1,0 +1,30 @@
+fields:
+    nombre:
+        label: Nombre
+        oc.commentPosition: ''
+        span: left
+        required: 1
+        type: text
+    descripcion:
+        label: Descripcion
+        size: small
+        oc.commentPosition: ''
+        span: left
+        type: textarea
+    status:
+        label: Status
+        span: right
+        default: 0
+        type: switch
+    icon:
+        label: 'Icono'
+        oc.commentPosition: ''
+        mode: file
+        imageWidth: '100'
+        imageHeight: '100'
+        useCaption: true
+        thumbOptions:
+            mode: crop
+            extension: auto
+        span: left
+        type: fileupload

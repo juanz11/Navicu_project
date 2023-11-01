@@ -1,0 +1,110 @@
+## START OFFLINE.ResponsiveImages - webp-rewrite
+#  DO NOT REMOVE THESE LINES
+<IfModule mod_setenvif.c>
+    # Vary: Accept for all the requests to jpeg and png
+    SetEnvIf Request_URI "\.(jpe?g|png)$" REQUEST_image
+</IfModule>
+<ifModule mod_rewrite.c>
+    RewriteEngine On
+
+    # If the Browser supports WebP images, and the .webp file exists, use it.
+    RewriteCond %{HTTP_ACCEPT} image/webp
+    RewriteCond %{REQUEST_URI} ^/?storage/.*\.(jpe?g|png)
+    RewriteCond %{REQUEST_FILENAME}.webp -f
+    RewriteRule ^/?(.*)$ $1.webp [NC,T=image/webp,END]
+
+    # If the Browser supports WebP images, and the .webp file does not exist, generate it.
+    RewriteCond %{HTTP_ACCEPT} image/webp
+    RewriteCond %{REQUEST_URI} ^/?storage/.*\.(jpe?g|png)
+    RewriteCond %{REQUEST_FILENAME}\.webp !-f
+    RewriteRule ^/?(.*)$ plugins/offline/responsiveimages/webp.php?path=$1 [NC,END]
+    </ifModule>
+<IfModule mod_headers.c>
+    Header append Vary Accept env=REQUEST_image
+</IfModule>
+<IfModule mod_mime.c>
+    AddType image/webp .webp
+</IfModule>
+
+## END OFFLINE.ResponsiveImages - webp-rewrite
+
+
+
+RewriteEngine on
+RewriteCond %{HTTP_HOST} ^uat\.navicu\.com$
+RewriteRule ^/?$ "https\:\/\/www\.uat\.navicu\.com\/" [R=301,L]
+
+RewriteCond %{SERVER_PORT} 80
+RewriteCond %{HTTP_HOST} ^(www\.)?uat\.navicu\.com
+RewriteRule ^(.*)$ localhost [R,L]
+
+    ##
+    ## You may need to uncomment the following line for some hosting environments,
+    ## if you have installed to a subdirectory, enter the name here also.
+    ##
+    # RewriteBase /
+
+    ##
+    ## Uncomment following lines to force HTTPS.
+    ##
+    # RewriteCond %{HTTPS} off
+    # RewriteRule (.*) https://%{SERVER_NAME}/$1 [L,R=301]
+
+    ##
+    ## Black listed folders
+    ##
+    RewriteRule ^bootstrap/.* index.php [L,NC]
+    RewriteRule ^config/.* index.php [L,NC]
+    RewriteRule ^vendor/.* index.php [L,NC]
+    RewriteRule ^storage/cms/.* index.php [L,NC]
+    RewriteRule ^storage/logs/.* index.php [L,NC]
+    RewriteRule ^storage/framework/.* index.php [L,NC]
+    RewriteRule ^storage/temp/protected/.* index.php [L,NC]
+    RewriteRule ^storage/app/uploads/protected/.* index.php [L,NC]
+
+    ##
+    ## White listed folders
+    ##
+    RewriteCond %{REQUEST_FILENAME} -f
+    RewriteCond %{REQUEST_FILENAME} !/.well-known/*
+    RewriteCond %{REQUEST_FILENAME} !/app/(assets|resources)/.*
+    RewriteCond %{REQUEST_FILENAME} !/storage/app/media/.*
+    RewriteCond %{REQUEST_FILENAME} !/storage/app/resources/.*
+    RewriteCond %{REQUEST_FILENAME} !/storage/app/uploads/public/.*
+    RewriteCond %{REQUEST_FILENAME} !/storage/temp/public/.*
+    RewriteCond %{REQUEST_FILENAME} !/themes/.*/(assets|resources)/.*
+    RewriteCond %{REQUEST_FILENAME} !/plugins/.*/(assets|resources)/.*
+    RewriteCond %{REQUEST_FILENAME} !/modules/.*/(assets|resources)/.*
+    RewriteRule !^index.php index.php [L,NC]
+
+    ##
+    ## Block all PHP files, except index
+    ##
+    RewriteCond %{REQUEST_FILENAME} -f
+    RewriteCond %{REQUEST_FILENAME} \.php$
+    RewriteRule !^index.php index.php [L,NC]
+
+    ##
+    ## Standard routes
+    ##
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^ index.php [L]
+
+    
+  RewriteCond %{HTTPS} off
+  RewriteRule (.*) https://%{SERVER_NAME}/$1 [L,R=301]
+  RewriteCond %{THE_REQUEST} /index\.php [NC]
+RewriteRule ^(.*?)index\.php?$ /$1 [L,R=301,NC,NE]
+  RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
+  RewriteRule ^(.*)$ http://%1/$1 [R=301,L]
+  RewriteRule ^(.*/)index\.php$ $1 [R=301,L]
+
+
+  RewriteEngine On
+
+RewriteCond %{QUERY_STRING} (^|&)dates=[^&]+ [NC,OR]
+RewriteCond %{QUERY_STRING} (^|&)criteria=[^&]+ [NC,OR]
+RewriteCond %{QUERY_STRING} (^|&)search_type=[^&]+ [NC,OR]
+RewriteCond %{QUERY_STRING} (^|&)search_id=[^&]+ [NC,OR]
+RewriteCond %{QUERY_STRING} (^|&)page=[^&]+ [NC]
+RewriteRule ^busqueda/([^/]+)/([^/]+)$ /busqueda/$1/$2? [L,R=301]

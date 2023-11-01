@@ -1,0 +1,4 @@
+title: Upselling
+modelClass: HesperiaPlugins\Hoteles\Models\Upselling
+toolbar:
+    buttons: reorder_toolbar

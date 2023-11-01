@@ -1,0 +1,224 @@
+tabs:
+    fields:
+        nombre:
+            label: Nombre
+            oc.commentPosition: ''
+            span: full
+            required: 1
+            type: text
+            tab: General
+        descripcion:
+            label: Descripcion
+            size: small
+            oc.commentPosition: ''
+            span: left
+            required: 1
+            type: richeditor
+            tab: General
+        direccion:
+            label: Direccion
+            size: small
+            oc.commentPosition: ''
+            span: right
+            type: textarea
+            tab: General
+        codigo_postal:
+            label: 'Código Postal'
+            span: left
+            required: 0
+            type: text
+            tab: General
+        slug:
+            label: Slug
+            span: right
+            preset:
+                field: nombre
+                type: slug
+            required: 1
+            type: text
+            tab: General
+        url_video:
+            label: 'Url Video'
+            span: right
+            required: 0
+            type: text
+            tab: General
+        tipo_hotel:
+            label: 'Tipo hotel'
+            span: auto
+            type: text
+            tab: General
+        banner:
+            label: Banner
+            mode: image
+            imageWidth: '200'
+            imageHeight: '100'
+            useCaption: true
+            thumbOptions:
+                mode: crop
+                extension: auto
+            span: left
+            required: 0
+            type: fileupload
+            tab: Galería
+        foto_inicio:
+            label: 'Foto Inicio'
+            mode: image
+            imageWidth: '200'
+            imageHeight: '100'
+            useCaption: true
+            thumbOptions:
+                mode: crop
+                extension: auto
+            span: right
+            required: 0
+            type: fileupload
+            tab: Galería
+        galeria:
+            label: Galeria
+            oc.commentPosition: ''
+            mode: image
+            useCaption: true
+            thumbOptions:
+                mode: crop
+                extension: auto
+            span: full
+            type: fileupload
+            tab: Galería
+        informacion:
+            label: Información
+            span: full
+            size: large
+            oc.commentPosition: ''
+            required: 1
+            type: richeditor
+            tab: Caracteristicas
+        latitud:
+            label: Latitud
+            oc.commentPosition: ''
+            span: left
+            type: text
+            tab: Caracteristicas
+        longitud:
+            label: Longitud
+            span: right
+            oc.commentPosition: ''
+            type: text
+            tab: Caracteristicas
+        telefonos:
+            label: Telefonos
+            oc.commentPosition: ''
+            prompt: 'Add new item'
+            span: left
+            type: repeater
+            tab: Caracteristicas
+            form:
+                fields:
+                    numero_tlf:
+                        label: Numero
+                        oc.commentPosition: ''
+                        span: left
+                        type: text
+                    nombre_tlf:
+                        label: 'Nombre Tlf'
+                        span: auto
+                        oc.commentPosition: ''
+                        type: text
+        emails:
+            label: Emails
+            oc.commentPosition: ''
+            prompt: 'Add new item'
+            span: right
+            type: repeater
+            tab: Caracteristicas
+            form:
+                fields:
+                    email:
+                        label: Email
+                        oc.commentPosition: ''
+                        span: auto
+                        type: text
+                    nombre_email:
+                        label: 'Nombre Email'
+                        span: auto
+                        oc.commentPosition: ''
+                        type: text
+        porcentaje_markup:
+            label: 'Porcentaje Markup'
+            type: number
+            default: 0
+            tab: Caracteristicas
+            span: auto
+        solo_adultos:
+            label: '¿Solo adultos?'
+            type: switch
+            tab: Caracteristicas
+            span: auto
+            'on': Si
+            'off': 'No'
+        regimenes:
+            label: Regimenes
+            span: full
+            context:
+                - update
+                - preview
+            type: partial
+            tab: Regimenes
+            path: ~/plugins/hesperiaplugins/hoteles/controllers/hotel/_regimen_list.htm
+        atributos:
+            label: Atributos
+            span: full
+            context:
+                - update
+                - preview
+            type: partial
+            tab: Atributos
+            path: ~/plugins/hesperiaplugins/hoteles/controllers/hotel/_atributos_list.htm
+        tipo_pagos:
+            label: 'Tipos de pago'
+            span: full
+            oc.commentPosition: ''
+            nameFrom: nombre
+            descriptionFrom: nombre
+            type: relation
+            tab: 'Tipos de pago'
+        paquete_fechas:
+            label: 'Paquete Fechas'
+            prompt: 'Add new item'
+            style: default
+            span: auto
+            type: repeater
+            tab: 'Paquetes Fechas'
+            form:
+                fields:
+                    fecha_salida:
+                        label: 'Fecha de Salida'
+                        span: auto
+                        type: text
+                    fecha_retorno:
+                        label: 'Fecha de Retorno'
+                        span: auto
+                        type: text
+        maximo_noches:
+            label: 'Maximo noches'
+            span: auto
+            type: number
+            tab: 'Paquetes Fechas'
+        emails_notificacion:
+            label: Emails
+            prompt: 'Add new item'
+            style: default
+            span: left
+            type: repeater
+            tab: Notificaciones
+            form:
+                fields:
+                    nombre:
+                        label: Nombre
+                        span: auto
+                        type: text
+                    email:
+                        label: Email
+                        oc.commentPosition: ''
+                        span: auto
+                        type: text

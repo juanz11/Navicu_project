@@ -1,0 +1,10 @@
+fields:
+    api_key:
+        span: left
+        label: APIkey
+        type: text
+    encrypt_mount:
+        label: Encrypt Mount
+        type: switch
+        on: Si
+        off: No

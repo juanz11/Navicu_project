@@ -1,0 +1,27 @@
+fields:
+    impuesto:
+        label: Impuesto
+        oc.commentPosition: ''
+        span: auto
+        type: text
+    valor:
+        label: Valor
+        oc.commentPosition: ''
+        span: auto
+        type: number
+    hotel:
+        label: Relation
+        oc.commentPosition: ''
+        nameFrom: nombre
+        descriptionFrom: nombre
+        span: auto
+        required: 1
+        type: relation
+    moneda:
+        label: Moneda
+        oc.commentPosition: ''
+        nameFrom: moneda
+        descriptionFrom: moneda
+        span: auto
+        required: 1
+        type: relation

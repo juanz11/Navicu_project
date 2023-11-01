@@ -1,0 +1,39 @@
+{% if compra.count > 1%}
+  {% set clase = "col-md-6"%}
+{% else %}
+  {% set clase = "col-md-6"%}
+{% endif %}
+
+{% if compra.count %}
+
+{% endif %}
+<div class="{{clase}}">
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <div class="row">
+          <div class="col-md-6">
+            <img class="img-responsive" src="{{compra.imagen.path}}" alt=""/>
+          </div>
+          <div class="col-md-6">
+            <h2>{{compra.titulo}}</h2>
+            <p>{{compra.descripcion|raw}}</p>
+            {% if compra.fecha_disfrute %}
+              <p><strong>Fecha disfrute: </strong>
+                {{compra.fecha_disfrute}}
+              </p>
+            {% endif %}
+
+            <hr>
+          </div>
+        </div>
+        <br>
+        <div class="col-md-12 well well-sm">
+          <p class="text-center">
+            <strong>Precio</strong>
+            {{__SELF__.cambiarFormatoPrecio(compra.precio.precio, compra.moneda_id)}}
+            {{compra.precio.acronimo}}
+          </p>
+        </div>
+      </div>
+    </div>
+</div>

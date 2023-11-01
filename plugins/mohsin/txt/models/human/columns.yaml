@@ -1,0 +1,13 @@
+# ===================================
+#  List Column Definitions
+# ===================================
+
+columns:
+    key:
+        label: Attribution
+        searchable: true
+
+    information_count:
+        label: Number of Entries
+        relation: information_count
+        relationCount: true

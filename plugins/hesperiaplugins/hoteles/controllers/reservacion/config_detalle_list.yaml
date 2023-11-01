@@ -1,0 +1,9 @@
+list: $/hesperiaplugins/hoteles/models/reservacion/columns.yaml
+modelClass: HesperiaPlugins\Hoteles\Models\Reservacion
+title: Reservacion
+noRecordsMessage: 'backend::lang.list.no_records'
+showSetup: true
+showCheckboxes: true
+recordsPerPage: 31
+recordUrl: 'hesperiaplugins/hoteles/reservacion/preview/:id'
+filter: config_filter.yaml

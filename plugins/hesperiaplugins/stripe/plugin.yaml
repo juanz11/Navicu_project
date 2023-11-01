@@ -1,0 +1,17 @@
+plugin:
+    name: 'hesperiaplugins.stripe::lang.plugin.name'
+    description: 'hesperiaplugins.stripe::lang.plugin.description'
+    author: hesperiaplugins
+    icon: oc-icon-cc-stripe
+    homepage: ''
+navigation:
+    main-menu-item:
+        label: Payments
+        url: hesperiaplugins/stripe/payment
+        icon: icon-cc-stripe
+        permissions:
+            - gestion_general_stripe
+permissions:
+    gestion_general_stripe:
+        tab: Stripe
+        label: 'Gestión General'

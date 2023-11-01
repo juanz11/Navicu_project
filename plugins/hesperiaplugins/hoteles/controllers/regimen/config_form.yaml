@@ -1,0 +1,10 @@
+name: Regimen
+form: $/hesperiaplugins/hoteles/models/regimen/fields.yaml
+modelClass: HesperiaPlugins\Hoteles\Models\Regimen
+defaultRedirect: hesperiaplugins/hoteles/regimen
+create:
+    redirect: 'hesperiaplugins/hoteles/regimen/update/:id'
+    redirectClose: hesperiaplugins/hoteles/regimen
+update:
+    redirect: hesperiaplugins/hoteles/regimen
+    redirectClose: hesperiaplugins/hoteles/regimen

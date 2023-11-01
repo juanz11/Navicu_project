@@ -1,0 +1,154 @@
+
+{% if habitaciones != null %}
+  <div class="container-fluid">
+    <div class="page-header">
+      <h2 class="text-center">Habitaciones Disponibles</h2>
+    </div>
+  <ul class="hab-list-reservacion">
+
+    {% for habitacion in habitaciones %}
+      
+      {% set precios = habitacion.getPrecios(checkin, checkout, moneda) %}
+
+      {% if impuestos == false %}
+
+        {% set impuestos = habitacion.hotel.getImpuestos(moneda) %}
+
+      {% endif %}
+
+      {# {{ habitacion.setArrayOcupaciones(precios) }} #}
+
+      {# {{ habitacion.setArrayRegimenes(precios) }} #}
+
+       {% set descuentos = habitacion.getDescuentos(props) %}
+    
+      {% if habitacion.getMenorPrecio(precios, impuestos) > 0 %}
+      <li class="col-md-12 hab-li row">
+        <div class="col-md-5 col-sm-6">
+          <a href="#" data-index="{{habitacion.id}}" class="detalle" data-toggle="modal"
+           data-target="#modal-detalle-hab-{{habitacion.id}}">
+            <img src="{{habitacion.foto_portada.path}}" class="img-responsive" alt="{{habitacion.nombre}}">
+          </a>
+        </div>
+
+        <div class="col-md-7 col-sm-6">
+          <h3 class="hab-list-titulo">
+            {{habitacion.nombre}}
+            {% if descuentos %}
+            <small class="label label-info pull-right hidden-xs">
+              <span class="fa-stack fa-sm">
+                <i class="fa fa-square-o fa-stack-2x"></i>
+                <i class="fa fa-gift fa-stack-1x"></i>
+              </span>Precio Especial
+            </small>
+
+            {% else %}
+            <small class="label label-warning pull-right hidden-xs">
+              Desde {{habitacion.getMenorPrecio(precios, impuestos)}} {{precios[0].acronimo}}
+            </small>
+            {% endif %}
+          </h3>
+          <br>
+          <p class="text-justify">{{ str_words(habitacion.descripcion, 30)}}<br>
+            <a href="#" data-index="{{habitacion.id}}" class="detalle" data-toggle="modal"
+             data-target="#modal-detalle-hab-{{habitacion.id}}"
+              >Más detalle <i class="fa fa-angle-double-right"></i>
+            </a>
+
+          </p>
+          <div class="row hidden-xs">
+            {% for atributo in habitacion.atributos %}
+              {% if loop.index <5 %}
+              <div class="col-md-6 col-sm-6 col-xs-6">
+                <h5><i class="fa fa-check-circle-o" aria-hidden="true"></i> {{atributo.nombre}}</h5>
+              </div>
+              {% endif %}
+            {% endfor %}
+          </div>
+         <h3 class="visible-xs text-center">
+           {% if descuentos  %}
+           <small class="label label-info">
+             <span class="fa-stack fa-sm">
+               <i class="fa fa-square-o fa-stack-2x"></i>
+               <i class="fa fa-gift fa-stack-1x"></i>
+             </span>Precio Especial
+           </small>
+           {% else %}
+           <small class="label label-warning">Desde {{habitacion.getMenorPrecio(precios, impuestos)}} {{precios[0].acronimo}}</small>
+           {% endif %}
+         </h3>
+          <div class="row">
+            <div class="col-sm-12 col-xs-12 col-md-12">
+              <section class="text-center ">
+                  <button class="add ver-precio-button btn btn-primary"  data-value="{{habitacion.id}}" >¡La Quiero!</button>
+              </section>
+            </div>
+          </div>
+
+        </div>
+
+        <div id="content-precios">
+
+        </div>
+        <!-- MODAL DE DETALLE -->
+        <div class="modal fade" id="modal-detalle-hab-{{habitacion.id}}" tabindex="-1" role="dialog">
+          <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">{{habitacion.nombre}}</h4>
+              </div>
+              <div class="modal-body">
+                <ul class="nav nav-tabs" role="tablist">
+                  <li role="presentation" class="active">
+                    <a href="#fotos_panel_{{habitacion.id}}" aria-controls="home" role="tab" data-toggle="tab">Fotos</a>
+                  </li>
+                  <li role="presentation">
+                    <a href="#descripcion_panel_{{habitacion.id}}" aria-controls="profile" role="tab" data-toggle="tab">Descripción</a>
+                  </li>
+                </ul>
+                <div class="tab-content">
+                  <div role="tabpanel" class="tab-pane active" id="fotos_panel_{{habitacion.id}}">
+                    <div id="hab-detalle-{{habitacion.id}}" class="hab-detalle-galeria owl-carousel">
+                        {% for imagen in habitacion.galeria %}
+                        <div class="item">
+                          <img class="lazyOwl img-responsive"
+                           src="{{imagen.path}}" alt="{{habitacion.nombre}}">
+                        </div>
+                        {% endfor %}
+                    </div>
+                  </div>
+                  <div role="tabpanel" class="tab-pane" id="descripcion_panel_{{habitacion.id}}">
+                    <p class="text-justify">{{ habitacion.descripcion }}</p>
+                    <div class="row">
+
+                        {% for atributo in habitacion.atributos %}
+                          <div class="col-md-4 col-sm-6 col-xs-6">
+                            <h5 class="text-center"><i class="fa fa-check-circle-o" aria-hidden="true"></i> {{atributo.nombre}}</h5>
+                          </div>
+                        {% endfor %}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- FIN MODAL DE DETALLE -->
+      </li>
+      {% endif %}
+    {% endfor %}
+  </ul>
+</div>
+  {% elseif __SELF__.property("redirect")== "" %}
+    <div class="container-fluid">
+    <div class="col-md-10 col-md-offset-1">
+
+      <h1 class="text-center"><i class="far fa-thumbs-up fa-3x"></i>
+        <br>Has tomado una buena decisión </h1>
+
+      <p class="lead text-center">ahora selecciona un hotel, fechas check-in/check-out y pulsa <strong>consultar</strong></p>
+
+    </div>
+    </div>
+{% endif %}

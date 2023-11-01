@@ -1,0 +1,109 @@
+
+{# {% if seleccion.id == NULL and propiedades %} #}
+  <div class="col-md-12">
+    <h2 class="text-center" >Información del Huésped</h2>
+    <form class="form" id="info-huesped-form" data-request-flash data-request-validate>
+      <div class="row">
+        <div class="col-md-6 col-xs-12">
+          <div class="form-group">
+            <label>Nombre y Apellido</label>
+            <input type="text" class="form-control" id="nombre"
+            name="nombre" value="" placeholder="Ej: John Doe">
+          </div>
+          <div class="row">
+            <div class="form-group">
+              <div class="col-md-12">
+                <label>Doc. de Identidad</label>
+              </div>
+              <div class="col-md-4 col-xs-6">
+                <select class="form-control" name="codigo_documento">
+                  {% for codigo in codigos_documentos %}
+                    <option value="{{codigo}}-">{{codigo}}</option>
+                  {% endfor %}
+
+                </select>
+              </div>
+              <div class="col-md-8 col-xs-6">
+                <input type="text" class="form-control" id="documento"
+               name="documento" value="" placeholder="Ej: 1234567">
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+        <div class="col-md-6 col-xs-12">
+          <div class="form-group">
+            <label>Correo</label>
+            <input type="email" class="form-control" id="email"
+             name="email" value="" placeholder="Ej: jdoe@mail.com">
+          </div>
+        </div>
+        <div class="col-md-6 col-xs-12">
+          <div class="row">
+            <div class="form-group">
+              <div class="col-md-12">
+                <label>Teléfono</label>
+              </div>
+
+              <div class="col-md-4 col-xs-6">
+                <select class="form-control" name="codigo_pais">
+                  {% for pais in paises %}
+                    {% if pais.cioc %} <!-- SI TIENE CODIGO -->
+
+                      {% set selected = "" %}
+
+                      {% if pais.cioc == "VEN" %} <!-- VENEZUELA APARECE SELECCIONADO POR DEFECTO -->
+                        {% set selected = "selected" %}
+                      {% endif %}
+
+                      <option value="+{{pais.callingCodes[0]}}" {{selected}}>+{{pais.callingCodes[0]}}</option>
+
+                    {% endif %} <!-- FIN SI TIENE CODIGO -->
+
+                  {% endfor %}
+                </select>
+              </div>
+              <div class="col-md-8 col-xs-6">
+                <input type="text" class="form-control" id="telefono"
+               name="telefono" value="">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12 col-xs-12">
+          <div class="form-group">
+            <label >Comentarios</label>
+            <textarea class="form-control" rows="3"
+             id="comentarios" name="comentarios"></textarea>
+          </div>
+        </div>
+         <div class="col-md-12 col-xs-12">
+          <div class="form-group">
+
+            <div class="checkbox">
+              <label>
+                <input type="checkbox" name="terminos" >He leído y acepto los{% partial '@terminos_condiciones' %}
+              </label>
+            </div>
+
+            <div class="checkbox">
+              <label>
+                <input type="checkbox" name="newsletter" checked>Suscríbeme al newsletter
+              </label>
+            </div>
+          </div>
+          <div class="form-group">
+
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-12 col-xs-12">
+        <p class="text-center"><button class="btn btn-primary">Ver Métodos de Pago</button></p>
+      </div>
+    </form>
+  </div>
+{# {% endif %} #}

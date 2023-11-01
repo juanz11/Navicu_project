@@ -1,0 +1,9 @@
+columns:
+    fecha:
+        label: Fecha
+        type: date
+        searchable: true
+    disponible:
+        label: 'Cantidad Disponible'
+        type: number
+        searchable: true

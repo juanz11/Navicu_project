@@ -1,0 +1,10 @@
+name: Impuestos
+form: $/hesperiaplugins/hoteles/models/impuesto/fields.yaml
+modelClass: HesperiaPlugins\Hoteles\Models\Impuesto
+defaultRedirect: hesperiaplugins/hoteles/impuestos
+create:
+    redirect: 'hesperiaplugins/hoteles/impuestos/update/:id'
+    redirectClose: hesperiaplugins/hoteles/impuestos
+update:
+    redirect: hesperiaplugins/hoteles/impuestos
+    redirectClose: hesperiaplugins/hoteles/impuestos

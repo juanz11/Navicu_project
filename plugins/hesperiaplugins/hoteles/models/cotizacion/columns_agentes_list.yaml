@@ -1,0 +1,30 @@
+columns:
+    nombre:
+        label: Agente
+        select: concat(first_name,' ',last_name)
+        sortable: true
+    cotizaciones_count:
+        label: Enviadas
+        type: text
+        default: '0'
+        sortable: false
+        relation: cotizaciones_count
+        valueFrom: count
+    cotizaciones_completas:
+        label: Completas
+        type: text
+        default: '0'
+        sortable: false
+        relation: cotizaciones_completas
+        valueFrom: count
+    ultima_fecha_cotizacion:
+        label: 'Ultima cotizacion enviada'
+        type: ultimo_registro
+        sortable: false
+        relation: ultima_fecha_cotizacion
+        valueFrom: created_at
+    revenue:
+        label: Revenue
+        type: sum
+        sortable: false
+        relation: revenue

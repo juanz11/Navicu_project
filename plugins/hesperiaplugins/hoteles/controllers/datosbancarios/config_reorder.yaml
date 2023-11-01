@@ -1,0 +1,4 @@
+title: DatosBancarios
+modelClass: HesperiaPlugins\Hoteles\Models\DatosBancarios
+toolbar:
+    buttons: reorder_toolbar

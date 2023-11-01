@@ -1,0 +1,10 @@
+name: Payment
+form: $/hesperiaplugins/stripe/models/payment/fields.yaml
+modelClass: hesperiaplugins\Stripe\Models\Payment
+defaultRedirect: hesperiaplugins/stripe/payment
+create:
+    redirect: 'hesperiaplugins/stripe/payment/update/:id'
+    redirectClose: hesperiaplugins/stripe/payment
+update:
+    redirect: hesperiaplugins/stripe/payment
+    redirectClose: hesperiaplugins/stripe/payment

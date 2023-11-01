@@ -1,0 +1,46 @@
+1.0.1:
+  - First version of Txt
+1.0.2:
+  - Created Humans Table
+  - create_humans_table.php
+  - Created Robots Table
+  - create_robots_table.php
+  - Created Directives Table
+  - create_directives_table.php
+  - Created Agents Table
+  - create_agents_table.php
+  - Created Information Table
+  - create_information_table.php
+1.0.3:
+    - Add seed data for agents table.
+    - seed_agents_table.php
+1.0.4:
+    - Minor Bug Fix
+1.0.5:
+    - Added compatability with RainLab.Sitemap
+1.0.6:
+    - Added setting permissions. PR by @matissjanis
+1.0.7:
+    - Added new type for directive
+1.0.8: !!! Important bug fix
+1.0.9: Download Txt Feature
+1.1.0:
+    - Updated human field labels to repeater
+    - refactor_settings_human_fields.php
+1.1.1: Upgraded Agents to use ImportExport behavior than custom code.
+1.1.2:
+    - Database maintenance. Removed all the unused timestamp columns.
+    - drop_timestamps.php
+2.0.0:
+    - Upgraded plugin for October 2.0.
+    - Made Txt models parent IDs nullable to allow deferred binding.
+    - update_txt_parent_ids_nullable.php
+2.0.1:
+    - Adds New Line Txt Option
+    - add_new_line_column.php
+2.0.2:
+    - Normalized Txt tables to improve efficiency.
+    - Create Parents Table
+    - create_parents_table.php
+    - Create Children Table
+    - create_children_table.php

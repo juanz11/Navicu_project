@@ -1,0 +1,16 @@
+{
+    "name": "mohsin/txt-plugin",
+    "type": "october-plugin",
+    "description": "Allows generating humans.txt and robots.txt with ease.",
+    "homepage": "http://imoz.in",
+    "keywords": ["octobercms", "humans","robots","txt", "attribution"],
+    "authors": [
+        {
+            "name": "Saifur Rahman Mohsin",
+            "email": "mohsin92@me.com"
+        }
+    ],
+    "require": {
+        "composer/installers": "~1.0"
+    }
+}

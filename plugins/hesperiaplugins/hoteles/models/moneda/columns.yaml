@@ -1,0 +1,10 @@
+columns:
+    id:
+        label: Id
+        type: number
+    acronimo:
+        label: Acrónimo
+        type: text
+    moneda:
+        label: Moneda
+        type: text

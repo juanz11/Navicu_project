@@ -1,0 +1,12 @@
+columns:
+    impuesto:
+        label: Impuesto
+        type: text
+    valor:
+        label: Valor
+        type: number
+    hotel_id:
+        label: Hotel
+        type: text
+        select: nombre
+        relation: hotel

@@ -1,0 +1,19 @@
+fields:
+    nombre:
+        label: Nombre
+        oc.commentPosition: ''
+        span: auto
+        required: 1
+        type: text
+    codigo:
+        label: Codigo
+        span: auto
+        type: text
+    descripcion:
+        label: Descripcion
+        span: full
+        type: text
+    activo:
+        label: Activo
+        span: auto
+        type: switch

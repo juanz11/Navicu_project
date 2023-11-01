@@ -1,0 +1,93 @@
+fields:
+    
+    
+tabs:
+    fields:
+        hotel:
+            label: Hotel
+            span: auto
+            oc.commentPosition: ''
+            nameFrom: nombre
+            descriptionFrom: nombre
+            type: relation
+            tab: General
+        concepto:
+            label: Concepto
+            oc.commentPosition: ''
+            span: auto
+            type: text
+            tab: General
+        fecha_desde:
+            label: Desde
+            oc.commentPosition: ''
+            mode: date
+            span: auto
+            type: datepicker
+            tab: General
+        fecha_hasta:
+            label: Hasta
+            span: auto
+            tab: General
+            oc.commentPosition: ''
+            mode: date
+            type: datepicker
+        ind_activo:
+            label: Activo
+            span: auto
+            type: switch
+            tab: General
+        
+        codigo_promocional:
+            label: 'Codigo Promocional'
+            span: auto
+            oc.commentPosition: ''
+            type: text
+            tab: General
+        beneficio:
+            label: 'Beneficio'
+            span: full
+            type: section
+            comment: 'Aplica un porcentaje a la tarifa de la habitación o noches gratis'
+            tab: Configuración
+        porcentaje:
+            label: Porcentaje
+            oc.commentPosition: ''
+            span: auto
+            type: text
+            default: '0'
+            tab: Configuración
+        noches_gratis:
+            label: 'Noches Gratis'
+            span: auto
+            type: number
+            default: '0'
+            tab: Configuración
+        condiciones_sec:
+            label: 'Condiciones'
+            span: full
+            type: section
+            comment: 'Condiciones que deben cumplirse para aplicar el beneficio'
+            tab: Configuración
+        minimo_noches:
+            label: 'Mínimo de noches'
+            span: auto
+            default: '0'
+            type: number
+            comment: '¿Cuantas noches mínimo debe hospedarse para aplicar este descuento'
+            tab: Configuración
+        noches_antelacion:
+            label: 'N° días de antelación'
+            span: auto
+            type: text
+            default: '0'
+            comment: '¿Cuantas días deben haber antes del check-in para aplicar este descuento'
+            tab: Configuración    
+        habitaciones:
+            path: habitaciones
+            span: full
+            context:
+                - update
+                - preview
+                - hotel
+            type: partial
+            tab: Habitaciones

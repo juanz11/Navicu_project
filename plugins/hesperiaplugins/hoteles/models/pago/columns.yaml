@@ -1,0 +1,20 @@
+columns:
+    id:
+        label: ID
+        type: number
+        searchable: true
+        sortable: true
+    created_at:
+        label: Fecha
+        type: datetime
+        searchable: true
+        sortable: true
+    referencia:
+        label: Referencia
+        type: text
+        searchable: true
+    tipo:
+        label: 'Tipo de Pago'
+        type: text
+        relation: tipoPago
+        valueFrom: nombre

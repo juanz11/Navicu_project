@@ -1,0 +1,10 @@
+name: Categories
+form: $/navicu/adiva/models/adivaha/fields.yaml
+modelClass: Navicu\Adiva\Models\Adivaha
+defaultRedirect: navicu/adiva/categories
+create:
+    redirect: 'navicu/adiva/categories/update/:id'
+    redirectClose: navicu/adiva/categories
+update:
+    redirect: navicu/adiva/categories
+    redirectClose: navicu/adiva/categories

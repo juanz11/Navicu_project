@@ -1,0 +1,4 @@
+title: Upgrade
+modelClass: HesperiaPlugins\Hoteles\Models\Upgrade
+toolbar:
+    buttons: reorder_toolbar

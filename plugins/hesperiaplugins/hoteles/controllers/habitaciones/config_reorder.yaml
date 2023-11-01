@@ -1,0 +1,4 @@
+title: Habitaciones
+modelClass: HesperiaPlugins\Hoteles\Models\Habitacion
+toolbar:
+    buttons: reorder_toolbar

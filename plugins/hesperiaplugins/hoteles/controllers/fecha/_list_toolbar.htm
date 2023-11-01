@@ -1,0 +1,39 @@
+<!--<div data-control="toolbar">
+        <a href="<?= Backend::url('hesperiaplugins/hoteles/Fecha/create') ?>" class="btn btn-primary oc-icon-plus"><?= e(trans('backend::lang.form.create')) ?></a>
+        <button
+        class="btn btn-default oc-icon-trash-o"
+        disabled="disabled"
+        onclick="$(this).data('request-data', {
+            checked: $('.control-list').listWidget('getChecked')
+        })"
+        data-request="onDelete"
+        data-request-confirm="<?= e(trans('backend::lang.list.delete_selected_confirm')) ?>"
+        data-trigger-action="enable"
+        data-trigger=".control-list input[type=checkbox]"
+        data-trigger-condition="checked"
+        data-request-success="$(this).prop('disabled', true)"
+        data-stripe-load-indicator>
+        <?= e(trans('backend::lang.list.delete_selected')) ?>
+    </button>
+</div>-->
+
+<div class="scoreboard">
+    <div data-control="toolbar">
+        <div class="scoreboard-item title-value">
+            <h4>Habitacion</h4>
+            <p><?= $this->habitacion_info->nombre ?></p>
+            <p class="description"><?= $this->habitacion_info->hotel->nombre ?></p>
+        </div>
+    </div>
+    <div data-control="toolbar">
+      <div class="scoreboard-item title-value">
+          <!--<a href="<?= Backend::url('hesperiaplugins/hoteles/Fecha/create') ?>" class="btn btn-primary oc-icon-plus"><?= e(trans('backend::lang.form.create')) ?></a>-->
+          <a data-toggle="modal" href="#content-form-tarifas" class="btn btn-primary btn-lg">Cargar/Modificar Tarifa</a>
+      </div>
+
+      <div class="scoreboard-item title-value">
+          <!--<a href="<?= Backend::url('hesperiaplugins/hoteles/Fecha/create') ?>" class="btn btn-primary oc-icon-plus"><?= e(trans('backend::lang.form.create')) ?></a>-->
+          <a data-toggle="modal" href="#content-form-disponibilidad" class="btn btn-primary btn-lg">Modificar Disponibilidad</a>
+      </div>
+    </div>
+</div>

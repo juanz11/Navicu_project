@@ -1,0 +1,28 @@
+<?php
+
+
+use HesperiaPlugins\Hoteles\models\Habitacion;
+
+    $habitacion =  Habitacion::find($id);
+
+    $cantidad_disponible = $habitacion->getCantidadDisponible($props);
+
+?>
+<tr>
+    <td>
+        <a href="javascript:;">
+            <strong><?php echo $habitacion->nombre ?></strong></a> <br>
+            <small><?php echo $cantidad_disponible ?> Disponibles</small>
+        </a>
+    </td>
+    <td class="column-button nolink">
+      <button
+          type="button"
+          data-request-data="hab:<?php echo $id ?>"
+          data-request="onMostrarPrecios"
+          data-request-complete="$('#content-precios').modal({show : true}); actualizarTotalHab();"
+          class="btn btn-secundary btn-sm">
+          Ver Precios
+      </button>
+    </td>
+</tr>

@@ -1,0 +1,46 @@
+pagos:
+    label: Pagos
+    view:
+        list: $/hesperiaplugins/hoteles/models/pago/columns.yaml
+        toolbarButtons: 'create|delete'
+        showCheckboxes: true
+
+    manage:
+        form: $/hesperiaplugins/hoteles/models/pago/fields.yaml
+        recordsPerPage: 10
+detalles:
+    label: Detalles
+    view:
+        list: $/hesperiaplugins/hoteles/models/detallereservacion/columns.yaml
+        toolbarButtons: false
+        showCheckboxes: false
+    manage:
+        form: $/hesperiaplugins/hoteles/models/detallereservacion/fields.yaml
+        recordsPerPage: 10
+observaciones:
+    label: Observaciones
+    view:
+        list: $/hesperiaplugins/hoteles/models/observacion/columns.yaml
+        toolbarButtons: false
+        showCheckboxes: false
+    manage:
+        form: $/hesperiaplugins/hoteles/models/observacion/fields.yaml
+        recordsPerPage: 10
+upgrades:
+    label: Upgrades/Upsellings
+    view:
+        list: $/hesperiaplugins/hoteles/models/upgrade/columns.yaml
+        toolbarButtons: false
+        showCheckboxes: false
+    manage:
+        form: $/hesperiaplugins/hoteles/models/upgrade/fields.yaml
+        recordsPerPage: 10
+status:
+    label: Status
+    view:
+        form: $/hesperiaplugins/hoteles/models/statusreserva/fields.yaml
+        toolbarButtons: link
+    manage:
+        form: $/hesperiaplugins/hoteles/models/statusreserva/fields.yaml
+        list: $/hesperiaplugins/hoteles/models/statusreserva/columns.yaml
+   

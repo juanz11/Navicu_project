@@ -1,0 +1,27 @@
+fields:
+    nombre:
+        label: Nombre
+        span: auto
+        oc.commentPosition: ''
+        required: 1
+        type: text
+    tipo_atributo:
+        label: Tipo Atributo
+        oc.commentPosition: ''
+        nameFrom: nombre
+        span: auto
+        required: 1
+        type: relation
+    icon:
+        label: 'Icono'
+        oc.commentPosition: ''
+        mode: image
+        imageWidth: '100'
+        imageHeight: '100'
+        useCaption: true
+        thumbOptions:
+            mode: crop
+            extension: auto
+        span: left
+        type: fileupload
+    

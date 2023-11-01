@@ -1,0 +1,10 @@
+
+<?php if ($record->cotizable_type == "HesperiaPlugins\Hoteles\Models\Compra"): ?>
+
+	<a class="btn btn-sm btn-secondary oc-icon-plus" href=" <?= Backend::url('hesperiaplugins/hoteles/compra/preview', $record->cotizable_id) ?>">Ver Detalle</a>
+<?php endif ?>
+
+<?php if ($record->cotizable_type == "HesperiaPlugins\Hoteles\Models\Reservacion"): ?>
+
+	<a class="btn btn-sm btn-secondary oc-icon-plus" href=" <?= Backend::url('hesperiaplugins/hoteles/reservacion/preview', $record->cotizable_id) ?>">Ver Detalle</a>
+<?php endif ?>

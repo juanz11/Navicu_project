@@ -1,0 +1,5 @@
+fields:
+    regimen_id:
+      label: Régimen
+      type: dropdown
+

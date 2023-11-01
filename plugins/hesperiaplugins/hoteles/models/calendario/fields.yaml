@@ -1,0 +1,9 @@
+fields:
+    calendarizable_id:
+        label: 'Calendarizable ID'
+        span: auto
+        type: text
+    calendarizable_type:
+        label: 'Calendarizable Type'
+        span: auto
+        type: text

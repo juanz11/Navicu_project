@@ -1,0 +1,42 @@
+<?php $datos = array(); ?>
+
+<?php if ($resultado_agentes->count()): ?>
+    
+        <?php foreach ($resultado_agentes as $agente): ?>
+
+            <?php 
+                $datos["agente_id"] = $agente->id;
+                $datos["moneda_id"] = $dates["moneda"];
+                $datos["hotel_id"] = $dates["hotel"]; 
+                $datos["fecha_desde"] = $dates["desde"];
+                $datos["fecha_hasta"] = $dates["hasta"];
+            ?>
+            <tr class="rowlink" data-href ="<?= Backend::url('hesperiaplugins/hoteles/cotizacion/detalle_agente',$datos); ?>">
+
+                <td><?= $agente->nombre; ?></td>
+                <td>
+                    <?php $enviadas = ($agente->enviadas ? $agente->enviadas : "0"); echo $enviadas;?>
+                </td>
+                <td>
+                    <?php $completas = ($agente->completas ? $agente->completas : "0"); echo $completas;?>
+                </td>
+                <td> 
+                    <?php $roomNight = ($agente->roomNight ? $agente->roomNight : "0"); echo $roomNight; ?>
+                </td>
+
+                <td><?php $porcentaje = ($agente->completas ? $agente->completas * 100/$agente->enviadas : '0 %');echo round($porcentaje,1).'%'; ?>
+
+                <td><?php 
+                    $valor =($agente->revenue ? number_format($agente->revenue, 0 ,",", ".") : "0"); echo $valor; ?>
+                </td>
+            </tr>
+        <?php endforeach ?>
+    <?php else: ?>
+        <tr class="no-data">
+            <td colspan="100" class="nolink">
+                <p class="no-data">
+                    No se encontraron resultados.
+                </p>
+            </td>
+        </tr>
+<?php endif ?>

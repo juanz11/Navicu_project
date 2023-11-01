@@ -1,0 +1,10 @@
+name: Emailnotificaciones
+form: $/navicudev/emailnotificacion/models/emailnotificacion/fields.yaml
+modelClass: navicudev\Emailnotificacion\Models\Emailnotificacion
+defaultRedirect: navicudev/emailnotificacion/emailnotificaciones
+create:
+    redirect: 'navicudev/emailnotificacion/emailnotificaciones/update/:id'
+    redirectClose: navicudev/emailnotificacion/emailnotificaciones
+update:
+    redirect: navicudev/emailnotificacion/emailnotificaciones
+    redirectClose: navicudev/emailnotificacion/emailnotificaciones

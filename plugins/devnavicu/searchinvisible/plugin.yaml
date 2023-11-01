@@ -1,0 +1,6 @@
+plugin:
+    name: 'devnavicu.searchinvisible::lang.plugin.name'
+    description: 'devnavicu.searchinvisible::lang.plugin.description'
+    author: dev_Navicu
+    icon: oc-icon-adjust
+    homepage: ''

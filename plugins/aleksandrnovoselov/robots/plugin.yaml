@@ -1,0 +1,10 @@
+plugin:
+    name: 'aleksandrnovoselov.robots::lang.plugin.name'
+    description: 'aleksandrnovoselov.robots::lang.plugin.description'
+    author: 'Aleksandr Novoselov'
+    icon: oc-icon-file-text-o
+    homepage: ''
+permissions:
+    aleksandr_novoselov.robots:
+        tab: 'aleksandrnovoselov.robots::lang.premissions.robots'
+        label: 'aleksandrnovoselov.robots::lang.premissions.robots'

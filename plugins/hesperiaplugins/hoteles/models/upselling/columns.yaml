@@ -1,0 +1,13 @@
+columns:
+    id:
+        label: ID
+        type: text
+        searchable: true
+        sortable: true
+    titulo:
+        label: Titulo
+        type: text
+        searchable: true
+    hotel:
+      relation: hotel
+      select: nombre

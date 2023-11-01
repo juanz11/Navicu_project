@@ -1,0 +1,63 @@
+{% set diasDiff = __SELF__.diasDiff %}
+
+<script>
+  	$(document).ready(function(){
+
+      $("#check-in").datepicker({
+  	    format: "dd-mm-yyyy",
+  	    language: "es",
+  			orientation: "bottom",
+  			startDate: "{{__SELF__.fechaInicioCheckIn}}",
+        endDate: "{{paquete.cambioFormatoFecha(paquete.fecha_hasta, 'd-m-Y') }}",
+  			disableTouchKeyboard: 'true',
+        autoclose: 'true'
+  	  });
+
+  		$("#check-out").datepicker({
+
+  	    language: "es",
+  			orientation: "bottom",
+  			startDate: "{{__SELF__.fechaInicioCheckOut}}",
+        endDate: "{{paquete.cambioFormatoFecha(paquete.fecha_hasta, 'd-m-Y') }}",
+        format: "dd-mm-yyyy",
+  			disableTouchKeyboard: 'true',
+        autoclose: 'true'
+  	  });
+
+    });
+
+</script>
+<p class="text-center">Selecciona fechas, configura tu habitación y verifica los servicios adicionales del paquete</p>
+<form id="paquete-form" class="form-inline text-center"
+  data-request-flash data-request-validate>
+    <div class="form-group input-group date" id="check-in">
+      <input type="text" class="form-control"  name="checkin"
+       placeholder="check in" autocomplete="off"><span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+    </div>
+    <div class="form-group input-group date" id="check-out">
+      <input type="text" class="form-control"  name="checkout"
+      placeholder="check out" autocomplete="off"><span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+    </div>
+    <div class="form-group">
+      <div class="input-group">
+        <select class="form-control" name="moneda">
+          {% set selected = "" %}
+          {% for moneda in monedas %}
+            {% if moneda.id == __SELF__.moneda_inicial %}
+              {% set selected = "selected" %}
+
+            {% else %}
+              {% set selected = "" %}
+            {% endif %}
+            <option value="{{moneda.id}}" data-acronimo ="{{moneda.acronimo}}" {{selected}}>
+              {{moneda.moneda}} - {{moneda.acronimo}}
+            </option>
+          {% endfor %}
+       </select>
+       <span class="input-group-addon"><i class="fa fa-money" aria-hidden="true"></i></span>
+      </div>
+    </div>
+    <div class="form-group">
+      <button class="btn btn-primary">Consultar</button>
+    </div>
+</form>

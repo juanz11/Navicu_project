@@ -1,0 +1,4 @@
+title: Regimen
+modelClass: HesperiaPlugins\Hoteles\Models\Regimen
+toolbar:
+    buttons: reorder_toolbar

@@ -1,0 +1,32 @@
+fields:
+    titulo:
+        label: Titulo
+        oc.commentPosition: ''
+        span: full
+        required: 1
+        type: text
+    subtitulo:
+        label: Subtitulo
+        oc.commentPosition: ''
+        span: full
+        required: 1
+        type: text
+    url:
+        label: Url
+        oc.commentPosition: ''
+        span: full
+        required: 1
+        type: text
+    foto:
+        label: Foto
+        oc.commentPosition: ''
+        mode: image
+        useCaption: true
+        thumbOptions:
+            mode: crop
+            extension: auto
+        span: left
+        required: 1
+        imageWidth: '200'
+        imageHeight: '200'
+        type: fileupload

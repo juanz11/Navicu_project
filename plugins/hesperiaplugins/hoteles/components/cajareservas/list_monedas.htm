@@ -1,0 +1,26 @@
+{# {% if habitaciones != null %} #}
+
+  <div class="col-md-12 ">
+    <form  class="form-inline text-right">
+      <div class="form-group text-center">
+        <label class="">Moneda</label>
+        <div class="input-group">
+          <span class="input-group-addon"><i class="fa fa-money" aria-hidden="true"></i></span>
+          <select class="form-control" id="monedas-select">
+            {% set selected = "" %}
+            {% for moneda in __SELF__.listaMonedas %}
+              {% if moneda.id == __SELF__.moneda_inicial %}
+                {% set selected = "selected" %}
+              {% endif %}
+              <option value="{{moneda.id}}" data-acronimo ="{{moneda.acronimo}}" {{selected}}>
+                {{moneda.moneda}} - {{moneda.acronimo}}
+              </option>
+            {% endfor %}
+          </select>
+        </div>
+      </div>
+    </form>
+    <br>
+  </div>
+
+{# {% endif %} #}

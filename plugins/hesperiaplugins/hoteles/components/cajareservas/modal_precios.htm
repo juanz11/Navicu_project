@@ -1,0 +1,50 @@
+
+{%  set ocupaciones = habitacion.setArrayOcupaciones(precios) %}
+{%  set regimenes = habitacion.setArrayRegimenes(precios) %}
+{% set acronimo = propiedades.acronimo %}
+
+<div class="modal-dialog modal-lg" role="document">
+  <div class="modal-content" id="modal-content-form"> <!-- MODAL CONTENT -->
+
+    <form class="hab-modal-form">
+
+      <div class="modal-body">
+        <ul class="nav nav-tabs" role="tablist">
+            <li class="active"><a href="#alojamiento" aria-controls="alojamiento" role="tab" data-toggle="tab">Alojamiento</a></li>
+            <li><a href="#upsellings-content" aria-controls="upsellings" role="tab" data-toggle="tab">Servicios Adicionales</a></li>
+        </ul>
+        <div class="row">
+          <div class="tab-content">
+            <div role="tabpanel" class="tab-pane col-md-12 active" id="alojamiento">
+              {% partial '@form_ocupacion'
+                habitacion = habitacion
+                ocupaciones = ocupaciones
+                regimenes = regimenes
+               %}
+            </div>
+            <div role="tabpanel" class="tab-pane col-md-12" id="upsellings-content">
+              {% partial '@lista_upsellings' acronimo = acronimo %}
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div class="modal-footer">
+        <p class="text-center">
+         <strong>Total: </strong><span id="total-full-hab-modal"></span> {{acronimo}}
+      </p>
+      <div class="pull-right">
+        <input type="hidden" name="habitacion_id" value="{{habitacion.id}}"/>
+        <input type="hidden" name="hab_nombre" value="{{habitacion.nombre}}"/>
+        <input type="hidden" id="acronimo" value="{{propiedades.acronimo}}"/>
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+        <button type="submit" class="add-hab btn btn-primary" id="add" data-attach-loading>
+          Añadir
+        </button>
+
+      </div>
+
+      </div>
+    </form>
+  </div> <!-- FIN MODAL CONTENT -->
+</div>

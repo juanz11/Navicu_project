@@ -1,0 +1,12 @@
+list: $/navicudev/emailnotificacion/models/emailnotificacion/columns.yaml
+modelClass: navicudev\Emailnotificacion\Models\Emailnotificacion
+title: Emailnotificacion
+noRecordsMessage: 'backend::lang.list.no_records'
+showSetup: true
+showCheckboxes: true
+recordsPerPage: 20
+toolbar:
+    buttons: list_toolbar
+    search:
+        prompt: 'backend::lang.list.search_prompt'
+recordUrl: 'navicudev/emailnotificacion/emailnotificacion/update/:id'

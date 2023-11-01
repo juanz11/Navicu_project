@@ -1,0 +1,33 @@
+<?php if (count($model->upgrades)): ?>
+<div class="control-list">
+  <h5>Upsellings/Upgrades</h5>
+    <table class="table data">
+        <thead>
+            <tr>
+                <th><a href="#">Nombre</a></th>
+                <th><a href="#">Precio</a></th>
+                <th><a href="#">Cantidad</a></th>
+                <th><a href="#">Fecha Disfrute</a></th>
+            </tr>
+        </thead>
+        <tbody>
+          <?php foreach ($model->upgrades  as $upgrade): ?>
+            <?php
+              if($upgrade->fecha_disfrute!="0000-00-00 00:00:00" && $upgrade->fecha_disfrute!=null){
+                $aux_fecha = new Carbon\Carbon($upgrade->fecha_disfrute);
+                $fecha = $aux_fecha->format("d-m-Y");
+              }else{
+                $fecha = "NA";
+              }
+            ?>
+            <tr>
+              <td><?=e($upgrade->upselling->titulo) ?> </td>
+              <td><?=e($upgrade->upselling->cambiarFormatoPrecio($upgrade->precio)) ?></td>
+              <td><?=e($upgrade->cantidad) ?></td>
+              <td><?=e($fecha) ?></td>
+            </tr>
+            <?php endforeach ?>
+        </tbody>
+    </table>
+</div>
+<?php endif ?>

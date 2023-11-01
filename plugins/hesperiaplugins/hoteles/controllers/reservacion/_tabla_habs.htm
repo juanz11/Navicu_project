@@ -1,0 +1,25 @@
+<div class="control-list">
+    <table class="table data row" data-control="rowlink">
+        <thead>
+            <tr>
+                <th><span>Habitación</span></th>
+                <th><span>Acciones</span></th>
+            </tr>
+        </thead>
+        <tbody>
+          <?php if ($habitaciones_disponibles): ?>
+              <?php foreach ($habitaciones_disponibles as $hab): ?>
+                <?= $this->makePartial('celdas_habs', ['id'=> $hab]); ?>
+              <?php endforeach ?>
+          <?php else: ?>
+          <tr class="no-data">
+                <td colspan="100" class="nolink">
+                    <p class="no-data">
+                        No encontramos habitaciones disponibles
+                    </p>
+                </td>
+            </tr>
+        <?php endif ?>
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,16 @@
+# ===================================
+#  Import/Export Behavior Config
+# ===================================
+
+import:
+    title: mohsin.txt::lang.agent.import_agent
+    modelClass: Mohsin\Txt\Models\AgentImport
+    list: $/mohsin/txt/models/agentimport/columns.yaml
+    redirect: mohsin/txt/agents
+
+export:
+    title: mohsin.txt::lang.agent.export_agent
+    fileName: agents.csv
+    modelClass: Mohsin\Txt\Models\AgentExport
+    list: $/mohsin/txt/models/agentexport/columns.yaml
+    redirect: mohsin/txt/agents

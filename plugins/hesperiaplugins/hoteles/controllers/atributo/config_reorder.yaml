@@ -1,0 +1,4 @@
+title: Atributo
+modelClass: HesperiaPlugins\Hoteles\Models\Atributo
+toolbar:
+    buttons: reorder_toolbar

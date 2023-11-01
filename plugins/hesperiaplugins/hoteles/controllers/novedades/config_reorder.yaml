@@ -1,0 +1,4 @@
+title: Novedades
+modelClass: HesperiaPlugins\Hoteles\Models\Novedad
+toolbar:
+    buttons: reorder_toolbar

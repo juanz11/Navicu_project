@@ -1,0 +1,20 @@
+columns:
+    habitacion:
+        label: Habitacion
+        relation: habitacion
+        select: nombre
+    regimen:
+      label: regimen
+      relation: regimen
+      select: nombre
+    ocupacion:
+        label: Ocupación
+        type: tipo_ocupacion
+    precio:
+        label: Precio en Alojamiento
+        type: monto_formateado
+    upgrades:
+        label: Total en upgrades
+        relation: upgrades
+        //select: cantidad
+        type: sum_upgrade

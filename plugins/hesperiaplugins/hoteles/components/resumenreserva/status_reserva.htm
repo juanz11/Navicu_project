@@ -1,0 +1,69 @@
+
+      {% if reservacion.status_id == 3 %}
+        <div class="col-md-12">
+          <h2 class="text-center">Status</h2>
+          <div class="alert alert-warning alert-dismissible fade in" role="warning">
+            <h4>¡Perfecto! <small>Tu pago está pendiente de validación</small> <span class="pull-right badge badge-light">ID Nº{{reservacion.id}}</span></h4>
+            <p>Hemos recibido tu comprobante de pago, una vez verificado, recibirás
+              un email con la confirmación de tu reservación
+            </p>
+            <p class="text-center">
+                <a class="btn btn-primary" href="{{'prueba'|staticPage}}">Volver al inicio</a>
+            </p>
+          </div>
+        </div>
+      {% elseif reservacion.status_id == 2 and reservacion.isVigente() %}
+        <div class="col-md-12">
+          
+          <div class="alert bg-info alert-dismissible text-center clearfix" role="alert">
+              
+            <p class="text-center">
+                <h4>PRE-RESERVACIÓN REGISTRADA </h4>
+              Puede elegir entre los metodos de pago
+            disponibles
+            </p>
+            
+            
+          </div>
+        </div>
+      {% elseif reservacion.status_id == 1 %}
+        <div class="col-md-12 well text-center">
+          <h2> <i class="fa fa-check-circle fa-3x"></i> <br>¡Hemos procesado su pago correctamente!</h2>
+          <p class="lead"><strong>Su reservación ha sido aprobada</strong>, esperamos disfrute su estancia con nosotros</p>
+          <!--<p class="text-center"><a href="{{'prueba'|staticPage}}"role="link">Volver a la página principal</a></p>-->
+        </div>
+        
+
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <p class="text-center">
+            <strong>¡Ahorra tiempo y haz tu pre-checkin online!</strong> <br>
+          </p>
+            <p class="text-center">
+              
+              <a class="btn btn-primary" href="{{'hotel/pre-checkin'|page}}">Hacer PRE-CHECKIN</a>
+            </p>
+            
+          </div>
+        </div>
+        <br>
+        <p class="text-center">
+          <a class="btn btn-default" href="{{'prueba'|staticPage}}">Volver al inicio</a>
+        </p>
+      {%elseif reservacion.status_id == 6 %}
+      <div class="col-md-12">
+          <h2 class="text-center">Status</h2>
+          <div class="alert alert-warning alert-dismissible fade in" role="warning">
+            <h4>¡Perfecto! Tu pre-reserva ha sido registrada <span class="pull-right badge badge-light">ID Nº{{reservacion.id}}</span></h4>
+            <p>Debes acercarte a la recepción del Hotel e indicar tú ID de reserva para que nuestro personal efectue
+              el cobro y disfrutes de tú estadía con nosotros
+            </p>
+            <p class="text-center">
+                <a class="btn btn-primary" href="{{'prueba'|staticPage}}">Volver al inicio</a>
+            </p>
+          </div>
+        </div>
+
+      {% endif %}
+      
+     

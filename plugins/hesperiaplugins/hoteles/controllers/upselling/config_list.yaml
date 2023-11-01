@@ -1,0 +1,13 @@
+list: $/hesperiaplugins/hoteles/models/upselling/columns.yaml
+modelClass: HesperiaPlugins\Hoteles\Models\Upselling
+title: Upselling
+noRecordsMessage: 'backend::lang.list.no_records'
+showSetup: true
+showCheckboxes: true
+recordsPerPage: 20
+toolbar:
+    buttons: list_toolbar
+    search:
+        prompt: 'backend::lang.list.search_prompt'
+recordUrl: 'hesperiaplugins/hoteles/upselling/update/:id'
+filter: config_filter.yaml

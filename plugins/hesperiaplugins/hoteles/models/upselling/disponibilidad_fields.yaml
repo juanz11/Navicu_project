@@ -1,0 +1,18 @@
+fields:
+    fecha_desde:
+        label: Desde
+        span: left
+        type: datepicker
+        mode: date
+        format: d-m-yy
+    fecha_hasta:
+        label: Hasta
+        span: right
+        type: datepicker
+        mode: date
+        format: d-m-yy
+    disponible:
+        label: 'Disponible'
+        span: auto
+        type: number
+        

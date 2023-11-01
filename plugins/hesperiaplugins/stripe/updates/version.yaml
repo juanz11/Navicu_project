@@ -1,0 +1,11 @@
+1.0.1:
+    - 'Initialize plugin.'
+1.0.2:
+    - 'Created table hesperiaplugins_stripe_payments'
+    - builder_table_create_hesperiaplugins_stripe_payments.php
+1.0.3:
+    - 'Updated table hesperiaplugins_stripe_payments'
+    - builder_table_update_hesperiaplugins_stripe_payments.php
+1.0.4:
+    - 'Updated table hesperiaplugins_stripe_payments'
+    - builder_table_update_hesperiaplugins_stripe_payments_2.php

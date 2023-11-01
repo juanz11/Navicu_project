@@ -1,0 +1,12 @@
+title: Habitaciones
+modelClass: HesperiaPlugins\Hoteles\Models\Habitacion
+list: $/hesperiaplugins/hoteles/models/habitacion/columns.yaml
+recordUrl: 'hesperiaplugins/hoteles/habitaciones/update/:id'
+noRecordsMessage: 'backend::lang.list.no_records'
+showSetup: true
+showCheckboxes: true
+filter: config_filter.yaml
+toolbar:
+    buttons: list_toolbar
+    search:
+        prompt: 'backend::lang.list.search_prompt'

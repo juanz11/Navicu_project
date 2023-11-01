@@ -1,0 +1,13 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    agent:
+        label: User-Agent
+        type: dropdown
+
+    directives:
+        label: Directives
+        type: partial
+        path: directives

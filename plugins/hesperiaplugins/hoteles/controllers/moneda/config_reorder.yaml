@@ -1,0 +1,4 @@
+title: Moneda
+modelClass: HesperiaPlugins\Hoteles\Models\Moneda
+toolbar:
+    buttons: reorder_toolbar

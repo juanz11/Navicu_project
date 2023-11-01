@@ -1,0 +1,24 @@
+fields:
+    desde:
+        label: Desde
+        mode: date
+        span: left
+        size: small
+        type: datepicker
+    hasta:
+        label: Hasta
+        mode: date
+        span: right
+        size: small
+        type: datepicker    
+    hotel:
+        label: Hotel
+        span: left
+        size: small
+        type: dropdown 
+    moneda:
+        label: Moneda
+        span: right
+        size: small
+        type: dropdown    
+        

@@ -1,0 +1,23 @@
+<?php 
+	use HesperiaPlugins\Hoteles\Models\Paquete;
+	$paquete = Paquete::find($paquete_id);
+?>
+<?php Block::put('breadcrumb'); ?>
+    <ul>
+        <li><a href="<?= Backend::url('hesperiaplugins/hoteles/paquete/reporte_paquetes'); ?>">Reporte de Paquetes</a></li>
+        <li><?= e($this->pageTitle); ?></li>
+    </ul>
+<?php Block::endPut(); ?>
+<div class="scoreboard">
+  <div data-control="toolbar">
+  	<div class="scoreboard-item title-value">
+		<h4>Paquete</h4>
+		<p><?= $paquete->titulo; ?></p>
+	</div>
+	<div class="scoreboard-item title-value">
+		<h4>Hotel</h4>
+		<p><?= $paquete->hotel->nombre; ?></p>
+	</div>
+  </div>
+</div>
+<?= $this->listRender('detalle_paquete'); ?>

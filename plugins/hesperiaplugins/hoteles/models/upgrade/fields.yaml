@@ -1,0 +1,28 @@
+fields:
+    cantidad:
+        label: Cantidad
+        span: auto
+        type: text
+        disabled: true
+    moneda:
+        label: Moneda
+        span: right
+        oc.commentPosition: ''
+        nameFrom: moneda
+        descriptionFrom: moneda
+        type: relation
+        disabled: true
+    precio:
+        label: Precio
+        type: text
+        span: right
+        disabled: true
+    upselling:
+        label: Upselling/Upgrade
+        span: left
+        oc.commentPosition: ''
+        nameFrom: titulo
+        required: 1
+        descriptionFrom: description
+        type: relation
+        disabled: true

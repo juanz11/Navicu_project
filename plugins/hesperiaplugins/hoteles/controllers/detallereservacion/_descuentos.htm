@@ -1,0 +1,22 @@
+
+<?php if (count($model->descuentos)): ?>
+<div class="control-list">
+  <h5>Descuentos Aplicados</h5>
+    <table class="table data">
+        <thead>
+            <tr>
+                <th><a href="#">Concepto</a></th>
+                <th><a href="#">Porcentaje</a></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <?php foreach ($model->descuentos  as $descuento): ?>
+                  <td><?=e($descuento->concepto) ?> </td>
+                  <td><?=e($descuento->porcentaje) ?>%</td>
+                <?php endforeach ?>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<?php endif ?>

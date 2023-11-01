@@ -1,0 +1,22 @@
+<?php namespace HesperiaPlugins\Hoteles\Updates;
+
+use Schema;
+use October\Rain\Database\Updates\Migration;
+
+class BuilderTableCreateHesperiapluginsHotelesHotelRegimen extends Migration
+{
+    public function up()
+    {
+        Schema::create('hesperiaplugins_hoteles_hotel_regimen', function($table)
+        {
+            $table->engine = 'InnoDB';
+            $table->integer('hotel_id');
+            $table->integer('regimen_id');
+        });
+    }
+    
+    public function down()
+    {
+        Schema::dropIfExists('hesperiaplugins_hoteles_hotel_regimen');
+    }
+}

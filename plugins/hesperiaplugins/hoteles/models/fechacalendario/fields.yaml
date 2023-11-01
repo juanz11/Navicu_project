@@ -1,0 +1,9 @@
+fields:
+    disponible:
+        label: 'Cantidad Disponible'
+        type: number
+        span: auto
+    precios:
+        path: $/hesperiaplugins/hoteles/controllers/fechacalendario/_precios.htm
+        span: full
+        type: partial

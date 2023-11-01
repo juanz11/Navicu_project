@@ -1,0 +1,29 @@
+<?php $datos = array(); ?>
+
+<?php if (count($resultUps) > 0): ?>
+	<?php foreach ($resultUps as $value): ?>
+
+        <?php 
+        $datos["upselling_id"] = $value->id;
+        $datos["moneda_id"] = $dates["moneda"]; 
+        $datos["fecha_desde"] = $dates["desde"];
+        $datos["fecha_hasta"] = $dates["hasta"];
+        ?>
+	    <tr class="rowlink" data-href ="<?= Backend::url('hesperiaplugins/hoteles/reservacion/detalle_upselling',$datos); ?>">
+	   		<td><?= $value->titulo; ?></td>
+            <td><?= $value->hotel->nombre; ?></td>
+            <td><?= $value->getUpsSolicitados(); ?></td>
+            <td><?= $value->getUpsConfirmados(); ?></td>
+            <td><?= number_format($value->getUpsRevenue(), 0 ,",", "."); ?></td>
+            
+	    </tr>
+	<?php endforeach  ?>
+<?php else: ?>
+    <tr class="no-data">
+        <td colspan="100" class="nolink">
+            <p class="no-data">
+                No se encontraron resultados.
+            </p>
+        </td>
+    </tr>
+<?php endif ?>

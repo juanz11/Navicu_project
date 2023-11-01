@@ -1,0 +1,10 @@
+name: Compra
+form: $/hesperiaplugins/hoteles/models/compra/fields.yaml
+modelClass: HesperiaPlugins\Hoteles\Models\Compra
+defaultRedirect: hesperiaplugins/hoteles/compra
+create:
+    redirect: 'hesperiaplugins/hoteles/compra/update/:id'
+    redirectClose: hesperiaplugins/hoteles/compra
+update:
+    redirect: hesperiaplugins/hoteles/compra
+    redirectClose: hesperiaplugins/hoteles/compra

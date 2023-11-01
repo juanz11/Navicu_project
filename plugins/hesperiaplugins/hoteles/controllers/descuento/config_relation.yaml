@@ -1,0 +1,10 @@
+desc_habs:
+    label: Habitaciones
+    view:
+        list: $/hesperiaplugins/hoteles/models/descuentohabitacion/columns.yaml
+        toolbarButtons: 'create|delete'
+        showCheckboxes: true
+
+    manage:
+        form: $/hesperiaplugins/hoteles/models/descuentohabitacion/fields.yaml
+        recordsPerPage: 10

@@ -1,0 +1,334 @@
+
+
+{% if reservacion or propiedades %}
+
+  <section id="info-reservacion-section">
+    <br>
+
+    <div class="col-md-6">
+      <h2 class="text-center">Tu selección</h2>
+        <div class="panel panel-default">
+          {% if reservacion.id %}
+              {% set resumen = reservacion.getResumen() %}
+             
+            <div class="panel-body">
+                <h4 class="text-right">ID Nº{{reservacion.id}}</h4>
+                  <h4 class="lead"><strong>Huésped:</strong> {{reservacion.huesped}}</h4>
+                  <h3 class="text-center">{{hotel.nombre}}</h3>
+                  <p class="lead text-center">
+                    {% if resumen.paquete %}
+                      <strong>{{resumen.paquete}}</strong><br>
+                    {% endif %}
+                    <strong>check-in:</strong> {{propiedades.checkin}} -
+                    <strong>check-out:</strong> {{propiedades.checkout}}
+                  </p>
+
+                  <div class="col-md-12 col-xs-12">
+                    <ul class="list-group">
+                      {% for habitacion in resumen.habitaciones %}
+                          <li class="list-group-item clearfix ">
+                            <h5><strong>{{habitacion.nombre}}</strong> <span class="pull-right hidden-xs">{{habitacion.precio}}</span></h5>
+                            <p>
+                              <span>
+                                {{habitacion.ocupacion}} | {{habitacion.regimen}}
+                              </span>
+                              <span class="pull-right visible-xs">{{habitacion.precio}}</span>
+                              {% if habitacion.upgrades %}
+                                {% for ups_hab in habitacion.upgrades %}
+                                  <br><em><small> + {{ups_hab.titulo}}</small></em>
+                                  <small class="pull-right">{{ups_hab.precio}}</small>
+                                {% endfor %}
+                              {% endif %}
+                            </p>
+                            {% if habitacion.descuentos.count > 0 %}
+
+                            <div class="alert alert-info" role="alert">
+                              <small>
+                                <strong>Descuentos Aplicados</strong>
+                              </small>
+                              {% for descuento in habitacion.descuentos %}
+                              <p>
+                                <small>
+                              <i class="fa fa-check-circle"></i>
+                                {{descuento.concepto}}
+                              </small>
+                              </p>
+                              
+                              {% endfor %}
+                            {#
+                            <p class="text-left">
+                              <small>
+                                <strong>Descuentos:</strong>
+                                {% for descuento in habitacion.descuentos %}
+                                  <span>{{descuento.concepto}}</span>
+                                {% endfor %}
+                              </small>
+                            </p>
+                            #}
+                            {% endif %}                            
+                          </li>
+  								    {% endfor %}
+                    </ul>
+                    {% if resumen.upsellings_paq %}
+                      <h4 class="text-center">Servicios Adicionales</h4>
+                      <ul class="list-group">
+
+                      {% for upselling in  resumen.upsellings_paq %}
+
+                        <li class="list-group-item">
+                          <span class="pull-right">{{upselling.precio}}</span>
+                          <strong>{{upselling.titulo}} </strong>
+                        </li>
+                      {% endfor %}
+                      </ul>
+                    {% endif %}
+                  </div>
+            </div>
+            <div class="panel-footer">
+              <p class="text-center"><strong>Total:</strong> {{reservacion.resumen.total}}</p>
+            </div>
+          {% else %} {# SI NO ESTÁ GUARDADA LA RESERVA EN SISTEMA #}
+            {# TRABAJAMOS DESDE AQUI #}
+            <div class="panel-body">
+              <h3 class="text-center">{{hotel.nombre}}</h3>
+              <p class="lead text-center">
+                {% if paquete %}
+                  {{paquete.titulo}}<br>
+                {% endif %}
+                <strong>check-in:</strong> {{propiedades.checkin}} -
+                <strong>check-out:</strong> {{propiedades.checkout}}
+
+              </p>
+              {% set impuestos = hotel.getImpuestos(propiedades.moneda) %}
+              {% set items = habitacion_obj.getResumenReserva(seleccion, propiedades) %}
+
+              {% set total_habs = 0 %}
+              {% set acr = "" %}
+              <ul class="list-group">
+
+              {% for item in  items %}
+                <li class="list-group-item">
+                  
+                  {% set total = item.alojamiento %}
+
+                  <h5><strong>{{item.hab_nombre}} </strong> <span class="pull-right hidden-xs">{{__SELF__.cambiarFormatoPrecio(item.alojamiento, propiedades.moneda)}} {{propiedades.acronimo}}</span></h5>
+
+                  <p>
+                  <span>
+                    {{habitacion_obj.getOcupacion(item.ocupacion)}} | {{item.reg_desc}}
+                  </span>
+                  <span class="pull-right visible-xs">{{item.precio}} {{propiedades.acronimo}}</span>  
+                    
+                  {% if item.upsellings %}
+                    {% for ups_hab in item.upsellings %}
+                      <br><em><small> + {{ups_hab.titulo}}</small></em>
+                      <small class="pull-right">{{__SELF__.cambiarFormatoPrecio(ups_hab.precio, propiedades.moneda)}} {{propiedades.acronimo}}</small>
+
+                      {% set total_habs = total_habs + ups_hab.precio %}
+
+                    {% endfor %}
+                  {% endif %}
+                  </p>
+                  {% if item.descuentos %}
+
+                  <div class="alert alert-info" role="alert">
+                    <small>
+                      <strong>Descuentos Aplicados</strong>
+                    </small>
+                    {% for descuento in item.descuentos %}
+                    <p>
+                      <small>
+                    <i class="fa fa-check-circle"></i>
+                      {{descuento.concepto}}
+                    </small>
+                    </p>
+                    
+                    {% endfor %}
+                  
+                  </div>
+
+                  {#
+                  <p class="text-left">
+                    <small>
+                      <strong>Descuentos:</strong>
+                      {% for descuento in item.descuentos %}
+                        <span>{{descuento.concepto}}</span>
+                      {% endfor %}
+                    </small>
+                  </p>
+                  #}
+                  {% endif %}
+                </li>
+                {% set total_habs = total_habs + total %}
+              {% endfor %}
+              </ul>
+              {% if upsellings_paq %}
+                <h4 class="text-center">Servicios Adicionales</h4>
+              {% endif %}
+
+              {% set total_upsellings = 0 %}
+              {% for upselling in upsellings_paq %}
+
+                <ul class="list-group">
+                  <li class="list-group-item">
+                    <strong>{{upselling.titulo}}</strong>
+                    <span class="pull-right">{{habitacion_obj.cambiarFormatoPrecio(upselling.precio, propiedades.moneda)}} {{propiedades.acronimo}}</span>
+                    <h4><strong>{{item.nombre}} </strong></h4>
+                  </li>
+                </ul>
+                {% set total_upsellings = upselling.precio + total_upsellings %}
+              {% endfor %}
+            </div>
+
+            {% set total_reserva = total_upsellings + total_habs %}
+
+            <div class="panel-footer">
+              <p class="text-center"><strong>Total:</strong>
+                {{__SELF__.cambiarFormatoPrecio(total_reserva, propiedades.moneda)}} {{propiedades.acronimo}}
+              </p>
+            </div>
+          {% endif %}
+      </div>
+  </div>
+  <div class="col-md-6">
+      <div class="row">
+          <div class="col-md-12">
+            <br>
+          {% partial '@status_reserva' reservacion = reservacion %}
+          </div>
+      </div>
+
+  {% if reservacion.id == NULL and propiedades %}
+    
+      <h2 class="text-center" >Información del Huésped</h2>
+      <form class="form" id="info-huesped-form" data-request-flash data-request-validate>
+        <div class="row">
+          <div class="col-md-6 col-xs-12">
+            <div class="form-group">
+              <label>Nombre y Apellido</label>
+              <input type="text" class="form-control" id="nombre"
+              name="nombre" value="{{reservacion.huesped}}" placeholder="Ej: John Doe" {{disabled}}>
+            </div>
+            <div class="row">
+              <div class="form-group">
+                <div class="col-md-12">
+                  <label>Doc. de Identidad</label>
+                </div>
+                <div class="col-md-4 col-xs-6">
+                  <select class="form-control" name="codigo_documento">
+                    {% for codigo in codigos_documentos %}
+                      <option value="{{codigo}}-">{{codigo}}</option>
+                    {% endfor %}
+
+                  </select>
+                </div>
+                <div class="col-md-8 col-xs-6">
+                  <input type="text" class="form-control" id="documento"
+                 name="documento" value="{{reservacion.identificacion}}" placeholder="Ej: 1234567" {{disabled}}>
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+          <div class="col-md-6 col-xs-12">
+            <div class="form-group">
+              <label>Correo</label>
+              <input type="email" class="form-control" id="email"
+               name="email" value="{{reservacion.usuario.email}}" placeholder="Ej: jdoe@mail.com" {{disabled}}>
+            </div>
+          </div>
+          <div class="col-md-6 col-xs-12">
+            <div class="row">
+              <div class="form-group">
+                <div class="col-md-12">
+                  <label>Teléfono</label>
+                </div>
+
+                <div class="col-md-4 col-xs-6">
+                  <select class="form-control" name="codigo_pais">
+                    {% for pais in paises %}
+                      {% if pais.cioc %} <!-- SI TIENE CODIGO -->
+
+                        {% set selected = "" %}
+
+                        {% if pais.cioc == "VEN" %} <!-- VENEZUELA APARECE SELECCIONADO POR DEFECTO -->
+                          {% set selected = "selected" %}
+                        {% endif %}
+
+                        <option value="+{{pais.callingCodes[0]}}" {{selected}}>+{{pais.callingCodes[0]}}</option>
+
+                      {% endif %} <!-- FIN SI TIENE CODIGO -->
+
+                    {% endfor %}
+                  </select>
+                </div>
+                <div class="col-md-8 col-xs-6">
+                  <input type="text" class="form-control" id="telefono"
+                 name="telefono" value="{{reservacion.contacto}}" {{disabled}}>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12 col-xs-12">
+            <div class="form-group">
+              <label >Comentarios</label>
+              <textarea class="form-control" rows="3"
+               id="comentarios" name="comentarios" {{disabled}}>{{reservacion.comentarios}}</textarea>
+            </div>
+          </div>
+           <div class="col-md-12 col-xs-12">
+            <div class="form-group">
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox" name="terminos" >He leído y acepto los{% partial '@terminos_condiciones' %}
+                </label>
+              </div>
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox" name="newsletter" checked>Suscríbeme al newsletter
+                </label>
+              </div>
+            </div>
+            <div class="form-group">
+
+            </div>
+          </div>
+        </div>
+
+        {% if reservacion == null %}
+        <div class="col-md-12 col-xs-12">
+          <p class="text-center"><button class="btn btn-primary">Ver Métodos de Pago</button></p>
+        </div>
+        {% endif %}
+      </form>
+    </div>
+  {% endif %}
+
+</section>
+
+{% else %}
+<div class="container-fluid">
+  <div class="col-md-10 col-md-offset-1">
+      {% if reserva_caducada %}
+        <h1 class="text-center text-danger">
+          <i class="fa fa-times-circle fa-3x"></i><br>¡Vaya! tu pre-reserva está caducada
+        </h1>
+        <p class="lead text-center">El tiempo de vigencia de tu solicitud ha expirado, pero no te preocupes, puedes volver a realizarla facilmente haciendo click <a class="btn btn-primary" href="{{ 'hotel/reservacion_habitacion'|page }}" role="button">Aquí</a>
+        </p>
+        <p class="text-center"><a href="{{'prueba'|staticPage}}" role="link">Volver a la página principal</a></p>
+      {% else %}
+        <h1 class="text-center text-danger">
+          <i class="fa fa-times-circle fa-3x"></i><br>Houston, tenemos un problema
+        </h1>
+        <p class="lead">El contenido al que intentas acceder no ha sido encontrado, no te preocupes,
+          si quieres reservar haz click <a class="btn btn-primary" href="{{ 'hotel/reservacion_habitacion'|page }}" role="button">Aquí</a>
+        </p>
+        <p class="text-center"><a href="{{'prueba'|staticPage}}" role="link">Volver a la página principal</a></p>
+      {% endif %}
+  </div>
+</div>
+
+{% endif %}

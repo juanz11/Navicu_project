@@ -1,0 +1,5 @@
+scopes:
+  fecha:
+        label: Fecha
+        type: daterange
+        conditions: fecha >= ':after' AND fecha <= ':before'

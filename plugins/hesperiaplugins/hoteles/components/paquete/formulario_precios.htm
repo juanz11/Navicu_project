@@ -1,0 +1,126 @@
+
+<div class="modal-header">
+  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+  <h4 class="modal-title">{{habitacion.nombre}}
+     {% if habitacion.hotel_id != 4 %}
+     <small>
+         -- <a class=""  data-toggle="collapse" href="#collapseInfo" aria-expanded="false" aria-controls="collapseExample">
+            ¿Traes a tus niños?
+         </a>
+     </small>
+     {% endif %}
+  </h4>
+</div>
+<form class="hab-modal-form" id="hab-modal-form">
+  <div class="modal-body">
+  {% if habitacion.hotel_id != 4 %}
+    <div class="collapse" id="collapseInfo">
+      <div class="well">
+        <ul>
+          <li>Infantes menores de 0 a 3 años son gratis</li>
+          <li>Niños de 4 a 10 años pagan 50%, mayores de 11 años cuentan como adultos</li>
+        </ul>
+      </div>
+    </div>
+  {% endif %}
+  <div class="row">
+    <div class="col-md-12"> <!-- CONTENEDOR inputs/precios-->
+      <div class="row">
+        <div class="form-group col-md-6 col-xs-6">
+          <label  class="control-label">Ocupación</label>
+          <select id="ocupacion_selector"
+             name="ocupacion" data-hab="{{habitacion.id}}"
+            class="form-control selector_modal_hab">
+            {% for ocupacion in habitacion.ocupaciones %}
+                <option value ="{{ocupacion.codigo}}">{{ocupacion.descripcion}}</option>
+            {% endfor %}
+          </select>
+        </div>
+        <div class="form-group col-md-6 col-xs-6">
+          <label for="regimen" class="control-label">Incluir Régimen</label>
+          <select id="regimen_selector"
+           name="regimen_id" data-hab="{{habitacion.id}}"
+           class="form-control selector_modal_hab">
+            {% for regimen in habitacion.regimenes %}
+                <option value ="{{regimen.codigo}}">{{regimen.descripcion}}</option>
+            {% endfor %}
+          </select>
+        </div>
+      </div>
+
+      {% if descuentos.count > 0 %} {# si hay descuentos #}
+      <ul class="list-group">
+        {% for descuento in descuentos %}
+        <li class="list-group-item"><span class="fa-stack fa-lg">
+          <i class="fa fa-square-o fa-stack-2x"></i>
+          <i class="fa fa-gift fa-stack-1x"></i>
+        </span>{{descuento.concepto}}
+       </li>
+       {% endfor %}
+      </ul>
+
+      {% endif %} {# fin si hay descuentos #}
+      {% for precio in precios %} {# FOR PRECIOS #}
+
+        {% if loop.index == 1 %}
+          {% set clase = " " %}
+          {% set disabled = " " %}
+
+          {% set acronimo = precio.acronimo %}
+
+        {% else %}
+          {% set clase = "hidden" %}
+          {% set disabled = "disabled" %}
+        {% endif %}
+
+        {% set precioFull = habitacion.getPrecioConImpuestos(precio.total, impuestos) %}
+
+
+        {% if precioFull > 0 %} {# SI EL PRECIO EXISTE PARA TODAS LAS FECHAS #}
+        <div class="{{clase}} precios-hab" id="container-precio-{{precio.ocupacion}}-{{precio.regimen_id}}">
+
+          {% if descuento.porcentaje > 0  %} {# si el paquete tiene descuento #}
+            {% set precioAntes = precioFull %}
+            {% set precioFull = habitacion.getPrecioConDescuentos (precioAntes, descuento) %}
+            <p class="text-right form-control-static">
+              <strong>Antes: </strong><del>{{__SELF__.cambiarFormatoPrecio(precioAntes, propiedades.moneda)}} {{precio.acronimo}}</del>
+            </p>
+          {% endif %} {# FIN SI HAY DESCUENTOS #}
+            <p class="text-right form-control-static"><strong>Total Alojamiento: </strong>{{__SELF__.cambiarFormatoPrecio(precioFull, propiedades.moneda)}} {{precio.acronimo}}</p>
+            <input type="hidden" id="preciototal-{{precio.ocupacion}}-{{precio.regimen_id}}"
+              class="precio-input" name="precio" value="{{precioFull}}" {{disabled}}>
+        </div>
+        {% else %} {# FIN SI EL PRECIO EXISTE PARA TODAS LAS FECHAS #}
+        <div class="precios-hab hidden" id="no-price">
+          <div class="row">
+            <h4 class="text-center">Sin precio disponible</h4>
+            <input type="hidden" id="preciototal-{{precio.ocupacion}}-{{precio.regimen_id}}"
+              class="precio-input" name="precio" value="0" {{disabled}}>
+          </div>
+        </div>
+        {% endif %}
+      {% endfor %} {# END FOR PRECIOS #}
+      {% if precios == null %}
+      <div class="well well-sm precios-hab" id="no-price">
+        <div class="row">
+          <h4 class="text-center">Sin precio disponible</h4>
+          <input type="hidden" id="preciototal-{{precio.ocupacion}}-{{precio.regimen_id}}"
+            class="precio-input" name="precio" value="0" {{disabled}}>
+        </div>
+      </div>
+      {% endif %}
+    </div> <!-- FIN CONTENEDOR inputs/precios-->
+
+  </div>
+
+    </div><!-- END MODAL BODY -->
+    <div class="modal-footer">
+      <input type="hidden" name="habitacion_id" value="{{habitacion.id}}"/>
+      <input type="hidden" name="hab_nombre" value="{{habitacion.nombre}}"/>
+      <input type="hidden" name="acronimo" value="{{acronimo}}"/>
+      <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+      <button type="submit" class="add-hab btn btn-primary" id="add" data-attach-loading>
+        Añadir
+      </button>
+    </div>
+</form>

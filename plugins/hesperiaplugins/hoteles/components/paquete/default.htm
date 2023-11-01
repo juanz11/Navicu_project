@@ -1,0 +1,42 @@
+{% set paquete = __SELF__.paquete %}
+{% set monedas = __SELF__.monedas %}
+<section class="full-width intro-parallax" style="background-image:url('{{paquete.banner.path}}'); height: 25em;">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12 col-sm-12">
+
+
+				<h1 class="wow fadeInUp" data-wow-delay="1.6s">{{paquete.titulo}}</h1>
+				<h3 class="wow bounceIn" data-wow-delay="0.9s">{{paquete.hotel.nombre}}</h3>
+
+				<!--  <a href="#overview" class="btn btn-lg btn-default smoothScroll wow fadeInUp hidden-xs" data-wow-delay="2.3s">LEARN MORE</a>-->
+				<!--  <a href="#register" class="btn btn-lg btn-danger smoothScroll wow fadeInUp" data-wow-delay="2.3s">REGISTER NOW</a>--></div>
+		</div>
+	</div>
+</section>
+
+<div class="container-fluid" id="main-content">
+    {{paquete.descripcion|raw}}
+    <div class="row">
+          {% partial '@buscador' paquete = paquete monedas = monedas %}
+    </div>
+
+    <div class="row" id="habitaciones-content-paquete"></div>
+		<div class="row" id="seleccion-content"></div>
+		<form id="form-pago-paquete">
+			<div class="row" id="upsellings-content"></div>
+			<hr>
+			<div class="row" id="resumen-precio-content">
+			</div>
+		</form>
+</div>
+<!--MODAL PRECIOS -->
+<div class="modal fade hab-modal" id="modal-hab-precios" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+	<div class="modal-dialog" role="document">
+
+		<div class="modal-content" id="modal-content-form">
+
+		</div>
+	</div>
+</div>
+<!-- FIN MODAL PRECIOS -->

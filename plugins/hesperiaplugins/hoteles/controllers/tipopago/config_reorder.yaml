@@ -1,0 +1,4 @@
+title: TipoPago
+modelClass: HesperiaPlugins\Hoteles\Models\TipoPago
+toolbar:
+    buttons: reorder_toolbar

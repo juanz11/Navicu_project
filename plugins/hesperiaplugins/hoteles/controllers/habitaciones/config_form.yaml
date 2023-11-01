@@ -1,0 +1,11 @@
+name: Habitaciones
+modelClass: HesperiaPlugins\Hoteles\Models\Habitacion
+form: $/hesperiaplugins/hoteles/models/habitacion/fields.yaml
+defaultRedirect: hesperiaplugins/hoteles/habitaciones
+create:
+    redirect: 'hesperiaplugins/hoteles/habitaciones/update/:id'
+    redirectClose: hesperiaplugins/hoteles/habitaciones
+update:
+    redirect: hesperiaplugins/hoteles/habitaciones
+    redirectClose: hesperiaplugins/hoteles/habitaciones
+preview: {  }

@@ -1,0 +1,75 @@
+<hr>
+{% if habs_disponibles.count > 0 %}
+<h3 class="text-center" id="label">ELIGE TU HABITACIÓN</h3>
+<div class="col-md-12 slider-2-items ">
+    {% for habitacion in habs_disponibles %}
+    <div class="item">
+      <div class="col-md-12">
+        <div class="media">
+          <div class="media-left media-middle">
+            <a class="detalle" data-toggle="modal" data-index="{{habitacion.id}}"
+             data-target="#modal-detalle-hab-{{habitacion.id}}">
+              <img class="media-object" src="{{ habitacion.foto_portada.thumb(150,150, {'mode':'crop'}) }}" alt="...">
+            </a>
+          </div>
+            <div class="media-body">
+              <h5 class="media-heading">{{habitacion.nombre}}</h5>
+              <p>{{ str_words(habitacion.descripcion, 20)}}</p>
+              
+              <p class="text-right">
+                <button class="btn btn-primary ver-precio-button" data-value="{{habitacion.id}}">¡La Quiero!</button>
+              </p>
+            </div>
+          </div>
+      </div>
+    </div>
+    <!--MODAL -->
+
+    {% endfor %}
+</div>
+  {% for habitacion in habs_disponibles %}
+  <div class="modal fade" id="modal-detalle-hab-{{habitacion.id}}" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title">{{habitacion.nombre}}</h4>
+        </div>
+        <div class="modal-body">
+          <ul class="nav nav-tabs" role="tablist">
+            <li role="presentation" class="active">
+              <a href="#fotos_panel_{{habitacion.id}}" aria-controls="home" role="tab" data-toggle="tab">Fotos</a>
+            </li>
+            <li role="presentation">
+              <a href="#descripcion_panel_{{habitacion.id}}" aria-controls="profile" role="tab" data-toggle="tab">Descripción</a>
+            </li>
+          </ul>
+          <div class="tab-content">
+            <div role="tabpanel" class="tab-pane active" id="fotos_panel_{{habitacion.id}}">
+              <div id="hab-detalle-{{habitacion.id}}" class="hab-detalle-galeria owl-carousel">
+                  {% for imagen in habitacion.galeria %}
+                  <div class="item">
+                    <img class="lazyOwl img-responsive"
+                     src="{{imagen.path}}" alt="{{habitacion.nombre}}">
+                  </div>
+                  {% endfor %}
+              </div>
+            </div>
+            <div role="tabpanel" class="tab-pane" id="descripcion_panel_{{habitacion.id}}">
+              <p class="text-justify">{{ habitacion.descripcion }}</p>
+              <div class="row">
+
+                  {% for atributo in habitacion.atributos %}
+                    <div class="col-md-4 col-sm-6 col-xs-6">
+                      <h5 class="text-center"><i class="fa fa-check-circle-o" aria-hidden="true"></i> {{atributo.nombre}}</h5>
+                    </div>
+                  {% endfor %}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+{% endif %}

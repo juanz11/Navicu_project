@@ -1,0 +1,22 @@
+columns:
+    id:
+        label: ID
+        type: number
+        searchable: true
+        sortable: true
+    regimen_id:
+        label: Regimen
+        relation: regimen
+        select: nombre
+    ocupacion:
+        label: Ocupacion
+        type: tipo_ocupacion
+    precio:
+        label: Precio
+        type: number
+        searchable: true
+        sortable: true
+    moneda_id:
+        label: Moneda
+        relation: moneda
+        select: moneda

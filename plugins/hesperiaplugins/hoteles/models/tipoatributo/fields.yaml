@@ -1,0 +1,14 @@
+fields:
+    nombre:
+        label: Nombre
+        span: auto
+        type: text
+    codigo:
+        label: Codigo
+        span: auto
+        type: text
+    descripcion:
+        label: Descripcion
+        size: small
+        span: full
+        type: textarea

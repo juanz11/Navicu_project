@@ -1,0 +1,4 @@
+title: Hotel
+modelClass: HesperiaPlugins\Hoteles\Models\Hotel
+toolbar:
+    buttons: reorder_toolbar

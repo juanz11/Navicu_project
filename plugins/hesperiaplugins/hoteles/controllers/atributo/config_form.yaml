@@ -1,0 +1,10 @@
+name: Atributo
+form: $/hesperiaplugins/hoteles/models/atributo/fields.yaml
+modelClass: HesperiaPlugins\Hoteles\Models\Atributo
+defaultRedirect: hesperiaplugins/hoteles/atributo
+create:
+    redirect: 'hesperiaplugins/hoteles/atributo/update/:id'
+    redirectClose: hesperiaplugins/hoteles/atributo
+update:
+    redirect: hesperiaplugins/hoteles/atributo
+    redirectClose: hesperiaplugins/hoteles/atributo

@@ -1,0 +1,51 @@
+fields:
+    titulo:
+        label: Titulo
+        span: left
+        required: 1
+        type: text
+    slug:
+        label: Slug
+        span: right
+        required: 1
+        preset:
+            field: titulo
+            type: slug
+        type: text
+    hotel:
+        label: Hotel
+        nameFrom: nombre
+        descriptionFrom: description
+        span: left
+        required: 1
+        type: relation
+    informacion:
+        label: Información
+        size: huge
+        span: full
+        type: richeditor
+    banner:
+        label: Banner
+        oc.commentPosition: ''
+        mode: image
+        imageWidth: '200'
+        imageHeight: '100'
+        useCaption: true
+        thumbOptions:
+            mode: crop
+            extension: auto
+        span: left
+        required: 1
+        type: fileupload
+    galeria:
+        label: Galeria
+        oc.commentPosition: ''
+        mode: image
+        imageWidth: '100'
+        imageHeight: '100'
+        useCaption: true
+        thumbOptions:
+            mode: crop
+            extension: auto
+        span: auto
+        type: fileupload

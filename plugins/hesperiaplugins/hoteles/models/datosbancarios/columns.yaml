@@ -1,0 +1,26 @@
+columns:
+    hotel_id:
+        label: Hotel
+        type: text
+        select: nombre
+        relation: hotel
+        searchable: true
+        sortable: true
+    banco:
+        label: Banco
+        type: text
+    beneficiario:
+        label: Beneficiario
+        type: text
+    cuenta:
+        label: Cuenta
+        type: text
+    rif:
+        label: RIF
+        type: text
+    swift:
+        label: Swift
+        type: text
+    email:
+        label: Email
+        type: text

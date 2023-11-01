@@ -1,0 +1,4 @@
+title: Calendario
+modelClass: HesperiaPlugins\Hoteles\Models\Calendario
+toolbar:
+    buttons: reorder_toolbar

@@ -1,0 +1,10 @@
+name: Reservacion
+form: $/hesperiaplugins/hoteles/models/reservacion/fields.yaml
+modelClass: HesperiaPlugins\Hoteles\Models\Reservacion
+defaultRedirect: hesperiaplugins/hoteles/reservacion
+create:
+    redirect: 'hesperiaplugins/hoteles/reservacion/update/:id'
+    redirectClose: hesperiaplugins/hoteles/reservacion
+update:
+    redirect: hesperiaplugins/hoteles/reservacion
+    redirectClose: hesperiaplugins/hoteles/reservacion

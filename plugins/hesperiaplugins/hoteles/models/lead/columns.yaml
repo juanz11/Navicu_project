@@ -1,0 +1,16 @@
+columns:
+    id:
+        label: ID
+        type: number
+        searchable: true
+        sortable: true
+    user_id:
+        label: Usuario
+        type: number
+        searchable: true
+        sortable: true
+    reserva_id:
+        label: Reserva
+        type: number
+        searchable: true
+        sortable: true

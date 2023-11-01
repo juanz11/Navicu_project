@@ -1,0 +1,27 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Human
+
+# Model Form Field configuration
+form: $/mohsin/txt/models/human/fields.yaml
+
+# Model Class name
+modelClass: Mohsin\Txt\Models\Human
+
+# Default redirect location
+defaultRedirect: mohsin/txt/humans
+
+# Create page
+create:
+    title: backend::lang.form.create_title
+    redirect: mohsin/txt/humans/update/:id
+    redirectClose: mohsin/txt/humans
+
+# Update page
+update:
+    title: backend::lang.form.update_title
+    redirect: mohsin/txt/humans
+    redirectClose: mohsin/txt/humans

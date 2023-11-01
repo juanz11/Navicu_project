@@ -1,0 +1,11 @@
+list: $/hesperiaplugins/hoteles/models/novedad/columns.yaml
+modelClass: HesperiaPlugins\Hoteles\Models\Novedad
+title: Novedades
+noRecordsMessage: 'backend::lang.list.no_records'
+showSetup: true
+showCheckboxes: true
+toolbar:
+    buttons: list_toolbar
+    search:
+        prompt: 'backend::lang.list.search_prompt'
+recordUrl: 'hesperiaplugins/hoteles/novedades/update/:id'

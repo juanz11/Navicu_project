@@ -1,0 +1,113 @@
+{% if upselling %}
+<script>
+  	$(document).ready(function(){
+
+      $("#fecha_disfrute").datepicker({
+
+  	    language: "es",
+  			orientation: "bottom",
+        defaultViewDate: "{{upselling.fechas_disponibles|first}}",
+  			startDate: "{{__SELF__.fecha_inicial_calendario}}",
+        endDate: "{{__SELF__.fecha_final_calendario}}",
+        format: "dd-mm-yyyy",
+        autoclose: "true",
+  			disableTouchKeyboard: 'true'
+  	  }).on("changeDate", function(e) {
+        var id = $("#id-ups").val();
+
+        var moneda = $("#selector-moneda").val();
+        dd = e.format("dd-m-yyyy");
+        
+        var data = {
+          fecha : dd,
+          id: id,
+          moneda : moneda
+        }
+        consultarDisponibilidad(data);
+      });
+    });
+  </script>
+
+<div class="col-md-12 ">
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <form id="form-upselling" >
+          <div class="col-md-12">
+            <div class="col-md-6">
+              <img class="img-responsive" src="{{upselling.imagen.path}}" alt=""/>
+            </div>
+            <div class="col-md-6">
+              <h2>{{upselling.titulo}}</h2>
+              <p>{{upselling.descripcion|raw}}</p>
+
+              <hr>
+              <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="row">
+                  {% if upselling.ind_calendario == 1 %}
+                  <div class="col-md-12 text-center">
+                    <label >¿Cúando quieres disfrutar este servicio?</label>
+                    <div class="form-group input-group date" id="fecha_disfrute">
+                      <input type="text" class="form-control"  name="fecha_disfrute"
+                       placeholder="Fecha de Disfrute" autocomplete="off"
+                       value="{{__SELF__.fecha_inicial_calendario}}">
+                       <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                    </div>
+                  </div>
+                  {% endif %}
+                  <div class="col-md-6 col-sm-6">
+                    <div class="input-group">
+                      <span class="input-group-addon">
+                        <i class="fa fa-money" aria-hidden="true"></i>
+                      </span>
+                      <select class="form-control selector" id="selector-moneda" name="moneda">
+                          {% for moneda in monedas %}
+                            {% if moneda.id == 2 %}
+                          <option value="{{moneda.id}}">{{moneda.moneda}} - {{moneda.acronimo}}</option>
+                            {% endif%}
+                          {% endfor %}
+                      </select>
+                    </div>
+                    <br>
+                  </div>
+                  <div id="contenedor-precios">
+                    {% partial '@precios' %}
+                  </div>
+
+                </div> <!-- FIN row -->
+                <br>
+              </div>
+            </div>
+          </div>
+
+<!-- http://placehold.it/500x500-->
+        <div class="col-md-12">
+        <hr>
+        <div  class="form col-md-12">
+          <input type="hidden" id="id-ups" name="id-ups" value="{{upselling.id}}">
+          <div class="col-md-12 col-sm-12 col-xs-12 text-right">
+            <div class="form-group">
+              {#<button type="submit" class="btn btn-default">
+                <span class="fa fa-shopping-basket"></span> Añadir
+              </button>#}
+              <button type="submit" class="btn btn-primary">
+                ¡Pagar! <span class="fa fa-check-circle"></span>
+              </button>
+            </div>
+          </div>
+
+        </div>
+        </div>
+        </form>
+      </div>
+    </div>
+</div>
+{% else %}
+<div class="container-fluid">
+	<div class="col-md-10 col-md-offset-1">
+
+		<h1 class="text-center"><i class="fa fa-exclamation-triangle fa-3x"></i>
+			<br>¡Vaya! No hemos podido encontrar lo que solicitas</h1>
+      <br>
+	</div>
+</div>
+{% endif %}

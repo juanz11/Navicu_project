@@ -1,0 +1,10 @@
+list: $/hesperiaplugins/hoteles/models/hotel/columns.yaml
+modelClass: HesperiaPlugins\Hoteles\Models\Hotel
+title: Hoteles
+noRecordsMessage: 'backend::lang.list.no_records'
+showSetup: true
+showCheckboxes: false
+toolbar:
+    search:
+        prompt: 'backend::lang.list.search_prompt'
+recordUrl: 'hesperiaplugins/hoteles/descuento/index/:id'

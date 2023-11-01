@@ -1,0 +1,58 @@
+fields:
+    'habitacion[nombre]':
+        label: 'Tipo habitacion'
+        oc.commentPosition: ''
+        span: auto
+        type: text
+        readOnly: true
+    ocupacion:
+        label: Ocupación
+        oc.commentPosition: ''
+        span: auto
+        type: dropdown
+        disabled: true
+    precio:
+        label: Precio
+        span: auto
+        oc.commentPosition: ''
+        type: number
+        readOnly: true
+    descuentos:
+        path: $/hesperiaplugins/hoteles/controllers/detallereservacion/_descuentos.htm
+        span: full
+        type: partial
+    upgrades:
+        path: $/hesperiaplugins/hoteles/controllers/detallereservacion/_upgrades.htm
+        span: full
+        type: partial
+    info_adicional:
+        label: 'Requerimientos Adicionales'
+        prompt: 'Add new item'
+        span: full
+        type: repeater
+        form:
+            fields:
+                hab_comunicante:
+                    label: 'Habitación comunicante'
+                    span: full
+                    type: checkbox
+                cama_extra:
+                    label: 'Cama Extra'
+                    span: full
+                    type: checkbox
+    huespedes:
+        label: Huespedes
+        prompt: 'Add new item'
+        span: full
+        type: repeater
+        form:
+            fields:
+                nombre:
+                    label: 'Nombre y apellido'
+                    span: auto
+                    type: text
+                documento:
+                    label: Documento
+                    mode: image
+                    span: auto
+                    type: mediafinder

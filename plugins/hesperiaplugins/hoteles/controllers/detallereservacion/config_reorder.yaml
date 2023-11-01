@@ -1,0 +1,4 @@
+title: DetalleReservacion
+modelClass: HesperiaPlugins\Hoteles\Models\DetalleReservacion
+toolbar:
+    buttons: reorder_toolbar

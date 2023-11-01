@@ -1,0 +1,25 @@
+fields:
+    desde:
+        label: Desde
+        mode: date
+        span: left
+        type: datepicker
+    hasta:
+        label: Hasta
+        mode: date
+        span: right
+        type: datepicker
+    moneda:
+        label: Moneda
+        span: left
+        size: small
+        type: dropdown
+    hotel:
+        label: Hotel
+        span: right
+        size: small
+        type: dropdown    
+    partial1:
+        span: full
+        path: $/hesperiaplugins/hoteles/controllers/upselling/_list_categoria_upsellings.htm
+        type: partial

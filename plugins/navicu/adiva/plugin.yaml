@@ -1,0 +1,20 @@
+plugin:
+    name: 'navicu.adiva::lang.plugin.name'
+    description: 'navicu.adiva::lang.plugin.description'
+    author: DevNavicu
+    icon: oc-icon-adn
+    homepage: ''
+navigation:
+    main-menu-item:
+        label: Adivaha
+        url: navicu/adiva
+        icon: icon-adn
+        sideMenu:
+            side-menu-item:
+                label: 'Usuarios De Adivaha'
+                url: navicu/adiva/categories
+                icon: icon-user
+            events:
+                label: 'navicu.adiva::lang.plugin.name'
+                url: /navicu/adiva
+                icon: icon-simplybuilt

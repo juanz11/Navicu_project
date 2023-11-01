@@ -1,0 +1,10 @@
+list: ~/plugins/hesperiaplugins/hoteles/models/cotizacion/columns_agentes_list.yaml
+modelClass: Backend\Models\User
+title: Lista de Agentes
+noRecordsMessage: 'backend::lang.list.no_records'
+showSetup: true
+toolbar:
+    buttons: list_agentes_toolbar
+    search:
+        prompt: 'backend::lang.list.search_prompt'
+recordsPerPage: 15

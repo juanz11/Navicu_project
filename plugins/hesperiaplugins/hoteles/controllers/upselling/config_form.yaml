@@ -1,0 +1,10 @@
+name: Upselling
+form: $/hesperiaplugins/hoteles/models/upselling/fields.yaml
+modelClass: HesperiaPlugins\Hoteles\Models\Upselling
+defaultRedirect: hesperiaplugins/hoteles/upselling
+create:
+    redirect: 'hesperiaplugins/hoteles/upselling/update/:id'
+    redirectClose: hesperiaplugins/hoteles/upselling
+update:
+    redirect: hesperiaplugins/hoteles/upselling
+    redirectClose: hesperiaplugins/hoteles/upselling

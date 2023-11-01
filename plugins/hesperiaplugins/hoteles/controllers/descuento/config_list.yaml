@@ -1,0 +1,11 @@
+title: Descuento
+modelClass: HesperiaPlugins\Hoteles\Models\Descuento
+list: $/hesperiaplugins/hoteles/models/descuento/columns.yaml
+recordUrl: 'hesperiaplugins/hoteles/descuento/update/:id/hotel/:hotel_id'
+noRecordsMessage: 'backend::lang.list.no_records'
+showSetup: true
+showCheckboxes: true
+toolbar:
+    buttons: list_toolbar
+    search:
+        prompt: 'backend::lang.list.search_prompt'

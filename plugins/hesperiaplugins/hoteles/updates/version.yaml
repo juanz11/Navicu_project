@@ -1,0 +1,290 @@
+1.0.1:
+    - 'Initialize plugin.'
+1.0.2:
+    - 'Created table hesperiaplugins_hoteles_hotel'
+    - builder_table_create_hesperiaplugins_hoteles_hotel.php
+1.0.3:
+    - 'Created table hesperiaplugins_hoteles_habitaciones'
+    - builder_table_create_hesperiaplugins_hoteles_habitaciones.php
+1.0.4:
+    - 'Created table hesperiaplugins_hoteles_servicios'
+    - builder_table_create_hesperiaplugins_hoteles_servicios.php
+1.0.5:
+    - 'Created table hesperiaplugins_hoteles_regimen'
+    - builder_table_create_hesperiaplugins_hoteles_regimen.php
+1.0.6:
+    - 'Created table hesperiaplugins_hoteles_novedades'
+    - builder_table_create_hesperiaplugins_hoteles_novedades.php
+1.0.7:
+    - 'Created table hesperiaplugins_hoteles_fechas'
+    - builder_table_create_hesperiaplugins_hoteles_fechas.php
+1.0.8:
+    - 'Created table hesperiaplugins_hoteles_precios'
+    - builder_table_create_hesperiaplugins_hoteles_precios.php
+1.0.9:
+    - 'Created table hesperiaplugins_hoteles_hotel_regimen'
+    - builder_table_create_hesperiaplugins_hoteles_hotel_regimen.php
+1.0.10:
+    - 'Created table hesperiaplugins_hoteles_atributos'
+    - builder_table_create_hesperiaplugins_hoteles_atributos.php
+1.0.11:
+    - 'Created table hesperiaplugins_hoteles_status_reserva'
+    - builder_table_create_hesperiaplugins_hoteles_status_reserva.php
+1.0.12:
+    - 'Created table hesperiaplugins_hoteles_reservacion'
+    - builder_table_create_hesperiaplugins_hoteles_reservacion.php
+1.0.13:
+    - 'Created table hesperiaplugins_hoteles_detalle_reservacion'
+    - builder_table_create_hesperiaplugins_hoteles_detalle_reservacion.php
+1.0.14:
+    - 'Created table hesperiaplugins_hoteles_datos_bancarios'
+    - builder_table_create_hesperiaplugins_hoteles_datos_bancarios.php
+1.0.15:
+    - 'Created table hesperiaplugins_hoteles_tipo_moneda'
+    - builder_table_create_hesperiaplugins_hoteles_moneda.php
+1.0.16:
+    - 'Created table hesperiaplugins_hoteles_impuesto_reserva'
+    - builder_table_create_hesperiaplugins_hoteles_impuesto_reserva.php
+1.0.17:
+    - 'Created table hesperiaplugins_hoteles_impuesto'
+    - builder_table_create_hesperiaplugins_hoteles_impuesto.php
+1.0.18:
+    - 'Created table hesperiaplugins_hoteles_habitacion_atributo'
+    - builder_table_create_hesperiaplugins_hoteles_habitacion_atributo.php
+1.0.19:
+    - 'Created table hesperiaplugins_hoteles_tipo_pago'
+    - builder_table_create_hesperiaplugins_hoteles_tipo_pago.php
+1.0.20:
+    - 'Created table hesperiaplugins_hoteles_pagos'
+    - builder_table_create_hesperiaplugins_hoteles_pagos.php
+1.0.21:
+    - 'Created table hesperiaplugins_hoteles_descuentos'
+    - builder_table_create_hesperiaplugins_hoteles_descuentos.php
+1.0.22:
+    - 'Created table hesperiaplugins_hoteles_descuento_habitacion'
+    - builder_table_create_hesperiaplugins_hoteles_descuento_habitacion.php
+1.0.23:
+    - 'Created table hesperiaplugins_hoteles_descuento_reserva'
+    - builder_table_create_hesperiaplugins_hoteles_descuento_reserva.php
+1.0.24:
+    - 'Updated table hesperiaplugins_hoteles_descuentos'
+    - builder_table_update_hesperiaplugins_hoteles_descuentos.php
+1.0.25:
+    - 'Updated table hesperiaplugins_hoteles_descuentos'
+    - builder_table_update_hesperiaplugins_hoteles_descuentos_2.php
+1.0.26:
+    - 'Updated table hesperiaplugins_hoteles_descuento_habitacion'
+    - builder_table_update_hesperiaplugins_hoteles_descuento_habitacion.php
+1.0.27:
+    - 'Created table hesperiaplugins_hoteles_cotizacion'
+    - builder_table_create_hesperiaplugins_hoteles_cotizacion.php
+1.0.28:
+    - 'Updated table hesperiaplugins_hoteles_reservacion'
+    - builder_table_update_hesperiaplugins_hoteles_reservacion.php
+1.0.29:
+    - 'Created table hesperiaplugins_hoteles_origen_reserva'
+    - builder_table_create_hesperiaplugins_hoteles_origen_reserva.php
+1.0.30:
+    - 'Created table hesperiaplugins_hoteles_observacion'
+    - builder_table_create_hesperiaplugins_hoteles_observacion.php
+1.0.31:
+    - 'Created table hesperiaplugins_hoteles_status_lead'
+    - builder_table_create_hesperiaplugins_hoteles_status_lead.php
+1.0.32:
+    - 'Created table hesperiaplugins_hoteles_reservas_lead'
+    - builder_table_create_hesperiaplugins_hoteles_reservas_lead.php
+1.0.33:
+    - 'Created table hesperiaplugins_hoteles_upselling'
+    - builder_table_create_hesperiaplugins_hoteles_upselling.php
+1.0.34:
+    - 'Created table hesperiaplugins_hoteles_paquete'
+    - builder_table_create_hesperiaplugins_hoteles_paquete.php
+1.0.35:
+    - 'Updated table hesperiaplugins_hoteles_paquete'
+    - builder_table_update_hesperiaplugins_hoteles_paquete.php
+1.0.36:
+    - 'Created table hesperiaplugins_hoteles_paquete_upselling'
+    - builder_table_create_hesperiaplugins_hoteles_paquete_upselling.php
+1.0.37:
+    - 'Created table hesperiaplugins_hoteles_paquete_habitacion'
+    - builder_table_create_hesperiaplugins_hoteles_paquete_habitacion.php
+1.0.38:
+    - 'Created table hesperiaplugins_hoteles_calendario'
+    - builder_table_create_hesperiaplugins_hoteles_calendario.php
+1.0.39:
+    - 'Created table hesperiaplugins_hoteles_fecha_calendario'
+    - builder_table_create_hesperiaplugins_hoteles_fecha_calendario.php
+1.0.40:
+    - 'Created table hesperiaplugins_hoteles_precio_fecha_calendario'
+    - builder_table_create_hesperiaplugins_hoteles_precio_fecha_calendario.php
+1.0.41:
+    - 'Created table hesperiaplugins_hoteles_compra'
+    - builder_table_create_hesperiaplugins_hoteles_compra.php
+1.0.42:
+    - 'Updated table hesperiaplugins_hoteles_paquete'
+    - builder_table_update_hesperiaplugins_hoteles_paquete_2.php
+1.0.43:
+    - 'Created table hesperiaplugins_hoteles_def_categoria_upselling'
+    - builder_table_create_hesperiaplugins_hoteles_def_categoria_upselling.php
+1.0.44:
+    - 'Created table hesperiaplugins_hoteles_rel_categoria_upselling'
+    - builder_table_create_hesperiaplugins_hoteles_rel_categoria_upselling.php
+1.0.45:
+    - 'Created table hesperiaplugins_hoteles_upgrades'
+    - builder_table_create_hesperiaplugins_hoteles_upgrades.php
+1.0.46:
+    - 'Updated table hesperiaplugins_hoteles_reservacion'
+    - builder_table_update_hesperiaplugins_hoteles_reservacion_2.php
+1.0.47:
+    - 'Updated table hesperiaplugins_hoteles_compra'
+    - builder_table_update_hesperiaplugins_hoteles_compra.php
+1.0.48:
+    - 'Updated table hesperiaplugins_hoteles_cotizacion'
+    - builder_table_update_hesperiaplugins_hoteles_cotizacion.php
+1.0.49:
+    - 'Updated table hesperiaplugins_hoteles_upselling'
+    - builder_table_update_hesperiaplugins_hoteles_upselling.php
+1.0.50:
+    - 'Updated table hesperiaplugins_hoteles_upselling'
+    - builder_table_update_hesperiaplugins_hoteles_upselling_2.php
+1.0.51:
+    - 'Updated table hesperiaplugins_hoteles_reservacion'
+    - builder_table_update_hesperiaplugins_hoteles_reservacion_3.php
+1.0.52:
+    - 'Created table hesperiaplugins_hoteles_tags'
+    - builder_table_create_hesperiaplugins_hoteles_tags.php
+1.0.53:
+    - 'Updated table hesperiaplugins_hoteles_compra'
+    - builder_table_update_hesperiaplugins_hoteles_compra_2.php
+1.0.54:
+    - 'Updated table hesperiaplugins_hoteles_upselling'
+    - builder_table_update_hesperiaplugins_hoteles_upselling_3.php
+1.0.55:
+    - 'Updated table hesperiaplugins_hoteles_upgrades'
+    - builder_table_update_hesperiaplugins_hoteles_upgrades.php
+1.0.56:
+    - 'Created table hesperiaplugins_hoteles_impuestables'
+    - builder_table_create_hesperiaplugins_hoteles_impuestables.php
+1.0.57:
+    - 'Updated table hesperiaplugins_hoteles_paquete'
+    - builder_table_update_hesperiaplugins_hoteles_paquete_3.php
+1.0.58:
+    - 'Created table hesperiaplugins_hoteles_hotel_tipo_pago'
+    - builder_table_create_hesperiaplugins_hoteles_hotel_tipo_pago.php
+1.0.60:
+    - 'Updated table hesperiaplugins_hoteles_compra'
+    - builder_table_update_hesperiaplugins_hoteles_compra_3.php
+1.0.61:
+    - 'Updated table hesperiaplugins_hoteles_descuentos'
+    - builder_table_update_hesperiaplugins_hoteles_descuentos_3.php
+1.0.63:
+    - 'Updated table hesperiaplugins_hoteles_detalle_reservacion'
+    - builder_table_update_hesperiaplugins_hoteles_detalle_reservacion_2.php
+1.0.64:
+    - 'Updated table hesperiaplugins_hoteles_hotel'
+    - builder_table_update_hesperiaplugins_hoteles_hotel.php
+1.0.65:
+    - 'Updated table hesperiaplugins_hoteles_moneda'
+    - builder_table_update_hesperiaplugins_hoteles_moneda.php
+1.0.66:
+    - 'Updated table hesperiaplugins_hoteles_hotel_regimen'
+    - builder_table_update_hesperiaplugins_hoteles_hotel_regimen.php
+1.1.01:
+    - 'Created table hesperiaplugins_hoteles_tipo_atributo'
+    - builder_table_create_hesperiaplugins_hoteles_tipo_atributo.php
+1.1.2:
+    - 'Created table hesperiaplugins_hoteles_hotel_atributo'
+    - builder_table_create_hesperiaplugins_hoteles_hotel_atributo.php
+1.1.3:
+    - 'Updated table hesperiaplugins_hoteles_atributos'
+    - builder_table_update_hesperiaplugins_hoteles_atributos.php
+1.1.4:
+    - 'Updated table hesperiaplugins_hoteles_habitacion_atributo'
+    - builder_table_update_hesperiaplugins_hoteles_habitacion_atributo.php
+1.1.5:
+    - 'Updated table hesperiaplugins_hoteles_hotel'
+    - builder_table_update_hesperiaplugins_hoteles_hotel_2.php
+1.1.6:
+    - 'Updated table hesperiaplugins_hoteles_reservacion'
+    - builder_table_update_hesperiaplugins_hoteles_reservacion_6.php
+1.1.7:
+    - 'Updated table hesperiaplugins_hoteles_reservacion'
+    - builder_table_update_hesperiaplugins_hoteles_reservacion_7.php
+1.1.8:
+    - 'Updated table hesperiaplugins_hoteles_detalle_reservacion'
+    - builder_table_update_hesperiaplugins_hoteles_detalle_reservacion.php
+1.1.9:
+    - 'Updated table hesperiaplugins_hoteles_reservacion'
+    - builder_table_update_hesperiaplugins_hoteles_reservacion_8.php
+1.1.10:
+    - 'Updated table hesperiaplugins_hoteles_compra'
+    - builder_table_update_hesperiaplugins_hoteles_compra_4.php
+1.1.11:
+    - 'Updated table hesperiaplugins_hoteles_compra'
+    - builder_table_update_hesperiaplugins_hoteles_compra_5.php
+1.1.12:
+    - 'Updated table hesperiaplugins_hoteles_tipo_pago'
+    - builder_table_update_hesperiaplugins_hoteles_tipo_pago.php
+1.1.13:
+    - 'Updated table hesperiaplugins_hoteles_tipo_pago'
+    - builder_table_update_hesperiaplugins_hoteles_tipo_pago_2.php
+1.1.14:
+    - 'Updated table hesperiaplugins_hoteles_upselling'
+    - builder_table_update_hesperiaplugins_hoteles_upselling_4.php
+1.1.15:
+    - 'Updated table hesperiaplugins_hoteles_upselling'
+    - builder_table_update_hesperiaplugins_hoteles_upselling_5.php
+1.1.16:
+    - 'Updated table hesperiaplugins_hoteles_precio_fecha_calendario'
+    - builder_table_update_hesperiaplugins_hoteles_precio_fecha_calendario.php
+1.1.17:
+    - 'Updated table hesperiaplugins_hoteles_fecha_calendario'
+    - builder_table_update_hesperiaplugins_hoteles_fecha_calendario.php
+1.1.18:
+    - 'Updated table hesperiaplugins_hoteles_paquete_habitacion'
+    - builder_table_update_hesperiaplugins_hoteles_paquete_habitacion.php
+1.1.19:
+    - 'Updated table hesperiaplugins_hoteles_upselling'
+    - builder_table_update_hesperiaplugins_hoteles_upselling_6.php
+1.1.20:
+    - 'Updated table hesperiaplugins_hoteles_upgrades'
+    - builder_table_update_hesperiaplugins_hoteles_upgrades_2.php
+1.1.21:
+    - 'Updated table hesperiaplugins_hoteles_paquete'
+    - builder_table_update_hesperiaplugins_hoteles_paquete_4.php
+1.1.22:
+    - 'Updated table hesperiaplugins_hoteles_paquete'
+    - builder_table_update_hesperiaplugins_hoteles_paquete_5.php
+1.1.23:
+    - 'Updated table hesperiaplugins_hoteles_paquete'
+    - builder_table_update_hesperiaplugins_hoteles_paquete_6.php
+1.1.24:
+    - 'Updated table hesperiaplugins_hoteles_upselling'
+    - builder_table_update_hesperiaplugins_hoteles_upselling_7.php
+1.1.25:
+    - 'Updated table hesperiaplugins_hoteles_upgrades'
+    - builder_table_update_hesperiaplugins_hoteles_upgrades_3.php
+1.1.26:
+    - 'Updated table hesperiaplugins_hoteles_upselling'
+    - builder_table_update_hesperiaplugins_hoteles_upselling_8.php
+1.1.27:
+    - 'Updated table hesperiaplugins_hoteles_paquete'
+    - builder_table_update_hesperiaplugins_hoteles_paquete_7.php
+1.1.28:
+    - 'Updated table hesperiaplugins_hoteles_hotel'
+    - builder_table_update_hesperiaplugins_hoteles_hotel_3.php
+1.1.29:
+    - 'Updated table hesperiaplugins_hoteles_paquete'
+    - builder_table_update_hesperiaplugins_hoteles_paquete_8.php
+1.1.30:
+    - 'Updated table hesperiaplugins_hoteles_hotel'
+    - builder_table_update_hesperiaplugins_hoteles_hotel_4.php
+1.1.31:
+    - 'Updated table hesperiaplugins_hoteles_hotel'
+    - builder_table_update_hesperiaplugins_hoteles_hotel_5.php
+1.1.32:
+    - 'Updated table hesperiaplugins_hoteles_paquete'
+    - builder_table_update_hesperiaplugins_hoteles_paquete_9.php
+1.1.33:
+    - 'Updated table hesperiaplugins_hoteles_upselling'
+    - builder_table_update_hesperiaplugins_hoteles_upselling_9.php

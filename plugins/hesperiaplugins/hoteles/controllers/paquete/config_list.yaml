@@ -1,0 +1,13 @@
+list: $/hesperiaplugins/hoteles/models/paquete/columns.yaml
+modelClass: HesperiaPlugins\Hoteles\Models\Paquete
+title: Paquete
+noRecordsMessage: 'backend::lang.list.no_records'
+showSetup: true
+showCheckboxes: true
+recordsPerPage: 20
+toolbar:
+    buttons: list_toolbar
+    search:
+        prompt: 'backend::lang.list.search_prompt'
+recordUrl: 'hesperiaplugins/hoteles/paquete/update/:id/hotel/:hotel_id'
+filter: config_filter.yaml

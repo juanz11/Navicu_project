@@ -1,0 +1,10 @@
+columns:
+    fecha:
+        label: 'Fecha'
+        type: date
+        format: d-m-Y
+        searchable: true
+        sortable: true
+    disponible:
+        label: disponible
+        type: number

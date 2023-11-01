@@ -1,0 +1,35 @@
+columns:
+    id:
+        label: ID
+        type: number
+        searchable: true
+        sortable: true
+    created_at:
+        label: Fecha
+        type: Date
+        searchable: true
+        sortable: true
+    nombre_cliente:
+        label: Cliente
+        type: text
+        searchable: true
+        sortable: true
+    total:
+        label: Total
+        type: monto_formateado
+        sortable: true
+    moneda_id:
+        label: Moneda
+        type: number
+        select: moneda
+        relation: moneda
+    status_id:
+        label: Status
+        type: text
+        select: status
+        relation: status
+    origen_id:
+        label: Origen
+        type: text
+        select: origen
+        relation: origen

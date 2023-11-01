@@ -1,0 +1,35 @@
+fields:
+    enabled:
+        label: 'aleksandrnovoselov.robots::lang.models.robots.enabled'
+        type: switch
+        span: auto
+    _partial1:
+        type: partial
+        span: auto
+        path: $/aleksandrnovoselov/robots/models/robots/_link.htm
+    robots:
+        label: 'aleksandrnovoselov.robots::lang.models.robots.title'
+        span: full
+        type: repeater
+        form:
+            fields:
+                userAgent:
+                    label: 'aleksandrnovoselov.robots::lang.models.robots.user-agent.label'
+                    type: dropdown
+                    placeholder: 'aleksandrnovoselov.robots::lang.models.robots.user-agent.placeholder'
+                    attributes:
+                        data-tags: true
+                        data-allow-clear: false
+                action:
+                    label: 'aleksandrnovoselov.robots::lang.models.robots.action.label'
+                    span: auto
+                    type: dropdown
+                    placeholder: 'aleksandrnovoselov.robots::lang.models.robots.action.placeholder'
+                    showSearch: false
+                    attributes:
+                        data-allow-clear: false
+                path:
+                    label: 'aleksandrnovoselov.robots::lang.models.robots.path'
+                    span: auto
+                    placeholder: /
+                    default: /

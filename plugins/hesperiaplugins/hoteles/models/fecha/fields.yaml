@@ -1,0 +1,44 @@
+fields:
+    fecha_desde:
+        label: Fecha Desde
+        oc.commentPosition: ''
+        mode: date
+        span: auto
+        required: 1
+        type: datepicker
+        format: d-mm-yy
+    fecha_final:
+        label: Fecha Hasta
+        oc.commentPosition: ''
+        mode: date
+        span: auto
+        required: 1
+        type: datepicker
+        format: d-mm-yy
+    precio:
+        label: Precio
+        span: auto
+        required: 1
+        type: number
+        default: 0
+    cantidad:
+        label: Cantidad Disponible
+        span: auto
+        required: 1
+        type: number
+        default: 0
+    regimen:
+        label: regimen
+        span: auto
+        required: 1
+        type: dropdown
+    ocupacion:
+        label: Ocupación
+        span: auto
+        required: 1
+        type: dropdown
+    moneda:
+        label: Moneda
+        span: auto
+        required: 1
+        type: dropdown

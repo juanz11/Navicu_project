@@ -1,0 +1,13 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    attribution:
+        label: Attribution
+        type: dropdown
+
+    information:
+        label: Information
+        type: partial
+        path: information

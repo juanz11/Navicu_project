@@ -1,0 +1,21 @@
+<?php if (count($model->precios)): ?>
+<div class="control-list">
+  <h5>Precios</h5>
+    <table class="table data">
+        <thead>
+            <tr>
+                <th><a href="#">Precio</a></th>
+                <th><a href="#">Moneda</a></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <?php foreach ($model->precios  as $precio): ?>
+                  <td><?=e($precio->cambiarFormatoPrecio()) ?> </td>
+                  <td><?=e($precio->moneda->moneda) ?></td>
+                <?php endforeach ?>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<?php endif ?>

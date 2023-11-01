@@ -1,0 +1,10 @@
+name: Servicios
+form: $/hesperiaplugins/hoteles/models/servicio/fields.yaml
+modelClass: HesperiaPlugins\Hoteles\Models\Servicio
+defaultRedirect: hesperiaplugins/hoteles/servicios
+create:
+    redirect: 'hesperiaplugins/hoteles/servicios/update/:id'
+    redirectClose: hesperiaplugins/hoteles/servicios
+update:
+    redirect: hesperiaplugins/hoteles/servicios
+    redirectClose: hesperiaplugins/hoteles/servicios

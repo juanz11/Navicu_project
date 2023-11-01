@@ -1,0 +1,10 @@
+name: Cotizacion
+form: $/hesperiaplugins/hoteles/models/cotizacion/fields.yaml
+modelClass: HesperiaPlugins\Hoteles\Models\Cotizacion
+defaultRedirect: hesperiaplugins/hoteles/cotizacion
+create:
+    redirect: 'hesperiaplugins/hoteles/cotizacion/update/:id'
+    redirectClose: hesperiaplugins/hoteles/cotizacion
+update:
+    redirect: hesperiaplugins/hoteles/cotizacion
+    redirectClose: hesperiaplugins/hoteles/cotizacion

@@ -1,0 +1,8 @@
+items:
+    label: test
+    view:
+        list: $/hesperiaplugins/hoteles/models/preciofecha/columns.yaml
+        toolbarButtons: create|delete
+    manage:
+        form: $/hesperiaplugins/hoteles/models/preciofecha/fields.yaml
+        recordsPerPage: 10

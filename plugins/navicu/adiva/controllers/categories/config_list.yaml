@@ -1,0 +1,12 @@
+list: $/navicu/adiva/models/adivaha/columns.yaml
+modelClass: Navicu\Adiva\Models\Adivaha
+title: Categories
+noRecordsMessage: 'backend::lang.list.no_records'
+showSetup: true
+showCheckboxes: true
+recordsPerPage: 20
+toolbar:
+    buttons: list_toolbar
+    search:
+        prompt: 'backend::lang.list.search_prompt'
+recordUrl: 'navicu/adiva/categories/update/:id'

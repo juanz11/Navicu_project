@@ -1,0 +1,38 @@
+<div class="col-md-6 col-sm-6"  >
+  <div class="input-group">
+    <span class="input-group-addon"><small>cantidad</small></span>
+    <select class="form-control selector" id="selector-cantidad" name="cantidad">
+      {% set indice_inicial = 0 %}
+
+        {% if upselling.cantidad_min < 1 %}
+
+          {% set indice_inicial = 1 %}
+
+        {% else %}
+
+          {% set indice_inicial = upselling.cantidad_min %}
+
+        {% endif %}
+
+        {% for i in indice_inicial..upselling.disponible_inicial %}
+          <option value="{{i}}">{{ i }}</option>
+        {% endfor %}
+    </select>
+  </div>
+</div>
+<br>
+{% set precios =  upselling.getPreciosMultiMoneda(propiedades) %}
+
+{% for precio in precios %}
+    {% if loop.index == 1 %}
+      {% set hidden = "" %}
+    {% else %}
+      {% set hidden = "hidden" %}
+    {% endif %}
+    <div class="col-md-12 well well-sm {{hidden}} precio-content" id="container-precio-{{precio.moneda_id}}"
+    data-base="{{precio.precio}}">
+      <p class="text-center"><strong>Precio:</strong> <span id="precio-{{precio.moneda_id}}">
+        {{__SELF__.cambiarFormatoPrecio(precio.precio, precio.moneda_id)}}</span> - {{precio.acronimo}}
+      </p>
+    </div>
+{% endfor %}

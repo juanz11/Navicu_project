@@ -1,0 +1,62 @@
+
+<div class="control-popup modal fade" id="content-form-tarifas" tabindex="-1" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">Cargar/Modificar Precios</h4>
+            </div>
+            <?= Form::open() ?>
+            <input type="hidden" name="habitacion" value="<?php $this->habitacion_info['id'] ?>" />
+            <div class="modal-body">
+                <?= $modal_form->render(); ?>
+            </div>
+            <div class="modal-footer">
+              <div class="loading-indicator-container">
+                  <button
+                      type="submit"
+                      data-request="onCargarTarifa"
+                      data-request-data="close:1"
+                      data-hotkey="ctrl+s, cmd+s"
+                      data-load-indicator="<?= e(trans('backend::lang.form.saving')) ?>"
+                      class="btn btn-primary">
+                      Cargar/Modificar
+                  </button>
+              </div>
+            </div>
+
+            <?= Form::close() ?>
+        </div>
+    </div>
+</div>
+
+<div class="control-popup modal fade" id="content-form-disponibilidad" tabindex="-1" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">Modificar Disponibilidad</h4>
+            </div>
+            <?= Form::open() ?>
+            <input type="hidden" name="habitacion" value="<?php $this->habitacion_info['id'] ?>" />
+            <div class="modal-body">
+                <?= $modal_form_disponibilidad->render(); ?>
+            </div>
+            <div class="modal-footer">
+              <div class="loading-indicator-container">
+                  <button
+                      type="submit"
+                      data-request="onCambiarDisponibilidad"
+                      data-request-data="close:1"
+                      data-hotkey="ctrl+s, cmd+s"
+                      data-load-indicator="<?= e(trans('backend::lang.form.saving')) ?>"
+                      class="btn btn-primary">
+                      Modificar
+                  </button>
+              </div>
+            </div>
+
+            <?= Form::close() ?>
+        </div>
+    </div>
+</div>

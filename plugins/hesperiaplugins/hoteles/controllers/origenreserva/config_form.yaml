@@ -1,0 +1,10 @@
+name: OrigenReserva
+form: $/hesperiaplugins/hoteles/models/origenreserva/fields.yaml
+modelClass: HesperiaPlugins\Hoteles\Models\OrigenReserva
+defaultRedirect: hesperiaplugins/hoteles/origenreserva
+create:
+    redirect: 'hesperiaplugins/hoteles/origenreserva/update/:id'
+    redirectClose: hesperiaplugins/hoteles/origenreserva
+update:
+    redirect: hesperiaplugins/hoteles/origenreserva
+    redirectClose: hesperiaplugins/hoteles/origenreserva

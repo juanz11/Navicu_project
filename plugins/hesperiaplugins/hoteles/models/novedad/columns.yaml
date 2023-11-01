@@ -1,0 +1,9 @@
+columns:
+    titulo:
+        label: Titulo
+        type: text
+        searchable: true
+        sortable: true
+    url:
+        label: Url
+        type: text

@@ -1,0 +1,32 @@
+
+<form class="form-elements" role="form" id="form-precio-upselling-sec">
+  <div class="row">
+
+    <?= $widget->renderField("fecha_disfrute"); ?>
+    <?= $widget->renderField("precio"); ?>
+    <?= $widget->renderField("cantidad"); ?>
+    <?= $widget->renderField("id"); ?>
+
+  </div>
+  <div class="row">
+    <div class="callout fade in callout-success">
+        <div class="content">
+            <p><strong>Precio:</strong> <span class="spanPrecio">0</span> </p>
+        </div>
+    </div>
+  </div>
+
+    <div class="loading-indicator-container">
+      <p class="text-right">
+      <button type="submit" class="btn btn-primary"
+          data-load-indicator="Espere..."
+          data-attach-loading
+          data-request="onAddUpsellingSec"
+          data-request-complete="$('#content-precios-upsellings-sec').modal('hide');"
+          >
+          Añadir
+       </button>
+       </p>
+    </div>
+
+</form>

@@ -1,0 +1,4 @@
+title: Descuento
+modelClass: HesperiaPlugins\Hoteles\Models\Descuento
+toolbar:
+    buttons: reorder_toolbar

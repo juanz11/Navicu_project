@@ -1,0 +1,26 @@
+{% if __SELF__.property('num_slides') == '3'  %}
+  {% set class ="slider-3-items" %}
+  {% set subclass = "col-md-12" %}
+{% else %}
+  {% set class ="slider-default" %}
+  {% set subclass = "" %}
+{% endif %}
+
+<div class="col-md-12" >
+  <div class="{{class}}">{% for paquete in paquetes %}
+    <div class="item {{subclass}}">
+      <div class="wrapper"><img src="{{paquete.banner.path}}" class="img-responsive">
+        <div class="speakers-thumb">
+
+          <h3 class="text-center">{{ paquete.titulo|upper }}<br>
+          <small>{{paquete.hotel.nombre}}</small></h3>
+
+          <p class="text-center">
+            <a class="btn btn-default" href="{{ 'paquete/'~ paquete.slug }}">LO QUIERO</a>
+          </p>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>

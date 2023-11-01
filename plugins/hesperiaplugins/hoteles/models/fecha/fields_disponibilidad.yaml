@@ -1,0 +1,21 @@
+fields:
+    fecha_desde:
+        label: Fecha Desde
+        oc.commentPosition: ''
+        mode: date
+        span: auto
+        required: 1
+        type: datepicker
+    fecha_final:
+        label: Fecha Hasta
+        oc.commentPosition: ''
+        mode: date
+        span: auto
+        required: 1
+        type: datepicker
+    cantidad:
+        label: Cantidad Disponible
+        span: auto
+        required: 1
+        type: number
+        default: 0

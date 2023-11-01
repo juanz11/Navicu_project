@@ -1,0 +1,10 @@
+name: Fecha
+form: $/hesperiaplugins/hoteles/models/fecha/fields_local.yaml
+modelClass: HesperiaPlugins\Hoteles\Models\Fecha
+defaultRedirect: hesperiaplugins/hoteles/fecha
+#create:
+#    redirect: 'hesperiaplugins/hoteles/fecha/update/:id'
+#    redirectClose: hesperiaplugins/hoteles/fecha
+update:
+    redirect: hesperiaplugins/hoteles/fecha/index/:habitacion_id
+    redirectClose: hesperiaplugins/hoteles/fecha/index/:habitacion_id

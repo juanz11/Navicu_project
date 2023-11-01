@@ -1,0 +1,10 @@
+name: Tag
+form: $/hesperiaplugins/hoteles/models/tag/fields.yaml
+modelClass: HesperiaPlugins\Hoteles\Models\Tag
+defaultRedirect: hesperiaplugins/hoteles/tag
+create:
+    redirect: 'hesperiaplugins/hoteles/tag/update/:id'
+    redirectClose: hesperiaplugins/hoteles/tag
+update:
+    redirect: hesperiaplugins/hoteles/tag
+    redirectClose: hesperiaplugins/hoteles/tag

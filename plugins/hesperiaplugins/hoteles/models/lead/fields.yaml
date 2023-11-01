@@ -1,0 +1,9 @@
+fields:
+    user_id:
+        label: Usuario
+        span: auto
+        type: text
+    reserva_id:
+        label: Reserva
+        span: auto
+        type: text

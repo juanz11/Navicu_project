@@ -1,0 +1,10 @@
+name: Observacion
+form: $/hesperiaplugins/hoteles/models/observacion/fields.yaml
+modelClass: HesperiaPlugins\Hoteles\Models\Observacion
+defaultRedirect: hesperiaplugins/hoteles/observacion
+create:
+    redirect: 'hesperiaplugins/hoteles/observacion/update/:id'
+    redirectClose: hesperiaplugins/hoteles/observacion
+update:
+    redirect: hesperiaplugins/hoteles/observacion
+    redirectClose: hesperiaplugins/hoteles/observacion

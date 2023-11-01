@@ -1,0 +1,23 @@
+fields:
+    acronimo:
+        label: Acronimo
+        oc.commentPosition: ''
+        span: auto
+        type: text
+    moneda:
+        label: Moneda
+        oc.commentPosition: ''
+        span: auto
+        type: text
+    ind_activo:
+        label: Activa
+        span: auto
+        type: switch
+    defecto:
+        label: Defecto
+        span: auto
+        type: switch
+    tasa:
+        label: Tasa
+        span: auto
+        type: number

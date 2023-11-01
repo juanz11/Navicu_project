@@ -1,0 +1,27 @@
+<?php if(count($resultado) > 0): ?>
+    
+        <?php foreach ($resultado as $reserva): ?>
+            <tr>
+                <td><?php 
+                    $roomNight = ($reserva->roomNight ? $reserva->roomNight : "0"); echo $roomNight; ?>
+                </td>    
+                <td>
+                <?php 
+                    $revenue =($reserva->total ? number_format($reserva->total, 0 ,",", ".") : "0"); echo $revenue; ?>
+                </td>
+
+                <td><?php
+                    $adr = ($reserva->total && $reserva->roomNight ? $reserva->total / $reserva->roomNight : "0"); 
+                    echo number_format(round($adr,1), 0 ,",","."); ?>
+                </td>
+            </tr>    
+        <?php endforeach ?>
+    <?php else: ?>
+        <tr class="no-data">
+            <td colspan="100" class="nolink">
+                <p class="no-data">
+                    No se encontraron resultados.
+                </p>
+            </td>
+        </tr>
+<?php endif ?>

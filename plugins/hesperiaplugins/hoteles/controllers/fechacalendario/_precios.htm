@@ -1,0 +1,23 @@
+<?php if (count($model->precios)): ?>
+<div class="control-list">
+  <h5>Precios</h5>
+    <table class="table data">
+        <thead>
+            <tr>
+                <th><a href="#">Precio adulto</a></th>
+                <th><a href="#">Precio niño</a></th>
+                <th><a href="#">Moneda</a></th>
+            </tr>
+        </thead>
+        <tbody>
+        <?php foreach ($model->precios  as $precio): ?>
+          <tr>
+            <td><?=e($precio->cambiarFormatoPrecio()) ?> </td>
+            <td><?=e($precio->precio_nino) ?> </td>
+            <td><?=e($precio->moneda->moneda) ?></td>
+          </tr>
+        <?php endforeach ?>
+        </tbody>
+    </table>
+</div>
+<?php endif ?>

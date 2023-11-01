@@ -1,0 +1,36 @@
+fields:
+    referencia:
+        label: Referencia
+        oc.commentPosition: ''
+        span: auto
+        required: 1
+        type: text
+
+    tipoPago:
+        label: 'Tipo de Pago'
+        span: auto
+        oc.commentPosition: ''
+        nameFrom: nombre
+        descriptionFrom: nombre
+        required: 1
+        type: relation
+tabs:
+    fields:
+      archivo:
+          label: Archivo
+          span: auto
+          oc.commentPosition: ''
+          mode: file
+          useCaption: false
+          thumbOptions:
+              mode: crop
+              extension: auto
+          imageWidth: '400'
+          imageHeight: '200'
+          type: fileupload
+          tab: Archivo
+      comprobante_e:
+          label: Comprobante Electronico
+          type: partial
+          path: $/hesperiaplugins/hoteles/controllers/pago/_comprobante_e.htm
+          tab: Comprobante

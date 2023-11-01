@@ -1,0 +1,19 @@
+columns:
+    id:
+        label: ID
+        type: number
+        searchable: true
+        sortable: true
+    concepto:
+        label: Concepto
+        type: text
+        searchable: true
+        sortable: true
+    porcentaje:
+        label: Porcentaje
+        type: number
+        searchable: true
+        sortable: true
+    hotel:
+        relation: hotel
+        select: nombre

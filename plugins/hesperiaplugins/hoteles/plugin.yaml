@@ -1,0 +1,243 @@
+plugin:
+    name: 'hesperiaplugins.hoteles::lang.plugin.name'
+    description: 'hesperiaplugins.hoteles::lang.plugin.description'
+    author: 'Jesus Castillo'
+    icon: oc-icon-building-o
+    homepage: ''
+navigation:
+    main-menu-item:
+        label: Hoteles
+        url: hesperiaplugins/hoteles/hotel
+        icon: icon-building-o
+        permissions:
+            - gestion_general_hoteles
+        sideMenu:
+            Hoteles:
+                label: Hoteles
+                url: hesperiaplugins/hoteles/hotel
+                icon: icon-building-o
+                permissions:
+                    - gestion_general_hoteles
+            side-menu-item:
+                label: Habitaciones
+                url: hesperiaplugins/hoteles/habitaciones
+                icon: icon-hotel
+                permissions:
+                    - gestion_habitaciones
+            side-menu-item3:
+                label: Servicios
+                url: hesperiaplugins/hoteles/servicios
+                icon: icon-star
+                permissions:
+                    - gestion_servicios
+            side-menu-item5:
+                label: Regímenes
+                url: hesperiaplugins/hoteles/regimen
+                icon: icon-coffee
+                permissions:
+                    - gestion_regimenes
+            side-menu-item6:
+                label: 'Status Reserva'
+                url: hesperiaplugins/hoteles/status
+                icon: icon-star-half-o
+                permissions:
+                    - gestion_status_reservas
+            side-menu-item8:
+                label: 'Datos Bancarios'
+                url: hesperiaplugins/hoteles/datosbancarios
+                icon: icon-bank
+                permissions:
+                    - gestion_datos_bancarios
+            side-menu-item9:
+                label: Impuestos
+                url: hesperiaplugins/hoteles/impuestos
+                icon: icon-deviantart
+                permissions:
+                    - gestion_impuestos
+            side-menu-item7:
+                label: Atributos
+                url: hesperiaplugins/hoteles/atributo
+                icon: icon-sliders
+                permissions:
+                    - gestion_atributos
+            side-menu-item2:
+                label: 'Tipo Atributo'
+                url: hesperiaplugins/hoteles/tipoatributo
+                icon: icon-chain
+    main-menu-item2:
+        label: Moneda
+        url: hesperiaplugins/hoteles/moneda
+        icon: icon-money
+        permissions:
+            - gestion_moneda_pagos
+        sideMenu:
+            side-menu-item4:
+                label: Moneda
+                url: hesperiaplugins/hoteles/moneda
+                icon: icon-money
+                permissions:
+                    - gestion_moneda_pagos
+            side-menu-item2:
+                label: Pagos
+                url: hesperiaplugins/hoteles/pago
+                icon: icon-archive
+            side-menu-item:
+                label: 'Tipos de Pago'
+                url: hesperiaplugins/hoteles/tipopago
+                icon: icon-tasks
+            side-menu-item3:
+                label: Descuentos
+                url: hesperiaplugins/hoteles/descuento/index
+                icon: icon-cart-arrow-down
+                permissions:
+                    - gestion_descuentos
+            side-menu-item5:
+                label: 'Origen Reserva'
+                url: hesperiaplugins/hoteles/origenreserva
+                icon: icon-exchange
+            side-menu-item6:
+                label: Observaciones
+                url: hesperiaplugins/hoteles/observacion
+                icon: icon-book
+                permissions:
+                    - gestionar_observaciones
+            side-menu-item7:
+                label: 'Status Leads'
+                url: /
+                icon: icon-cog
+                permissions:
+                    - gestionar_leads
+    main-menu-item3:
+        label: Reservaciones
+        url: hesperiaplugins/hoteles/reservacion
+        icon: icon-suitcase
+        permissions:
+            - gestion_reservas
+        sideMenu:
+            side-menu-item8:
+                label: Reservaciones
+                url: hesperiaplugins/hoteles/reservacion
+                icon: icon-suitcase
+                permissions:
+                    - gestion_reservas
+            side-menu-item:
+                label: Paquetes
+                url: hesperiaplugins/hoteles/paquete
+                icon: icon-cart-plus
+                permissions:
+                    - gestion_paquetes
+            side-menu-item2:
+                label: Upsellings
+                url: hesperiaplugins/hoteles/upselling
+                icon: icon-beer
+                permissions:
+                    - gestion_upsellings
+            side-menu-item3:
+                label: 'Categoria Upselling'
+                url: hesperiaplugins/hoteles/categoriaupselling
+                icon: icon-list-alt
+                permissions:
+                    - gestion_categoria_upsellings
+            side-menu-item4:
+                label: Upgrades
+                url: hesperiaplugins/hoteles/upgrade
+                icon: icon-asterisk
+                permissions:
+                    - gestion_upgrades
+            side-menu-item5:
+                label: Cotización
+                url: hesperiaplugins/hoteles/cotizacion
+                icon: icon-envelope-o
+                permissions:
+                    - gestion_cotizaciones
+            side-menu-item6:
+                label: Compra
+                url: hesperiaplugins/hoteles/compra
+                icon: icon-shopping-cart
+                permissions:
+                    - gestion_compras
+            side-menu-item7:
+                label: Tags
+                url: hesperiaplugins/hoteles/tag
+                icon: icon-bookmark
+                permissions:
+                    - gestion_tags
+permissions:
+    gestion_general_hoteles:
+        tab: Hoteles
+        label: 'Agregar, Modificar y Eliminar información de los Hoteles'
+    gestion_tarifas:
+        tab: Hoteles
+        label: 'Gestionar Tarifas'
+    gestion_reservas:
+        tab: Hoteles
+        label: 'Acceder al menu de reservaciones'
+    gestion_status_reservas:
+        tab: Hoteles
+        label: 'Agregar. Modificar y Eliminar status de reservaciones'
+    gestion_moneda_pagos:
+        tab: Hoteles
+        label: 'Gestionar monedas o pagos'
+    gestion_habitaciones:
+        tab: Hoteles
+        label: 'Agregar, Modificar y Eliminar información de Habitaciones'
+    gestion_atributos:
+        tab: Hoteles
+        label: 'Agregar, Modificar y Eliminar información de Atributos'
+    gestion_novedades:
+        tab: Hoteles
+        label: 'Agregar, Modificar y Eliminar información de Novedades'
+    gestion_servicios:
+        tab: Hoteles
+        label: 'Agregar, Modificar y Eliminar información de Servicios'
+    gestion_regimenes:
+        tab: Hoteles
+        label: 'Agregar, Modificar y Eliminar información de Regimenes'
+    gestion_datos_bancarios:
+        tab: Hoteles
+        label: 'Agregar, Modificar y Eliminar información de Bancos'
+    gestion_impuestos:
+        tab: Hoteles
+        label: 'Agregar, Modificar y Eliminar información impuestos'
+    gestion_descuentos:
+        tab: Hoteles
+        label: 'Agregar, Modificar y eliminar descuentos'
+    cotizaciones:
+        tab: Hoteles
+        label: 'Crear cotizaciones'
+    modificar_reservas:
+        tab: Hoteles
+        label: 'Modificar una reservación'
+    eliminar_reservas:
+        tab: Hoteles
+        label: 'Eliminar una reservación'
+    gestionar_leads:
+        tab: Hoteles
+        label: 'Gestionar Leads'
+    gestionar_observaciones:
+        tab: Hoteles
+        label: 'Gestionar Observaciones'
+    ver_lista_agentes:
+        tab: Hoteles
+        label: 'Ver Lista de Agentes de Reservas'
+    gestion_paquetes:
+        tab: Reservaciones
+        label: 'Acceder al menú de paquetes'
+    gestion_cotizaciones:
+        tab: Reservaciones
+        label: 'Acceder al menú de cotizaciones'
+    gestion_upsellings:
+        tab: Reservaciones
+        label: 'Acceder al menú de upsellings'
+    gestion_categoria_upsellings:
+        tab: Reservaciones
+        label: 'Acceder al menu de caategoria upsellings'
+    gestion_upgrades:
+        tab: Reservaciones
+        label: 'Acceder al menu de upgrades'
+    gestion_compras:
+        tab: Reservaciones
+        label: 'Acceder al menú de compras'
+    gestion_tags:
+        tab: Reservaciones
+        label: 'Acceder al menú de tags'

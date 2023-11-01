@@ -1,0 +1,38 @@
+<div class="form-group form-group-sm dropdown-field span-left">
+    <label>Ocupación</label>
+    <select class="form-control custom-select selector-modal " id="ocupacion-select"
+     data-hab="<?php echo $habitacion->id; ?>" name="ocupacion">
+      <?php foreach ($habitacion->ocupaciones as $ocupacion) :?>
+        <option value="<?php echo $ocupacion['codigo']; ?>"><?php echo $ocupacion['descripcion']; ?></option>
+      <?php endforeach ?>
+    </select>
+
+</div>
+<div class="form-group form-group-sm dropdown-field span-right">
+    <label>Regimen</label>
+    <select class="form-control custom-select selector-modal" id="regimen-select"
+     data-hab="<?php echo $habitacion->id; ?>" name="regimen">
+    <?php foreach ($habitacion->regimenes as $regimen) :?>
+        <option value="<?php echo $regimen['codigo']; ?>"><?php echo $regimen['descripcion']; ?></option>
+    <?php endforeach ?>
+    </select>
+</div>
+<input type="hidden" id="habitacion" name="hab" value="<?php echo $habitacion->id; ?>">
+<?php $first = true; ?>
+<?php foreach ($precios as $key => $precio) :?>
+  <?php
+    $clase = ($first ? '': 'hidden');
+    $disabled = ($first ? '': 'disabled');
+    $precioFull = $habitacion->getPrecioConImpuestos($precio["total"], $impuestos);
+    $first = false;
+   ?>
+
+  <div class="precios-hab-<?php echo $habitacion->id.' '.$clase ?>"
+    id="container-precio-<?php echo $precio['ocupacion'].'-'.$precio['regimen_id'].'-'.$habitacion->id ?>">
+    <div class="text-right">
+      <strong>Total alojamiento: </strong> <?php echo $this->cambiarFormatoPrecio($precioFull, $busqueda["moneda"]) ?>
+    </div>
+    <input type="hidden" id="preciototal-<?php echo $precio['ocupacion'].'-'.$precio['regimen_id'].'-'.$habitacion->id ?>"
+     class="precio-input" name="precio" value="<?php echo $precioFull ?>" <?php echo $disabled ?> >
+  </div>
+<?php endforeach ?>

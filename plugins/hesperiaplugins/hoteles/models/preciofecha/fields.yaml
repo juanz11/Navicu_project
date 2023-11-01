@@ -1,0 +1,14 @@
+fields:
+    precio:
+        label: Precio
+        span: full
+        oc.commentPosition: ''
+        required: 1
+        type: number
+    #regimen:
+    #  label: Régimen
+    #  span: auto
+    #  disabled: true
+    #  type: relation
+    #  nameFrom: title
+      #descriptionFrom: nombre

@@ -1,0 +1,4 @@
+title: Impuestos
+modelClass: HesperiaPlugins\Hoteles\Models\Impuesto
+toolbar:
+    buttons: reorder_toolbar

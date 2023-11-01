@@ -1,0 +1,16 @@
+fields:
+    role:
+        label: Role
+        span: auto
+        type: text
+tabs:
+    fields:
+        email:
+            label: Email
+            size: tiny
+            span: auto
+            disabled: 0
+            readOnly: 0
+            required: 1
+            type: textarea
+            tab: Email

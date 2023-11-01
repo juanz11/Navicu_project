@@ -1,0 +1,10 @@
+name: Pago
+form: $/hesperiaplugins/hoteles/models/pago/fields.yaml
+modelClass: HesperiaPlugins\Hoteles\Models\Pago
+defaultRedirect: hesperiaplugins/hoteles/pago
+create:
+    redirect: 'hesperiaplugins/hoteles/pago/update/:id'
+    redirectClose: hesperiaplugins/hoteles/pago
+update:
+    redirect: hesperiaplugins/hoteles/pago
+    redirectClose: hesperiaplugins/hoteles/pago

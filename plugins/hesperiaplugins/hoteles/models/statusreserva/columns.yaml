@@ -1,0 +1,8 @@
+columns:
+    status:
+        label: Status
+        type: text
+        searchable: true
+    descripcion:
+        label: Descripción
+        type: text

@@ -1,0 +1,8 @@
+1.0.1:
+    - 'Initialize plugin.'
+1.0.2:
+    - 'Created table navicu_adiva_categories'
+    - builder_table_create_navicu_adiva_categories.php
+1.0.3:
+    - 'Updated table navicu_adiva_categories'
+    - builder_table_update_navicu_adiva_categories.php

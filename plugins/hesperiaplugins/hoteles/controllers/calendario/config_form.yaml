@@ -1,0 +1,10 @@
+name: Calendario
+form: $/hesperiaplugins/hoteles/models/calendario/fields.yaml
+modelClass: HesperiaPlugins\Hoteles\Models\Calendario
+defaultRedirect: hesperiaplugins/hoteles/calendario
+create:
+    redirect: 'hesperiaplugins/hoteles/calendario/update/:id'
+    redirectClose: hesperiaplugins/hoteles/calendario
+update:
+    redirect: hesperiaplugins/hoteles/calendario
+    redirectClose: hesperiaplugins/hoteles/calendario

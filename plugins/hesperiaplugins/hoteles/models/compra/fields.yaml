@@ -1,0 +1,41 @@
+fields:
+    identificacion:
+        label: Identificación
+        span: auto
+        type: text
+    usuario@preview:
+        label: Email
+        nameFrom: email
+        descriptionFrom: email
+        type: relation
+        span: right
+    contacto:
+        type: text
+        label: Contacto
+        span: right
+    comentarios:
+        span: auto
+        label: Comentarios
+        type: textarea
+        size: small
+        span: full
+    moneda:
+        label: Moneda
+        span: right
+        oc.commentPosition: ''
+        nameFrom: moneda
+        descriptionFrom: moneda
+        type: relation
+    total@preview:
+        type: number
+        label: Total
+        readOnly: true
+        span: left
+    pago_insite:
+        label: Pago en sitio
+        type: switch
+        span: left
+        comment: Permitir hacer el pago en recepción
+        on: Si
+        off: No
+        context: create

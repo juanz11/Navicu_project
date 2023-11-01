@@ -1,0 +1,46 @@
+{% if compra.upgrades.count > 1%}
+  {% set clase = "col-md-6"%}
+{% else %}
+  {% set clase = "col-md-6"%}
+{% endif %}
+
+<div class="{{clase}}">
+    <div class="panel panel-default">
+      <div class="panel-body">
+        {% for upgrade in compra.upgrades %}
+        <div class="row">
+          <div class="col-md-6">
+            <img class="img-responsive" src="{{upgrade.upselling.imagen.path}}" alt=""/>
+          </div>
+          {{upgrade.upselling.cantidad}}
+          <div class="col-md-6">
+            {% if upgrade.cantidad > 1 %}
+              {% set titulo = upgrade.upselling.titulo ~ ' X'~ upgrade.cantidad %}
+            {% else %}
+              {% set titulo = upgrade.upselling.titulo %}
+            {% endif %}
+            <h2>{{titulo}}</h2>
+            <p>{{upgrade.upselling.descripcion|raw}}</p>
+            {% if upgrade.fecha_disfrute %}
+              <p><strong>Fecha disfrute: </strong>
+                {{__SELF__.cambiarFormatoFecha(upgrade.fecha_disfrute)}}
+              </p>
+            {% endif %}
+            <hr>
+          </div>
+        </div>
+        {% endfor %}
+        <br>
+        <div class="col-md-12 well well-sm">
+          <p class="text-center">
+            <strong>Precio</strong>
+            {{__SELF__.cambiarFormatoPrecio(compra.total, compra.moneda_id)}}
+            {{compra.moneda.acronimo}}
+          </p>
+        </div>
+      </div>
+    </div>
+</div>
+<div class="col-md-6 col-offset-md-2">
+  {% partial '@status_compra' compra = compra %}
+</div>

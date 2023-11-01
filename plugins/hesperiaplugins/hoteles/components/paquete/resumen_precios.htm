@@ -1,0 +1,18 @@
+<div class="col-md-6 col-md-offset-3 well well-sm">
+    <h4 class="text-center">TU SELECCIÓN</h4>
+    {% if total_alojamiento %}
+      <p class="text-center">
+        <strong class="text-center"> Alojamiento:</strong>  {{total_alojamiento}}
+      </p>
+    {% endif %}
+
+      <p class="text-center">
+        <strong class="text-center">Servicios adicionales:</strong>
+        <span id="total-upselling-resumen">0</span>
+      </p>
+      <p class="text-center">
+        <strong class="text-center">Total</strong>
+        <span id="total-paquete-full">{{total_aloj_raw + total_upsellings}}</span>
+        <button class="btn btn-primary">Pagar</button>
+      </p>
+</div>

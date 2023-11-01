@@ -1,0 +1,9 @@
+list: $/hesperiaplugins/hoteles/models/fechacalendario/columns.yaml
+modelClass: HesperiaPlugins\Hoteles\Models\FechaCalendario
+title: FechaCalendario
+noRecordsMessage: 'backend::lang.list.no_records'
+showSetup: false
+showCheckboxes: false
+recordsPerPage: 20
+recordUrl: 'hesperiaplugins/hoteles/fechacalendario/update/:id'
+filter: config_filter.yaml

@@ -1,0 +1,10 @@
+name: TipoPago
+form: $/hesperiaplugins/hoteles/models/tipopago/fields.yaml
+modelClass: HesperiaPlugins\Hoteles\Models\TipoPago
+defaultRedirect: hesperiaplugins/hoteles/tipopago
+create:
+    redirect: 'hesperiaplugins/hoteles/tipopago/update/:id'
+    redirectClose: hesperiaplugins/hoteles/tipopago
+update:
+    redirect: hesperiaplugins/hoteles/tipopago
+    redirectClose: hesperiaplugins/hoteles/tipopago

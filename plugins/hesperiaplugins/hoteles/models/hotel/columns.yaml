@@ -1,0 +1,9 @@
+columns:
+    nombre:
+        label: Nombre
+        type: text
+        searchable: true
+        sortable: true
+    direccion:
+        label: Direccion
+        type: text

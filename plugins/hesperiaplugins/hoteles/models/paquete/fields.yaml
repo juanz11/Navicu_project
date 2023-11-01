@@ -1,0 +1,70 @@
+fields:
+    titulo:
+        label: Titulo
+        span: auto
+        type: text
+    slug:
+        label: Slug
+        span: auto
+        preset:
+            field: titulo
+            type: slug
+        type: text
+    hotel:
+        label: Hotel
+        nameFrom: nombre
+        descriptionFrom: description
+        span: auto
+        required: 1
+        type: relation
+    porcentaje:
+        label: Porcentaje
+        span: auto
+        type: text
+        default: 0
+    fecha_desde:
+        label: Desde
+        mode: date
+        span: auto
+        type: datepicker
+    fecha_hasta:
+        label: Hasta
+        mode: date
+        span: auto
+        type: datepicker
+    codigo:
+        label: Codigo
+        span: auto
+        type: text
+    ind_activo:
+        label: Activo
+        span: left
+        type: switch
+    banner:
+        label: Banner
+        mode: image
+        imageWidth: '200'
+        imageHeight: '100'
+        useCaption: true
+        thumbOptions:
+            mode: crop
+            extension: auto
+        span: full
+        type: fileupload
+    descripcion:
+        label: Descripcion
+        size: large
+        span: full
+        type: richeditor
+    ciudad:
+        label: 'Ciudad de Salida'
+        span: auto
+        type: text
+    type_paquete:
+        label: 'Temporada Baja'
+        span: auto
+        type: switch
+    home_destacado:
+        label: 'Home destacado'
+        span: auto
+        type: checkbox

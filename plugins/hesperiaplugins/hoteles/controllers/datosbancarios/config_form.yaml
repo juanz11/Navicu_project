@@ -1,0 +1,10 @@
+name: DatosBancarios
+form: $/hesperiaplugins/hoteles/models/datosbancarios/fields.yaml
+modelClass: HesperiaPlugins\Hoteles\Models\DatosBancarios
+defaultRedirect: hesperiaplugins/hoteles/datosbancarios
+create:
+    redirect: 'hesperiaplugins/hoteles/datosbancarios/update/:id'
+    redirectClose: hesperiaplugins/hoteles/datosbancarios
+update:
+    redirect: hesperiaplugins/hoteles/datosbancarios
+    redirectClose: hesperiaplugins/hoteles/datosbancarios

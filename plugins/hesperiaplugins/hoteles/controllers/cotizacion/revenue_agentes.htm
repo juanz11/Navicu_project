@@ -1,0 +1,47 @@
+<?php 
+    use HesperiaPlugins\Hoteles\Models\Cotizacion;
+    $cotizacion = new Cotizacion();
+    $resultado= $cotizacion->buscarAgentes($form = null);
+
+    $form = array("id" => "", "moneda" => "3","desde" => "","hasta" => "", "hotel" => "");
+?>
+<?php Block::put('breadcrumb'); ?>
+    <ul>
+        <li><a href="<?= Backend::url('hesperiaplugins/hoteles/cotizacion'); ?>">Cotizacion</a></li>
+        <li><?= e($this->pageTitle); ?></li>
+    </ul>
+<?php Block::endPut(); ?>
+
+<?= Form::open(['id' => 'form-principal']) ?>
+    <?= $widget->render(); ?> 
+
+<div class="control-toolbar text-center">
+    <div class="toolbar-item">
+      <div data-control="toolbar">
+          <button type="button" class="btn btn-primary"
+          type="submit"
+          data-request="onBuscarAgentes",
+          data-stripe-load-indicator
+          data-request-flash
+          >Consultar</button>
+<?= Form::close(); ?>
+      </div>
+    </div>
+</div>          
+<div class="control-list">
+    <table class="table data row" data-control="rowlink">
+      <thead>
+        <tr>
+          <th><span>Agente</span></th>
+          <th><span>Enviadas</span></th>
+          <th><span>Completadas</span></th>
+          <th><span>ROOM NIGHT</span></th>
+          <th><span>Porcentaje de Conversión</span></th>
+          <th><span>Revenue</span></th>
+        </tr>
+      </thead>
+      <tbody id="partialContents">
+        <?= $this->makePartial('tabla_agentes', ['resultado_agentes' => $resultado, 'dates' => $form ]); ?>   
+      </tbody>
+    </table>
+</div>

@@ -1,0 +1,21 @@
+columns:
+    id:
+        label: id
+        type: number
+        searchable: true
+        sortable: true
+    message:
+        label: Message
+        type: text
+        searchable: true
+        sortable: true
+    description:
+        label: Description
+        type: text
+        searchable: true
+        sortable: true
+    amount:
+        label: Amount
+        type: text
+        searchable: true
+        sortable: true

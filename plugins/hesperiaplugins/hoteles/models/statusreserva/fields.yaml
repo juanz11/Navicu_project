@@ -1,0 +1,12 @@
+fields:
+    status:
+        label: Status
+        oc.commentPosition: ''
+        span: auto
+        type: text
+    descripcion:
+        label: Descripción
+        size: ''
+        oc.commentPosition: ''
+        span: auto
+        type: textarea

@@ -1,0 +1,270 @@
+.go-bottom {
+  background-color: #f0ad4e;
+  bottom: 2em;
+  right: 2em;
+  color: #ffffff;
+  padding: 14px 8px;
+  font-size: 13px;
+  display: none;
+  position: fixed;
+  text-decoration: none;
+  /*width: 70px;
+  height: 50px;*/
+  line-height: 18px;
+  text-align: center;
+  //transition: all 0.4s ease-in-out;
+  z-index: 1;
+  border-radius: 50%;
+  box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.16), 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+  /*animation: pulse 2s infinite;*/
+}
+
+.modal{
+  z-index: 9999;
+}
+.go-bottom:hover {
+    background: #dcaaa1;
+    color: #ffffff;
+}
+
+@-webkit-keyframes pulse {
+  0% {
+    -webkit-box-shadow: 0 0 0 0 rgba(204,169,44, 0.4);
+  }
+  70% {
+      -webkit-box-shadow: 0 0 0 10px rgba(204,169,44, 0);
+  }
+  100% {
+      -webkit-box-shadow: 0 0 0 0 rgba(204,169,44, 0);
+  }
+}
+@keyframes pulse {
+  0% {
+    -moz-box-shadow: 0 0 0 0 rgba(204,169,44, 0.4);
+    box-shadow: 0 0 0 0 rgba(204,169,44, 0.4);
+  }
+  70% {
+      -moz-box-shadow: 0 0 0 10px rgba(204,169,44, 0);
+      box-shadow: 0 0 0 10px rgba(204,169,44, 0);
+  }
+  100% {
+      -moz-box-shadow: 0 0 0 0 rgba(204,169,44, 0);
+      box-shadow: 0 0 0 0 rgba(204,169,44, 0);
+  }
+}
+
+.hab-list-titulo>small{
+  /*font-size: 15px;*/
+}
+
+.hab-list-titulo{
+  margin-top: 8;
+  margin-bottom: 8px;
+  padding-bottom: 10;
+  //border-bottom: 1px solid #f2f2f2;
+  //font-size: 20px;
+  color:#346392;
+  //font-weight: bolder;
+}
+.hab-list-reservacion{
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.hab-list-reservacion .hab-li{
+  margin-bottom: 2em;
+  padding-bottom: 2em;
+  border-bottom: 1px solid #f2f2f2;
+  //font-size: 8px;
+}
+.precio-hab{
+  background: green;
+  color: white;
+  font-weight: normal;
+  margin-top: 10px;
+  padding: 10px 15px;
+}
+section.text-center button {
+
+  border-radius: 0px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  font-size: 12px;
+  padding: 14px 35px;
+  margin-top: 42px;
+  //margin-right: 10px;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+}
+
+section.text-center .detalle{
+  background: #ffffff;
+  border: 2px solid #000;
+  color: #000;
+}
+
+.resumen-reserva{
+  position:fixed;
+  bottom:0;
+  z-index: 1;
+}
+.hide{
+  display: none;
+}
+
+.hab-modal-form .nav-tabs, .panel{
+  margin-bottom: 0px;
+}
+.hab-modal-form .modal-footer{
+  padding: 10px;
+}
+.hab-modal-form .panel-body {
+  padding: 10px;
+}
+
+/* NUEVO SIDE MENU*/
+
+#wrapper {
+  /*padding-left: 350px;*/
+  transition: all 0.4s ease 0s;
+}
+
+#sidebar1-wrapper {
+  margin-right: -350px;
+  right: 350px;
+  width: 350px;
+  background: #fff;
+  position: fixed;
+  height: 100%;
+  overflow-y: auto;
+  z-index: 9999;
+  transition: all 0.4s ease 0s;
+  box-shadow: 0 4px 7px 0 rgba(0, 0, 0, .2);
+}
+
+#wrapper1.active {
+  /*padding-right: 0;*/
+}
+
+#wrapper1.active #sidebar1-wrapper {
+  right: 0;
+}
+
+.sidebar1-nav {
+  position: absolute;
+  top: 0;
+  width: 350px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.sidebar-nav1 li {
+  line-height: 40px;
+  text-indent: 20px;
+}
+/*
+.sidebar-nav1 li a {
+  color: #999999;
+  display: block;
+  text-decoration: none;
+  padding-left: 60px;
+}
+
+.sidebar-nav1 li a span:before {
+  position: absolute;
+  left: 0;
+  color: #41484c;
+  text-align: center;
+  width: 20px;
+  line-height: 18px;
+}*/
+
+.sidebar-nav1 li a:hover,
+.sidebar-nav1 li.active {
+  color: #fff;
+  background: rgba(255,255,255,0.2);
+  text-decoration: none;
+}
+
+.sidebar-nav1 li a:active,
+.sidebar-nav1 li a:focus {
+  text-decoration: none;
+}
+
+.sidebar-nav1 > .sidebar-brand {
+  height: 65px;
+  line-height: 60px;
+  font-size: 18px;
+}
+
+.sidebar-nav1 > .sidebar-brand a {
+  color: #999999;
+}
+
+.sidebar-nav1 > .sidebar-brand a:hover {
+  color: #fff;
+  background: none;
+}
+
+
+
+.content-header {
+  height: 65px;
+  line-height: 65px;
+}
+
+.content-header h1 {
+  margin: 0;
+  margin-left: 20px;
+  line-height: 65px;
+  display: inline-block;
+}
+
+#menu-toggle {
+    text-decoration: none;
+}
+
+.btn-menu {
+  color: #fff;
+} 
+
+.inset {
+  padding: 20px;
+}
+.not-scrollable{
+  overflow: hidden;
+}
+/*
+@media (max-width:767px) {
+
+#wrapper1 {
+  padding-left: 0;
+}
+
+#sidebar1-wrapper {
+  right: 0;
+}
+
+#wrapper1.active {
+  position: relative;
+  left: 250px;
+}
+
+#wrapper1.active #sidebar1-wrapper {
+  left: 250px;
+  width: 250px;
+  transition: all 0.4s ease 0s;
+}
+
+#menu-toggle {
+  display: inline-block;
+}
+
+.inset {
+  padding: 15px;
+}
+
+}
+*/

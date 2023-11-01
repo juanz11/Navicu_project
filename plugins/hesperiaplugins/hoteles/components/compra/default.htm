@@ -1,0 +1,13 @@
+
+{% if compra.id %}
+
+  {% partial '@compra' compra = compra %}
+
+{% elseif compra %}
+  {% partial '@pre-compra' compra = compra %}
+  <div class="col-md-6">
+    {% partial '@formulario'  %}
+  </div>
+{% else %}
+  nada para comprar
+{% endif %}

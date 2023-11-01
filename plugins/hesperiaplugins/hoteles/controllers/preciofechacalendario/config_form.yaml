@@ -1,0 +1,10 @@
+name: PrecioFechaCalendario
+form: $/hesperiaplugins/hoteles/models/preciofechacalendario/fields.yaml
+modelClass: HesperiaPlugins\Hoteles\Models\PrecioFechaCalendario
+defaultRedirect: hesperiaplugins/hoteles/preciofechacalendario
+create:
+    redirect: 'hesperiaplugins/hoteles/preciofechacalendario/update/:id'
+    redirectClose: hesperiaplugins/hoteles/preciofechacalendario
+update:
+    redirect: hesperiaplugins/hoteles/preciofechacalendario
+    redirectClose: hesperiaplugins/hoteles/preciofechacalendario

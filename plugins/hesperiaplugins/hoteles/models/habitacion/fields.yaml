@@ -1,0 +1,65 @@
+
+tabs:
+  fields:
+      nombre:
+          label: Nombre
+          oc.commentPosition: ''
+          span: left
+          required: 1
+          type: text
+          tab: Principal
+      hotel:
+          label: Hotel
+          oc.commentPosition: ''
+          nameFrom: nombre
+          span: auto
+          required: 1
+          descriptionFrom: description
+          type: relation
+          tab: Principal
+      capacidad:
+          label: Capacidad
+          oc.commentPosition: ''
+          span: right
+          required: 1
+          type: text
+          tab: Principal
+      status:
+          label: Activo
+          span: left
+          default: 1
+          type: switch
+          tab: Principal
+      descripcion:
+          label: Descripcion
+          size: small
+          oc.commentPosition: ''
+          span: full
+          type: richeditor
+          tab: Principal
+      foto_portada:
+          label: 'Foto Portada'
+          oc.commentPosition: ''
+          mode: image
+          imageWidth: '100'
+          imageHeight: '100'
+          useCaption: true
+          thumbOptions:
+              mode: crop
+              extension: auto
+          span: left
+          type: fileupload
+          tab: Media
+      galeria:
+          label: Galeria
+          span: auto
+          oc.commentPosition: ''
+          mode: image
+          useCaption: true
+          thumbOptions:
+              mode: crop
+              extension: auto
+          imageWidth: '200'
+          imageHeight: '200'
+          type: fileupload
+          tab: Media

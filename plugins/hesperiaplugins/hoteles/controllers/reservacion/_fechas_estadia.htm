@@ -1,0 +1,15 @@
+
+<div class="content row text-center">
+  <div class="col-md-12">
+    <div class="col-md-4">
+      <strong>Check-in:</strong><?php echo $propiedades["checkin"]; ?> - <strong>Check-out:</strong> <?php echo $propiedades["checkout"]; ?>
+    </div>
+    <div class="col-md-4">
+      <strong>Hotel:</strong> <?php echo $propiedades["nombre_hotel"]; ?>
+    </div>
+    <div class="col-md-4">
+      <strong>Moneda:</strong> <?php echo $propiedades['nombre_moneda']." ".$propiedades['acronimo']; ?>
+      <input type="hidden" value="<?php echo $propiedades['acronimo']?>" id="acronimo" >
+    </div>
+  </div>
+</div>

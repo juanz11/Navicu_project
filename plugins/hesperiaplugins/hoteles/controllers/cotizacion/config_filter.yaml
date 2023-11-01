@@ -1,0 +1,5 @@
+scopes:
+  fecha:
+    label: Fecha
+    type: daterange
+    conditions: date(hesperiaplugins_hoteles_cotizacion.created_at) between ':afterDate' and ':beforeDate'

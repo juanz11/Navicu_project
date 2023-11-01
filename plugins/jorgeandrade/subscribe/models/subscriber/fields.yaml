@@ -1,0 +1,25 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    name:
+        label: Name
+    surname:
+        label: Surname
+    email:
+        label: Email
+        required: true
+    code@create:
+        label: Code
+        required: true
+        type: partial
+        path: code_field
+    country:
+        label: Country
+    country:
+        label: Country
+    latitude:
+        label: Latitude
+    longitude:
+        label: Longitude

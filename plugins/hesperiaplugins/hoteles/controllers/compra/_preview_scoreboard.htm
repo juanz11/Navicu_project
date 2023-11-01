@@ -1,0 +1,75 @@
+<div class="scoreboard-item title-value">
+    <h4>Huesped</h4>
+    <?php if ($formModel->nombre_cliente): ?>
+        <p><?= e($formModel->nombre_cliente) ?></p>
+    <?php else: ?>
+        <p><em>sin huesped</em></p>
+    <?php endif ?>
+        <p class="description">fecha: <?= e($formModel->created_at->format("d-m-y")) ?> </p>
+</div>
+ <div class="scoreboard-item title-value">
+    <h4>Status</h4>
+    <p><?php  echo $formModel->status->status?></p>
+    <p class="description">
+      <a href="https://navicu.com/compra/<?php  echo $formModel->codigo ?>"
+       target="_blank" rel="noopener noreferrer">Enlace público</a>
+    </p>
+  </div>
+
+  <!-- MODAL -->
+  <div class="control-popup modal fade" id="content-confirmation" tabindex="-1" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <?php if ($formModel->status_id == 3 || $formModel->status_id == 6 || $formModel->status_id == 7): ?>
+                  <h4 class="modal-title">¿Seguro que desea aprobar esta reservación?</h4>
+                <?php elseif($formModel->status_id == 1): ?>
+                  <h4 class="modal-title">¿Seguro que desea realizar esta acción?</h4>
+                <?php endif ?>
+            </div>
+            <div class="modal-body">
+              <?php if ($formModel->status_id == 3 || $formModel->status_id == 6 || $formModel->status_id == 7): ?>
+                <p>Se procederá a aprobar la reservación</p>
+                <p>este proceso notificará via email a los directivos del hotel
+                y al cliente.</p>
+              <?php elseif($formModel->status_id == 1): ?>
+                <p>Se procederá a reenviar el correo de confirmación al cliente</p>
+              <?php endif ?>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                <a class="btn btn-primary"
+                data-request="onAprobar"
+                <?php if ($formModel->status_id == 6 || $formModel->status_id == 7): ?>
+                  data-request-data="insite : true"
+                <?php endif ?>
+                data-stripe-load-indicator>Aceptar</a>
+            </div>
+        </div>
+    </div>
+    <!-- FIN MODAL -->
+</div>
+
+<div class="control-popup modal fade" id="content-confirmation-reenvio-solicitud" tabindex="-1" role="dialog">
+  <div class="modal-dialog">
+      <div class="modal-content">
+          <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+
+                <h4 class="modal-title">¿Seguro que desea realizar esta acción?</h4>
+
+          </div>
+          <div class="modal-body">
+              <p>Se procederá a reenviar el correo de solicitud al cliente</p>
+          </div>
+          <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+              <a class="btn btn-primary"
+              data-request="onReenviarCotizacion"
+              data-stripe-load-indicator>Aceptar</a>
+          </div>
+      </div>
+  </div>
+  <!-- FIN MODAL -->
+</div>

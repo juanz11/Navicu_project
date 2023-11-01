@@ -1,0 +1,265 @@
+<!-- Primary content -->
+<?php Block::put('form-contents') ?>
+<div class="layout-row">
+  <div class="callout in callout-success" id="contentFechasEstadia">
+
+  </div>
+  <div class="control-tabs primary-tabs" data-control="tab">
+    <ul class="nav nav-tabs">
+        <li class="active"><a href="#primaryTabOne">Habitaciones</a></li>
+        <li><a href="#primaryTabTwo">Servicios Adicionales</a></li>
+        <li><a href="#primaryTabThree">Info. Huesped</a></li>
+    </ul>
+    <div class="tab-content">
+        <div class="tab-pane active">
+          <div id="partialContents" class="span-left">
+
+          </div>
+
+        </div>
+        <div class="tab-pane">
+
+          <div id="contentUpsellingsSecundarios" class="span-left">
+
+          </div>
+        </div>
+        <div class="tab-pane">
+          <div class="row">
+          <?= $this->formRenderField('huesped') ?>
+          <?= $this->formRenderField('usuario') ?>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label>Telefono</label>
+                <div class="input-group">
+                  <div class="input-group-addon">
+                    <select name="Reservacion[codigo_telefono]">
+                      <?php $codigos = $this->getCodigosTelefonicos(); ?>
+
+                      <?php foreach ($codigos as $codigo): ?>
+                        <?php if($codigo->callingCodes[0]=="58"): ?>
+                          <option value="<?php echo ('+'.$codigo->callingCodes[0])?>" selected>
+                            <?php echo ('+'.$codigo->callingCodes[0]) ?>
+                          </option>
+                        <?php else :?>
+                          <option value="<?php echo ('+'.$codigo->callingCodes[0])?>">
+                            <?php echo ('+'.$codigo->callingCodes[0]) ?>
+                          </option>
+                        <?php endif ?>
+                      <?php endforeach ?>
+                    </select>
+                </div>
+                  <input type="text" name="Reservacion[contacto]" class="form-control">
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label>Documento</label>
+                <div class="input-group">
+                  <div class="input-group-addon">
+                    <?php $tipos = $this->getCodigosDocumentos(); ?>
+                    <select name="Reservacion[tipo_documento]">
+                      <?php foreach ($tipos as $value): ?>
+                        <option value="<?php echo $value ?>">
+                          <?php echo $value ?>
+                        </option>
+                      <?php endforeach ?>
+                    </select>
+                </div>
+                  <input type="text" name="Reservacion[identificacion]" class="form-control">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <?= $this->formRenderField('pago_insite') ?>
+            <?= $this->formRenderField('status') ?>
+            <?= $this->formRenderField('comentarios') ?>
+          </div>
+          <div class="col-md-12">
+            <div class="loading-indicator-container">
+              <p class="text-center">
+                <button class="btn btn-primary"
+                    data-request="onGuardarReservacion",
+                    data-request-flash
+                    data-load-indicator="Espere..."
+                    data-attach-loading>
+                    Enviar Cotización
+                  </button>
+
+              </p>
+            </div>
+          </div>
+        </div>
+    </div>
+  </div>
+</div>
+
+<?php Block::endPut() ?>
+
+<!-- Complimentary sidebar -->
+<?php Block::put('form-sidebar') ?>
+
+
+  <form class="form-elements" role="form">
+    <div class="row">
+      <p class="text-center">
+        <a href="#modal-buscador" data-toggle="modal"
+          class="btn btn-success oc-icon-calendar btn-lg" >
+          Buscar
+        </a>
+      </p>
+    </div>
+  </form>
+
+
+    <div id="contentSeleccion">
+
+    </div>
+
+
+<?php Block::endPut() ?>
+
+<!-- Layout execution -->
+<?php Block::put('body') ?>
+
+    <?= Form::open(['class'=>'layout stretch']) ?>
+    <div class="control-popup modal fade" id="modal-buscador" tabindex="-1" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+
+                </div>
+                <div class="modal-body">
+
+                  <div class="row">
+                    <div class="form-group span-full">
+                        <label>check-in / check-out</label>
+                        <input type="text" name="fechas" id="input-id" value="" class="form-control" onkeypress="return false" />
+                    </div>
+                  </div>
+                  <div class="row">
+                    <?= $this->formRenderField('hotel') ?>
+                    <?= $this->formRenderField('moneda') ?>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <div class="loading-indicator-container">
+                  <button class="btn btn-primary"
+                      data-request="onCheck"
+                      data-request-flash
+                      data-load-indicator="Buscando..."
+                      >Consultar</button>
+                  </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <?= $this->makeLayout('form-with-sidebar') ?>
+    <?= Form::close() ?>
+
+    <div class="control-popup modal fade" id="content-precios-upsellings-sec" tabindex="-1" role="dialog">
+      <div class="modal-dialog">
+        <div class="modal-content" id="modal-content-form">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          </div>
+          <div class="modal-body" id="formContentPreciosUps">
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="control-popup modal fade" id="content-precios" tabindex="-1" role="dialog">
+      <div class="modal-dialog modal-lg">
+
+        <div class="modal-content" id="modal-content-form">
+          <?= Form::open(['id'=>'form-habs-modal']) ?>
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          </div>
+          <div class="modal-body">
+            <div class="control-tabs content-tabs " data-control="tab">
+              <ul class="nav nav-tabs">
+                  <li class="active"><a href="#contentTabOne">Alojamiento</a></li>
+                  <li><a href="#contentTabTwo">Upsellings</a></li>
+
+              </ul>
+              <div class="tab-content">
+                  <div class="tab-pane active">
+                    <div class="form-elements" role="form"> <!-- antes era un form -->
+                      <div class="form-group span-left">
+                        <label>Porcentaje (solo número)</label>
+                          <input type="text" name="porcentaje" id="porcentaje"
+                           class="form-control input-sm" />
+                      </div>
+                      <div class="form-group span-right">
+                        <label>Concepto</label>
+                        <input type="text" name="concepto" id="concepto"
+                          class="form-control input-sm" />
+                      </div>
+                      <!-- Checkbox -->
+                      <div class="form-group checkbox-field span-full is-required">
+                        <div class="checkbox custom-checkbox">
+                          <div class="loading-indicator-container">
+                            <input name="checkbox"
+                              type="checkbox" id="checkdescuento"
+                              data-request="onMostrarPrecios"
+                              data-load-indicator="Espere..."
+                              data-attach-loading
+                              data-request-complete="actualizarTotalHab();">
+                            <label for="checkdescuento">Aplicar descuento</label>
+                          </div>
+
+                        </div>
+                      </div>
+                      <div id="contentPreciosModal">
+
+                      </div>
+                    </div> <!-- antes era un form -->
+                  </div>
+                  <div class="tab-pane" >
+                    <div id="contentUpsellingsHabs">
+
+                    </div>
+                    <div class="list-footer">
+                      <div class="text-right">
+                        <strong>Total upsellings: </strong>
+                        <span id="label-total-upsellings-habs"></span>
+                      </div>
+                    </div>
+
+                  </div>
+              </div>
+              <br>
+              <div class="callout fade in callout-success">
+                  <div class="content text-center">
+                      <p><strong>Total:</strong> <span id="total_hab_modal"> </span></p>
+
+                  </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <div class="loading-indicator-container">
+            <button type="submit" class="btn btn-primary"
+                data-load-indicator="Espere..."
+                data-attach-loading
+                data-request="onAddSeleccion"
+                data-request-complete="$('#content-precios').modal('hide');refreshForm();actualizarTotalHab();">
+                Añadir
+              </button>
+              </div>
+          </div>
+        <?= Form::close() ?>
+        </div>
+      </div>
+    </div>
+
+<?php Block::endPut() ?>

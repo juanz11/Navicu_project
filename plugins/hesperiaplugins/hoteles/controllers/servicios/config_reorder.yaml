@@ -1,0 +1,4 @@
+title: Servicios
+modelClass: HesperiaPlugins\Hoteles\Models\Servicio
+toolbar:
+    buttons: reorder_toolbar

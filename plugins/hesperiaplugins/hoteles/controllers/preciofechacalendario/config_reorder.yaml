@@ -1,0 +1,4 @@
+title: PrecioFechaCalendario
+modelClass: HesperiaPlugins\Hoteles\Models\PrecioFechaCalendario
+toolbar:
+    buttons: reorder_toolbar

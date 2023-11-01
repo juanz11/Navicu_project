@@ -1,0 +1,75 @@
+
+<a
+    href="<?= Backend::url('hesperiaplugins/hoteles/reservacion') ?>"
+    class="btn btn-default oc-icon-chevron-left">
+    Volver a la lista de Reservaciones
+</a>
+
+<a class="btn btn-primary"
+        data-toggle="modal"
+        href="#content-change-status">
+        Cambiar Status
+</a>
+
+<?php if ($formModel->status_id == 3 || $formModel->status_id == 6 || $formModel->status_id == 7): ?>
+<a class="btn btn-success oc-icon-thumbs-o-up"
+        data-toggle="modal"
+        href="#content-confirmation">
+        Aprobar Reservación
+    </a>
+  <?php elseif($formModel->status_id == 1): ?>
+    <a class="btn btn-warning oc-icon-envelope-o"
+        data-toggle="modal"
+        href="#content-confirmation">
+          Reenviar confirmación
+      </a>
+  <?php elseif($formModel->status_id == 4): ?>
+    <a class="btn btn-warning oc-icon-envelope-o"
+        data-toggle="modal"
+        href="#content-anulada">
+          Enviar correo de anulación
+      </a>
+  <?php elseif($formModel->status_id == 2): ?>
+    <a class="btn btn-warning oc-icon-envelope-o oc-icon-pencil"
+      data-toggle="modal"
+      href="<?= Backend::url('hesperiaplugins/hoteles/reservacion/update/'.$formModel->id) ?>">
+      Modificar
+    </a>
+
+    <a class="btn btn-success oc-icon-envelope-o"
+      data-toggle="modal"
+      href="#content-confirmation-reenvio-solicitud">
+      Reenviar Solicitud
+    </a>
+  <?php endif ?>
+  <div class="control-popup modal fade" id="content-change-status" tabindex="-1" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content" id="modal-content-form">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        </div>
+        <div class="modal-body">
+            <div class="form-elements" role="form"> <!-- antes era un form -->
+            
+
+             <?= $this->relationRender("status") ?>
+                <label>Motivo</label>
+                <input type="text" name="descripcion" value="" class="form-control" />
+                <p class="help-block">Se creará una observación para hacer seguimiento a esta reservacion</p>
+
+            </div> <!-- antes era un form -->
+        </div>
+
+
+        <div class="modal-footer">
+            <button type="submit" class="btn btn-primary"
+            data-request="onCambiarStatus"
+            data-attach-loading>
+              Cambiar
+            </button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+?>

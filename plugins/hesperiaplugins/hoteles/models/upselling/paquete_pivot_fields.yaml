@@ -1,0 +1,26 @@
+fields:
+    titulo:
+        label: Titulo
+        span: auto
+        type: text
+    cantidad_min:
+        label: 'Cantidad Minima'
+        span: auto
+        type: number
+    cantidad_max:
+        label: 'Cantidad Maxima'
+        span: auto
+        type: number
+    sumable:
+        label: 'Es sumable'
+        span: auto
+        type: switch
+    pivot[obligatorio]:
+      label: 'Obligatorio'
+      span: auto
+      type: switch
+    descripcion:
+        label: Descripcion
+        span: full
+        size: ''
+        type: richeditor

@@ -1,0 +1,10 @@
+columns:
+    id:
+        label: ID
+        type: number
+    precio:
+        label: Precio por adulto
+        type: number
+    precio_nino:
+        label: Precio por niño
+        type: number

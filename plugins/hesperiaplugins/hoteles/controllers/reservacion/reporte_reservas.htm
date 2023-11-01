@@ -1,0 +1,34 @@
+<?php Block::put('breadcrumb'); ?>
+    <ul>
+        <li><a href="<?= Backend::url('hesperiaplugins/hoteles/reservacion'); ?>">Reservacion</a></li>
+        <li><?= e($this->pageTitle); ?></li>
+    </ul>
+<?php Block::endPut(); ?>
+
+<?= Form::open(['id' => 'form-principal', 'data-request'=>'onReporte']); ?>
+    <?= $widget->render(); ?> 
+
+<div class="control-toolbar text-center">
+    <div class="toolbar-item">
+      <div data-control="toolbar">
+          <button type="submit" class="btn btn-primary"
+          data-attach-loading
+          >Consultar</button>
+      </div>
+    </div>
+</div>          
+<div class="control-list">
+    <table class="table data row" data-control="rowlink">
+        <thead>
+          <tr>
+            <th><span>ROOM NIGHT</span></th>
+            <th><span>REVENUE</span></th>
+            <th><span>ADR</span></th>
+          </tr>
+        </thead>
+        <tbody id="partialContents">
+        
+        </tbody>
+    </table>
+</div>
+<?= Form::close(); ?>

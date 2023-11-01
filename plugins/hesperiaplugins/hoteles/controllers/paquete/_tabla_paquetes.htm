@@ -1,0 +1,29 @@
+<?php $datos = array(); ?>
+
+<?php if (count($resultadoPaquetes) > 0): ?>
+	<?php foreach ($resultadoPaquetes as $value): ?>
+		<?php 
+		$datos["paquete_id"] = $value->id;
+		$datos["moneda_id"] = $dates["moneda"]; 
+		$datos["fecha_desde"] = $dates["desde"];
+		$datos["fecha_hasta"] = $dates["hasta"];
+		?>
+	    <tr class="rowlink" data-href ="<?= Backend::url('hesperiaplugins/hoteles/reservacion/detalle_paquete',$datos); ?>">
+	   		<td><?= $value->titulo; ?></td>
+	   		<td><?= $value->hotel->nombre; ?></td>
+	   		<td><?= $value->reservaciones()->between($dates)->moneda($dates)->count(); ?></td>
+	   		<td><?= $value->reservaciones()->confirmadas()->between($dates)->moneda($dates)->count(); ?></td>
+	   		<td><?= number_format($value->reservaciones()->confirmadas()->between($dates)
+	   		->moneda($dates)->sum("total"), 0 ,",", "."); ?></td>
+	   		<td><?= number_format($value->getSumUpgrades($dates), 0 ,",", "."); ?></td>
+	    </tr>
+	<?php endforeach  ?>
+<?php else: ?>
+    <tr class="no-data">
+        <td colspan="100" class="nolink">
+            <p class="no-data">
+                No se encontraron resultados.
+            </p>
+        </td>
+    </tr>
+<?php endif ?>

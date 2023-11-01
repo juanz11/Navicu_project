@@ -1,0 +1,84 @@
+<?php if ($seleccion!==null) :?>
+<div class="control-list row" style="background:white;">
+    <table class="table data">
+        <thead>
+            <tr>
+                <th class="text-center"><span>Selección</span></th>
+            </tr>
+        </thead>
+        <tbody>
+          <?php $total = 0; ?>
+
+          <?php foreach ($seleccion as $key  => $item) :?>
+            <tr>
+              <td>
+                <div id="detalle-<?php echo $key ?>" class="detalle-obj">
+                  <button type="button" class="close eliminar-detalle"
+                      data-indice="<?php echo $key ?>"
+                      data-attach-loading
+                      data-request="onRemoveSeleccion"
+                      data-request-data="index:<?php echo $key ?>">
+                    <span aria-hidden="true">×</span>
+                  </button>
+                  <?php if (isset($item["habitacion_id"])) :?>
+                    <p>
+                      <span class="list-badge badge-success">
+                         <i class="icon-certificate"></i>
+                     </span>
+                      <strong><?php echo $item["nombre"] ?></strong></p>
+                    <small><?php echo $item["nombre_ocupacion"] ?> | <?php echo $item["nombre_regimen"] ?></small>
+                    <p>
+                      <small><strong>Precio:</strong>
+                        <span class="valor-precio" data-value=""><?php echo $this->cambiarFormatoPrecio($item["precio"], $busqueda["moneda"]) ?></span>
+                        <?php $total = $total + $item["precio"] ?>
+                        <br>
+                        <?php if($item["porcentaje"] !="" ) : ?>
+                        <span class="text-right frozen">
+                          <em> <?php echo $item["concepto"] ?> </em>
+                        </span>
+
+                      <?php endif ?>
+                      </small>
+                    </p>
+                    <?php foreach ($item["ups"] as $ups) :?>
+                    <p>
+                      <em>
+                        + <?php echo $ups["titulo"] ?>
+                      </em><br>
+                      <?php if ($ups["fecha_disfrute"]!==null): ?>
+                      <small>
+                        <strong>Fecha Disfrute:</strong> <?php echo $ups["fecha_disfrute"] ?><br>
+                        <strong>Precio: </strong><?php echo $this->cambiarFormatoPrecio($ups["precio"], $busqueda["moneda"]) ?>
+                      </small>
+                      <?php endif ?>
+                        <?php $total = $total + $ups["precio"] ?>
+                    </p>
+                    <?php endforeach ?>
+                <?php else :?>
+                    <p>
+                      <span class="list-badge badge-warning">
+                         <i class="icon-star"></i>
+                     </span>
+                       <strong><?php echo $item["titulo"] ?></strong>
+                      <br>
+                      <small>
+                        <?php if ($item["fecha_disfrute"]!==null): ?>
+                        <strong>Fecha Disfrute:</strong> <em><?php echo $item["fecha_disfrute"] ?></em>
+                        <br>
+                        <?php endif ?>
+                        <strong>Precio: </strong><?php echo $this->cambiarFormatoPrecio($item["precio"], $busqueda["moneda"]) ?>
+                          <?php $total = $total + $item["precio"] ?>
+                      </small>
+                    </p>
+            <?php endif ?>
+              </div>
+            </td>
+          </tr>
+          <?php endforeach ?>
+        </tbody>
+    </table>
+    <div class="list-footer">
+        <p class="text-right"><strong>Total:</strong> <?php echo $this->cambiarFormatoPrecio($total, $busqueda["moneda"]); ?> </p>
+    </div>
+</div>
+<?php endif ?>

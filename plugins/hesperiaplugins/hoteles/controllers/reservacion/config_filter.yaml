@@ -1,0 +1,43 @@
+scopes:
+  status:
+        label: Status
+        modelClass: HesperiaPlugins\Hoteles\Models\StatusReserva
+        conditions: status_id in (:filtered)
+        nameFrom: status
+  hotel:
+        label: Hotel
+        modelClass: HesperiaPlugins\Hoteles\Models\Hotel
+        conditions: hotel_id in (:filtered)
+        nameFrom: nombre
+  moneda:
+        label: Moneda
+        modelClass: HesperiaPlugins\Hoteles\Models\Moneda
+        conditions: moneda_id in (:filtered)
+        nameFrom: moneda
+  vigente:
+        label: Vigentes
+        scope: Vigentes
+        type: checkbox
+  #leads:
+  #      label: leads (oportunidades)
+  #      scope: Vencidas
+  #      type: checkbox
+  fecha:
+        label: Fecha
+        type: daterange
+        conditions: date(hesperiaplugins_hoteles_reservacion.created_at) >= ':afterDate' AND date(hesperiaplugins_hoteles_reservacion.created_at) <= ':beforeDate'
+  cotizacion:
+        label: Mis cotizaciones
+        scope: MyCotizacion
+        type: checkbox
+  #paquete:
+  #      label: Paquetes
+  #      type: checkbox
+  #      conditions: paquete_id IS NOT NULL
+  tipo_reserva:
+        label: Tipo
+        type: group
+        options:
+            paquete: Paquetes
+            ups_hab: Upselling en Habs
+        scope: upgrades

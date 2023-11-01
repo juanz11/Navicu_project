@@ -1,0 +1,20 @@
+<?php 
+	use Backend\Models\User;
+	$agente_nombre = User::find($agente_id)->getFullNameAttribute();
+?>
+<?php Block::put('breadcrumb'); ?>
+    <ul>
+        <li><a href="<?= Backend::url('hesperiaplugins/hoteles/cotizacion/revenue_agentes'); ?>">Lista de Agentes</a></li>
+        <li><?= e($this->pageTitle); ?></li>
+    </ul>
+<?php Block::endPut(); ?>
+
+<div class="scoreboard">
+  <div data-control="toolbar">
+  	<div class="scoreboard-item title-value">
+		<h4>Agente</h4>
+		<p><?= $agente_nombre; ?></p>
+	</div>
+  </div>
+</div>
+<?= $this->listRender(); ?>

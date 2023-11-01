@@ -1,0 +1,4 @@
+title: Paquete
+modelClass: HesperiaPlugins\Hoteles\Models\Paquete
+toolbar:
+    buttons: reorder_toolbar

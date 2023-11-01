@@ -1,0 +1,10 @@
+name: Descuento
+form: $/hesperiaplugins/hoteles/models/descuento/fields.yaml
+modelClass: HesperiaPlugins\Hoteles\Models\Descuento
+defaultRedirect: hesperiaplugins/hoteles/descuento
+create:
+    redirect: 'hesperiaplugins/hoteles/descuento/update/:id'
+    redirectClose: hesperiaplugins/hoteles/descuento
+update:
+    redirect: hesperiaplugins/hoteles/descuento
+    redirectClose: hesperiaplugins/hoteles/descuento

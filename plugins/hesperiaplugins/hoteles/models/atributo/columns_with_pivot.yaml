@@ -1,0 +1,12 @@
+columns:
+    nombre:
+        label: Nombre
+        span: auto
+        oc.commentPosition: ''
+        required: 1
+        type: text
+    pivot[orden]:
+        label: Orden
+        type: number
+        default: 0
+   

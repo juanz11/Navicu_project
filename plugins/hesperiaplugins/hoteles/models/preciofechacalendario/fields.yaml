@@ -1,0 +1,13 @@
+fields:
+    precio:
+        label: Precio
+        span: auto
+        type: text
+    moneda_id:
+        label: Moneda
+        span: auto
+        type: text
+    fecha_id:
+        label: 'Fecha ID'
+        span: auto
+        type: text

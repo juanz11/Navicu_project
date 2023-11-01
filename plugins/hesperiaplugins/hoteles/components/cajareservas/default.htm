@@ -1,0 +1,67 @@
+{% set hoteles = __SELF__.hoteles %}
+{% set monedas = __SELF__.listaMonedas %}
+<div class="container-fluid" id="dates-bar">
+  <!-- respaldo
+
+  data-request="{{ __SELF__ }}::onCheck"
+    data-request-update="'{{ __SELF__ }}::habitaciones_disponibles': '#result',
+    '{{ __SELF__ }}::list_monedas': '#moneda-container'"
+    data-request-flash data-request-validate
+
+  -->
+  <form id="reservas-form" class="form-inline text-center"
+    data-request-flash data-request-validate>
+      <div class="form-group">
+        <select class="form-control" name="hotel" value={{__SELF__.hotelDefault}}>
+          {% for s_hotel in hoteles %}
+            {% if hotel != null and hotel == s_hotel.id %}
+              <option value="{{s_hotel.id}}" selected>{{s_hotel.nombre}}</option>
+            {% else %}
+              <option value="{{s_hotel.id}}">{{s_hotel.nombre}}</option>
+            {% endif %}
+
+         {% endfor %}
+       </select>
+      </div>
+      <div class="form-group input-group date" id="check-in" >
+        <input type="text" class="form-control" name="checkin" value="{{__SELF__.checkIn}}"
+         placeholder="check in" autocomplete="off"><span class="input-group-addon" ><i class="fa fa-calendar"></i></span>
+      </div>
+      <div class="form-group input-group date" id="check-out">
+        <input type="text" class="form-control"  name="checkout" value="{{__SELF__.checkOut}}"
+        placeholder="check out" autocomplete="off"><span class="input-group-addon" ><i class="fa fa-calendar"></i></span>
+      </div>
+      <div class="form-group">
+        <div class="collapse" id="contentPromo">
+          <input type="text" class="form-control"  name="cod_promo"
+          placeholder="Codigo Promocional">
+        </div>
+      </div>
+      <!--</div>-->
+      <div class="form-group">
+        <button type="submit" class="btn btn-primary">Consultar</button>
+      </div>
+      <div class="row">
+        <label><a data-toggle="collapse" href="#contentPromo" aria-expanded="false">¡Tengo un codigo!</a></label>
+      </div>
+  </form>
+</div>
+
+{% if __SELF__.property('mostrar_moneda') %}
+  <div id="moneda-container">
+    {% partial '@list_monedas' %}
+  </div>
+{% endif %}
+
+<div id="result">
+  {% partial '@habitaciones_disponibles' %}
+</div>
+
+<div id="resumen">
+  {% partial '@resumen_reserva' %}
+</div>
+
+<!-- MODAL DE PRECIOS -->
+<div class="modal fade hab-modal" id="modal-hab-precios" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+
+</div><!-- FIN MODAL DE PRECIOS -->

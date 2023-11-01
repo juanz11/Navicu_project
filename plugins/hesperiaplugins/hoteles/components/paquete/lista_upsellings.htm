@@ -1,0 +1,89 @@
+{% set total = 0 %}
+<hr>
+<input type="hidden" value="{{moneda_usada.acronimo}}" id="acronimo">
+<div class="col-md-12">
+  <div class="col-md-8 col-md-offset-2">
+       <h3 class="text-center">PERSONALIZA TU PAQUETE</h3>
+       <ul class="list-group">
+         {% if upsellings.count > 0 %}
+           {% for upselling in upsellings %}
+
+              {% set precio = upselling.isDisponible(propiedades) %}
+
+              {% if precio  %}
+                {% set precioImpuestos = upselling.getPrecioConImpuestos(precio, impuestos)%}
+                <li class="list-group-item">
+                    <div class="row">
+                      <div class="col-md-9 col-sm-9 col-xs-12">
+                        <label>{{upselling.titulo}}
+                          {% if upselling.pivot.obligatorio == 1 %}
+                          <!--<span class="label label-warning">Obligatorio</span>-->
+                          {% else %}
+                          <em><small>(opcional)</small></em>
+                          {% endif %}
+                        </label>
+
+                      </div>
+                      <div class="col-md-3 col-sm-3 col-xs-12">
+                        <div class="input-group">
+                          <span class="input-group-addon"><small>cantidad</small></span>
+                          <select class="form-control select-upselling" data-ups-id="{{upselling.id}}"
+                          data-base="{{precioImpuestos}}" name="ups-{{upselling.id}}">
+                          {% set indice_inicial = 0 %}
+                            {% if upselling.pivot.obligatorio == 1 and upselling.cantidad_min < 1 %}
+                              {% set indice_inicial = 1 %}
+                            {% else %}
+                              {% set indice_inicial = upselling.cantidad_min %}
+                            {% endif %}
+
+                            {% for i in indice_inicial..upselling.cantidad_max %}
+                              <option value="{{i}}">{{ i }}</option>
+                            {% endfor %}
+                          </select>
+
+                        </div>
+
+                      </div>
+                      <div class="col-md-12 col-sm-12 col-xs-12">
+                         <p>{{upselling.descripcion|raw}}</p>
+                      </div>
+                      {% for i in upselling.cantidad_min+indice_inicial..upselling.cantidad_max %}
+                        {% if loop.first %}
+                          {% set clase = "" %}
+                          {# GUARDO EL PRIMER PRECIO PARA INICIALIZAR EL TOTAL #}
+                          {% set total = (total + precioImpuestos) %}
+
+                        {% else %}
+                          {% set clase = "hidden" %}
+                        {% endif %}
+                      <div class="col-md-12 col-xs-12 {{clase}} precios-paq-{{upselling.id}}
+                       precios-ups" id="precio-{{upselling.id}}-{{i}}">
+                        <p class="text-right" >
+                          <strong>
+                            Precio:
+                          </strong>
+                           {{upselling.cambiarFormatoPrecio(precioImpuestos)}} {{moneda_usada.acronimo}}
+                        </p>
+                      </div>
+                      {% endfor %}
+                    </div>
+                </li>
+             {% endif %}
+           {% endfor %}
+           <li class="list-group-item text-center">
+             <strong>Total en servicios adicionales: </strong>
+             <span id="precio-ups-total" data-value="{{total}}">{{upsellings[0].cambiarFormatoPrecio(total)}}</span>
+             {{moneda_usada.acronimo}}
+           </li>
+         {% else %}
+           <li class="list-group-item">
+             <p class="lead text-center">No tenemos servicios disponibles por el momento</p>
+           </li>
+         {% endif %}
+
+
+
+         <!---->
+       </ul>
+  </div>
+</div>

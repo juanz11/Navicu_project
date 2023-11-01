@@ -1,0 +1,49 @@
+<?php 
+    use HesperiaPlugins\Hoteles\Models\Paquete;
+    
+    $paquetes = Paquete::whereHas('reservaciones', function($query){
+      $query->where('moneda_id',1);
+    })->get();
+
+    $form = array("id" => "", "moneda" => "1","desde" => "","hasta" => "");
+?>
+<?php Block::put('breadcrumb'); ?>
+    <ul>
+        <li><a href="<?= Backend::url('hesperiaplugins/hoteles/paquete'); ?>">Paquete</a></li>
+        <li><?= e($this->pageTitle); ?></li>
+    </ul>
+<?php Block::endPut(); ?>
+
+<?= Form::open(['id' => 'form-principal']); ?>
+    <?= $widget->render(); ?> 
+
+<div class="control-toolbar text-center">
+    <div class="toolbar-item">
+      <div data-control="toolbar">
+          <button type="button" class="btn btn-primary"
+          type="submit"
+          data-request="onReportePaquetes",
+          data-stripe-load-indicator
+          data-request-flash
+          >Consultar</button>
+<?= Form::close(); ?>
+      </div>
+    </div>
+</div>
+<div class="control-list">
+    <table class="table data row" data-control="rowlink">
+      <thead>
+        <tr>
+          <th><span>Nombre</span></th>
+          <th><span>Hotel</span></th>
+          <th><span>Solicitados</span></th>
+          <th><span>Confirmados</span></th>
+          <th><span>revenue</span></th>
+          <th><span>Revenue Upselling</span></th>
+        </tr>
+      </thead>
+      <tbody id="partialContents">
+        <?= $this->makePartial('tabla_paquetes',['resultadoPaquetes' => $paquetes,'dates' => $form]); ?>
+      </tbody>
+    </table>
+</div>

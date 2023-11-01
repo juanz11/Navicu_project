@@ -1,0 +1,4 @@
+title: Pago
+modelClass: HesperiaPlugins\Hoteles\Models\Pago
+toolbar:
+    buttons: reorder_toolbar

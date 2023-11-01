@@ -1,0 +1,24 @@
+<?php 
+	use HesperiaPlugins\Hoteles\Models\Upselling;
+	$upselling = Upselling::find($upselling_id);
+?>
+<?php Block::put('breadcrumb'); ?>
+    <ul>
+        <li><a href="<?= Backend::url('hesperiaplugins/hoteles/upselling/reporte_upsellings'); ?>">Reporte de Upsellings</a></li>
+        <li><?= e($this->pageTitle); ?></li>
+    </ul>
+<?php Block::endPut(); ?>
+<div class="scoreboard">
+  <div data-control="toolbar">
+  	<div class="scoreboard-item title-value">
+		<h4>Upselling</h4>
+		<p><?= $upselling->titulo; ?></p>
+	</div>
+	<div class="scoreboard-item title-value">
+		<h4>Hotel</h4>
+		<p><?= $upselling->hotel->nombre; ?></p>
+	</div>
+  </div>
+</div>
+
+<?= $this->listRender('detalle_upselling'); ?>

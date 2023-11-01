@@ -1,0 +1,11 @@
+scopes:
+  hotel:
+    label: Hotel
+    modelClass: HesperiaPlugins\Hoteles\Models\Hotel
+    conditions: hotel_id in (:filtered)
+    nameFrom: nombre
+  categorias:
+    label: Categoria
+    modelClass: HesperiaPlugins\Hoteles\Models\CategoriaUpselling
+    nameFrom: nombre
+    scope: CategoriaUpselling

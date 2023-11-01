@@ -1,0 +1,79 @@
+
+<a href="#resumen-reserva-content" id="go-bottom" class="go-bottom seleccion-toggle">Mi<br>Reserva</a>
+<nav id="spy">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">Tu selección
+            <a href="#" class="seleccion-toggle">
+                <span class="label label-default pull-right "> cerrar </span>
+            </a>
+            
+        </h3>
+      </div>
+      <form  id="form-seleccion">
+  
+        <div class="panel-body">
+        {% if seleccion != null %}
+            {% set total = 0 %}
+  
+            {% set acr = "" %}
+  
+            {% for hab in seleccion %}
+            {% set acr =  hab.codigo_moneda %}
+            <div class="col-md-12 col-xs-12">
+              <p>
+                <strong>{{hab.hab_nombre}}
+                <button type="button" data-index="{{loop.index0}}" class="close delete-hab-selected" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </strong>
+              </p>
+              <p><small>{{hab.reg_desc}}
+                <span class="pull-right">
+                  {{__SELF__.cambiarFormatoPrecio(hab.alojamiento, propiedades.moneda)}} {{hab.codigo_moneda}}<br>
+                 </span>
+                </small>
+                {% if hab.upsellings %}
+                  {% for ups in hab.upsellings %}
+                  <br>
+                    <em><small> + {{ups.titulo}}</small></em>
+                    <small>
+                      <span class="pull-right">
+                        {{__SELF__.cambiarFormatoPrecio(ups.precio, propiedades.moneda)}}  {{hab.codigo_moneda}}
+                      </span>
+                    </small>
+  
+                  {% endfor %}
+  
+                {% endif %}
+              </p>
+              <hr>
+            </div>
+              {% set total = total + hab.precio %}
+  
+            {% endfor %}
+        {% else %}
+
+            <div class="well">
+                Elige al menos una habitación para reservar
+            </div>
+        
+        {% endif %}
+        </div>
+        {% if seleccion != null %}
+        <div class="panel-footer">
+          <p class="text-center">
+            <strong>Total:</strong> {{__SELF__.cambiarFormatoPrecio(total, propiedades.moneda)}} {{acr}}
+            
+          </p>
+          <p class="text-center">
+            <button type="submit" id="pagar-btn" class="btn btn-primary">Pagar</button>
+          </p>
+          
+        </div>
+        {% endif %}
+      </form>
+    </div>
+  </nav>
+
+

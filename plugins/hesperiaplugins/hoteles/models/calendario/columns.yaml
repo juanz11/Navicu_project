@@ -1,0 +1,12 @@
+columns:
+    id:
+        label: ID
+        type: number
+        searchable: true
+        sortable: true
+    calendarizable_id:
+        label: 'C. ID'
+        type: number
+    calendarizable_type:
+        label: 'C. Type'
+        type: text

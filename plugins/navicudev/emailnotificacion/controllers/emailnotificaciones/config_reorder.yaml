@@ -1,0 +1,4 @@
+title: Emailnotificaciones
+modelClass: navicudev\Emailnotificacion\Models\Emailnotificacion
+toolbar:
+    buttons: reorder_toolbar

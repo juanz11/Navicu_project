@@ -1,0 +1,15 @@
+<input type="hidden" id="valor-seleccion" value="<?php echo $model->detalles ?>" name="<?php echo $name ?>">
+
+<?php foreach ($model->detalles as $key => $value): ?>
+
+    <div class="detalle-obj" id="detalle-<?php echo $key ?>">
+        <button type="button" class="close eliminar-detalle" data-indice="<?php echo $key ?>" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <p><?php echo $value->habitacion->nombre ?></p>
+          <small><?php echo $value->habitacion->getOcupacion($value->ocupacion) ?> | <?php echo $value->regimen->nombre ?></small>
+         <p> <small><strong>precio:</strong> <span class='valor-precio' data-value='<?php echo $value->precio ?>'><?php echo $value->precio ?></span> </small></p>
+
+          <?php foreach ($value->descuentos as $descuento ): ?>
+             <p><small><em><?php echo $descuento->concepto ?></em></small></p>
+          <?php endforeach ?> 
+    </div>
+<?php endforeach ?>

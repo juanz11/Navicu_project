@@ -1,0 +1,26 @@
+#title: Fechas
+#modelClass: HesperiaPlugins\Hoteles\Models\Fechas
+#list: $/hesperiaplugins/hoteles/models/fecha/columns.yaml
+#recordUrl: 'hesperiaplugins/hoteles/fechas/update/:id'
+#noRecordsMessage: 'backend::lang.list.no_records'
+#showSetup: true
+#showCheckboxes: true
+#toolbar:
+#    buttons: list_toolbar
+#    search:
+#        prompt: 'backend::lang.list.search_prompt'
+
+title: Fechas Disponibles
+modelClass: HesperiaPlugins\Hoteles\Models\Fecha
+list: $/hesperiaplugins/hoteles/models/fecha/fechas_list.yaml
+recordUrl: 'hesperiaplugins/hoteles/fecha/update/:id'
+noRecordsMessage: 'backend::lang.list.no_records'
+recordsPerPage: 10
+showSetup: true
+#showCheckboxes: true
+#filter: config_filter_fechas.yaml
+toolbar:
+    buttons: list_toolbar
+    search:
+        prompt: 'backend::lang.list.search_prompt'
+filter: config_filter_fechas.yaml

@@ -1,0 +1,12 @@
+list: $/hesperiaplugins/hoteles/models/pago/columns.yaml
+modelClass: HesperiaPlugins\Hoteles\Models\Pago
+title: Pago
+noRecordsMessage: 'backend::lang.list.no_records'
+recordsPerPage: 20
+showSetup: true
+showCheckboxes: true
+toolbar:
+    buttons: list_toolbar
+    search:
+        prompt: 'backend::lang.list.search_prompt'
+recordUrl: 'hesperiaplugins/hoteles/pago/update/:id'

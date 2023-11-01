@@ -1,0 +1,4 @@
+title: Cotizacion
+modelClass: HesperiaPlugins\Hoteles\Models\Cotizacion
+toolbar:
+    buttons: reorder_toolbar

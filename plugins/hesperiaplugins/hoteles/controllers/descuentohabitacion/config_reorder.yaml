@@ -1,0 +1,4 @@
+title: DescuentoHabitacion
+modelClass: HesperiaPlugins\Hoteles\Models\DescuentoHabitacion
+toolbar:
+    buttons: reorder_toolbar

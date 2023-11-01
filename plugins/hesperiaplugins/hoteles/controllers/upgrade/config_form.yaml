@@ -1,0 +1,10 @@
+name: Upgrade
+form: $/hesperiaplugins/hoteles/models/upgrade/fields.yaml
+modelClass: HesperiaPlugins\Hoteles\Models\Upgrade
+defaultRedirect: hesperiaplugins/hoteles/upgrade
+create:
+    redirect: 'hesperiaplugins/hoteles/upgrade/update/:id'
+    redirectClose: hesperiaplugins/hoteles/upgrade
+update:
+    redirect: hesperiaplugins/hoteles/upgrade
+    redirectClose: hesperiaplugins/hoteles/upgrade

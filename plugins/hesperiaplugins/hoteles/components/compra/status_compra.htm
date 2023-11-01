@@ -1,0 +1,42 @@
+
+
+      {% if compra.status_id == 3 %}
+        <div class="col-md-12">
+          <h2 class="text-center">Status</h2>
+          <div class="alert alert-warning alert-dismissible fade in" role="warning">
+            <h4>¡Perfecto! Tu pago está pendiente de validación</h4>
+            <p>Hemos recibido tu comprobante de pago, una vez verificado, recibirás
+              un email con la confirmación de tu compra
+            </p>
+          </div>
+        </div>
+      {% elseif compra.status_id == 2  %}
+        <div class="col-md-12">
+          <div class="alert bg-info alert-dismissible text-center" role="alert">
+            <h4>Pre-compra registrada</h4>
+            <p>Puede elegir entre los metodos de pago
+            disponibles
+            </p>
+          </div>
+        </div>
+      {% elseif compra.status_id == 1 %}
+        <div class="col-md-12 well text-center">
+          <h2> <i class="fa fa-check-circle fa-3x"></i> <br>¡Hemos procesado su pago correctamente!</h2>
+          <p class="lead"><strong>Su compra ha sido aprobada</strong>, esperamos disfrutes de nuestros productos y servicios</p>
+          <p class="text-center"><a href="{{'prueba'|staticPage}}"role="link">Volver a la página principal</a></p>
+        </div>
+
+      {%elseif compra.status_id == 6 %}
+      <div class="col-md-12">
+          <h2 class="text-center">Status</h2>
+          <div class="alert alert-warning alert-dismissible fade in" role="warning">
+            <h4>¡Perfecto! Tu pre-compra ha sido registrada <span class="pull-right badge badge-light">ID Nº{{compra.id}}</span></h4>
+            <p>Debes acercarte a la recepción del Hotel e indicar tú ID de compra para que nuestro personal efectue
+              el cobro y disfrutes de nuestros productos y servicios.
+            </p>
+            <p class="text-center">
+                <a class="btn btn-primary" href="{{'prueba'|staticPage}}">Volver al inicio</a>
+            </p>
+          </div>
+        </div>
+      {% endif %}

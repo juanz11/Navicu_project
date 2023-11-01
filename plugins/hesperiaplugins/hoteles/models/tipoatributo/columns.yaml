@@ -1,0 +1,11 @@
+columns:
+    id:
+        label: id
+        type: number
+    nombre:
+        label: Nombre
+        type: text
+        searchable: true
+    codigo:
+        label: Codigo
+        type: text

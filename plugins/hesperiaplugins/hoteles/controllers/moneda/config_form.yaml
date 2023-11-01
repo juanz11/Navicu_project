@@ -1,0 +1,10 @@
+name: Moneda
+form: $/hesperiaplugins/hoteles/models/moneda/fields.yaml
+modelClass: HesperiaPlugins\Hoteles\Models\Moneda
+defaultRedirect: hesperiaplugins/hoteles/moneda
+create:
+    redirect: 'hesperiaplugins/hoteles/moneda/update/:id'
+    redirectClose: hesperiaplugins/hoteles/moneda
+update:
+    redirect: hesperiaplugins/hoteles/moneda
+    redirectClose: hesperiaplugins/hoteles/moneda

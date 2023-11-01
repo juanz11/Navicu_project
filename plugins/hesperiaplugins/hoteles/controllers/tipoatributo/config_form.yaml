@@ -1,0 +1,10 @@
+name: TipoAtributo
+form: $/hesperiaplugins/hoteles/models/tipoatributo/fields.yaml
+modelClass: HesperiaPlugins\Hoteles\Models\TipoAtributo
+defaultRedirect: hesperiaplugins/hoteles/tipoatributo
+create:
+    redirect: 'hesperiaplugins/hoteles/tipoatributo/update/:id'
+    redirectClose: hesperiaplugins/hoteles/tipoatributo
+update:
+    redirect: hesperiaplugins/hoteles/tipoatributo
+    redirectClose: hesperiaplugins/hoteles/tipoatributo

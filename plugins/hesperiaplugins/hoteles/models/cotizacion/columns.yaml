@@ -1,0 +1,33 @@
+columns:
+    id:
+        label: Cotizacion
+        type: text
+    'cotizable[id]':
+        type: text
+        label: 'ID Reserva / ID Compra'
+    'cotizable[status][status]':
+        type: text
+        label: Status
+    usable:
+        label: Usuario
+        type: agente
+        sortable: false
+    created_at:
+        label: Fecha
+        type: date
+        format: d-m-Y
+        searchable: true
+        sortable: true
+    nombre:
+        label: 'huesped / cliente'
+        type: cotizable_nombre
+        sortable: false
+    hotel:
+        label: Hotel
+        type: cotizable_hotel
+        sortable: false
+    'detalle':
+        label: ''
+        sortable: false
+        type: partial
+        path: ~/plugins/hesperiaplugins/hoteles/controllers/cotizacion/_detalle_cotiz_column.htm

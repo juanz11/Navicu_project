@@ -1,0 +1,6 @@
+fields:
+    descripcion:
+        label: Descripcion
+        span: full
+        size: ''
+        type: textarea

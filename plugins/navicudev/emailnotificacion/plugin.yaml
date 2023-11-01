@@ -1,0 +1,16 @@
+plugin:
+    name: 'navicudev.emailnotificacion::lang.plugin.name'
+    description: 'navicudev.emailnotificacion::lang.plugin.description'
+    author: navicudev
+    icon: oc-icon-adjust
+    homepage: ''
+navigation:
+    main-menu-item:
+        label: 'Email notificaciones'
+        url: navicudev/emailnotificacion/emailnotificacion
+        icon: icon-envelope
+        sideMenu:
+            side-menu-item:
+                label: 'Email notifications'
+                url: navicudev/emailnotificacion/emailnotificaciones
+                icon: icon-envelope
